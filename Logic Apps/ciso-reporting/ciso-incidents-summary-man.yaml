@@ -16,7 +16,7 @@ SkillGroups:
 
   - Format: API
     Settings:
-      OpenApiSpecUrl: <YOUR-REPO-URL>/ciso-incidents-summary-api-spec.yaml
+      OpenApiSpecUrl: https://raw.githubusercontent.com/nicdux/Security-Copilot/main/Logic%20Apps/ciso-reporting/ciso-incidents-summary-api-spec.yaml
 
   - Format: KQL
     Skills:
