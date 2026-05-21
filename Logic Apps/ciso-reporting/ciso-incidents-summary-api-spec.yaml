@@ -3,40 +3,49 @@ info:
   title: CISO Incidents Summary
   description: Helper skills used to get specific summary info on the incidents in Defender
   version: "0.0.1"
+
 servers:
   - url: https://prod-25.brazilsouth.logic.azure.com:443
 
 paths:
-  /workflows/cc5101f1ee4f4e1f855722103e1ca232/triggers/AnalyzeUPNsCall/paths/invoke:
-    post:
-      operationId: CisoGetUsersStatus
-      summary: Get the status of a list of users in terms of enablement and risk level in Entra
+  /workflows/cc5101f1ee4f4e1f855722103e1ca232/triggers/AnalyzeUP summary: Get the status of a list of users in terms of enablement and risk level in Entra.  /workflows/cc5101f1ee4f4e1f855722103e1ca232/triggers/AnalyzeUPNsCall/paths/invoke:
       parameters:
         - name: api-version
           in: query
-          default: 2016-10-01
+          required: true
           schema:
             type: string
+            default: 2016-10-01
         - name: sp
           in: query
-          default: /triggers/AnalyzeUPNsCall/run
+          required: true
           schema:
             type: string
+            default: /triggers/AnalyzeUPNsCall/run
         - name: sv
           in: query
-          default: 1.0
+          required: true
           schema:
             type: string
+            default: "1.0"
+
       requestBody:
-        description: Comma separated list of the User Principal Names (UPNs) of the user to be analyzed
         required: true
         content:
           application/json:
             schema:
               type: object
+              required:
+                - users_upn
               properties:
                 users_upn:
                   type: string
+                  description: Comma separated list of the User Principal Names (UPNs) of the users to be analyzed
+                  example: "suporte@nicdux.com.br"
+
       responses:
         "200":
           description: Status of the users
+``
+    post:
+      operationId: CisoGetUsersStatus
