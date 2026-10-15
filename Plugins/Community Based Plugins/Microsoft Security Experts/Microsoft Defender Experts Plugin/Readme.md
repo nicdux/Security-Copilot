@@ -1,57 +1,57 @@
-![Defender Experts Logo](https://github.com/Azure/Copilot-For-Security/blob/main/Plugins/Community%20Based%20Plugins/Microsoft%20Security%20Experts/Microsoft%20Defender%20Experts%20Plugin/Images/LogoDex.png)
+![Logotipo do Defender Experts](https://github.com/Azure/Copilot-For-Security/blob/main/Plugins/Community%20Based%20Plugins/Microsoft%20Security%20Experts/Microsoft%20Defender%20Experts%20Plugin/Images/LogoDex.png)
 
-# Introduction
+# Introdução
 
-Welcome to the **Defender Experts for Hunting Plugin**! This plugin elevates your cybersecurity posture by providing proactive threat hunting across your entire organizational environment—including Office 365, cloud applications, and identity platforms. Leveraging insights from Microsoft's seasoned security experts, our plugin empowers your team to swiftly detect and respond to advanced threats.
+Boas-vindas ao **Defender Experts for Hunting Plugin**! Este plugin eleva sua postura de segurança cibernética ao fornecer busca proativa de ameaças em todo o ambiente da organização, incluindo o Office 365, aplicativos de nuvem e plataformas de identidade. Com as informações de especialistas experientes em segurança da Microsoft, o plugin permite que sua equipe detecte e responda rapidamente a ameaças avançadas.
 
-# Overview
+# Visão geral
 
-Defender Experts for Hunting is a proactive threat hunting service that extends beyond traditional endpoints to encompass Office 365, cloud applications, and identity platforms. Our seasoned security experts actively search for threats across your organization's environment, investigating anomalies and providing detailed contextual alerts along with clear remediation instructions to enable swift and effective responses.
+O Defender Experts for Hunting é um serviço proativo de busca de ameaças que vai além dos pontos de extremidade tradicionais e abrange o Office 365, aplicativos de nuvem e plataformas de identidade. Nossos especialistas experientes em segurança procuram ativamente ameaças no ambiente da organização, investigam anomalias e fornecem alertas contextuais detalhados com instruções claras de correção, permitindo respostas rápidas e eficazes.
 
-We delve deep to uncover advanced threats and assess the scope and impact of malicious activities, particularly those involving human adversaries or hands-on-keyboard attacks. A key deliverable of our service is sharing the advanced hunting queries developed during our analyses, empowering your security team to proactively search for similar threats and enhance risk mitigation.
+Realizamos análises aprofundadas para descobrir ameaças avançadas e avaliar o alcance e o impacto de atividades mal-intencionadas, especialmente aquelas que envolvem adversários humanos ou ataques hands-on-keyboard. Um importante resultado do serviço é o compartilhamento das consultas de busca avançada desenvolvidas durante as análises, permitindo que sua equipe procure proativamente ameaças semelhantes e aprimore a mitigação de riscos.
 
-Additionally, through Copilot for Security, we integrate our findings back into automated tools to improve their capacity for discovery and prioritization, ensuring your defenses continuously evolve to meet emerging security challenges.
+Além disso, por meio do Copilot for Security, integramos nossas descobertas às ferramentas automatizadas para melhorar sua capacidade de descoberta e priorização, garantindo que suas defesas evoluam continuamente diante dos novos desafios de segurança.
 
-# Prerequisites
+# Pré-requisitos
 
-- **Copilot for Security Capacity**
+- **Capacidade do Copilot for Security**
 - **Microsoft Defender for Endpoint**
 
-> **Note:** This plugin is KQL-based and leverages advanced hunting queries to scan across Defender tables for risky behavior and suspicious activities. The tables include `CloudAppEvents`, `EmailEvents`, `EmailAttachmentInfo`, `AADSignIn`, and more.
+> **Observação:** este plugin é baseado em KQL e usa consultas de busca avançada para verificar comportamentos de risco e atividades suspeitas nas tabelas do Defender. As tabelas incluem `CloudAppEvents`, `EmailEvents`, `EmailAttachmentInfo`, `AADSignIn`, entre outras.
 
-# Step-by-Step Guided Walkthrough
+# Passo a passo orientado
 
-In this guide, we will provide high-level steps to get started using the new tooling. We will start by adding the custom plugin.
+Este guia apresenta as principais etapas para começar a usar a nova ferramenta. Primeiro, adicionaremos o plugin personalizado.
 
-1. **Go to Security Copilot**
+1. **Acesse o Security Copilot**
 
-    ![Main Page DEX](https://github.com/Azure/Copilot-For-Security/blob/main/Plugins/Community%20Based%20Plugins/Microsoft%20Security%20Experts/Microsoft%20Defender%20Experts%20Plugin/Images/mainpageDex.png)
-
-
-2. **Download the Defender Experts plugin from GitHub**
-
-3. **Select the plugins icon in the bottom left corner**
-
-4. **Under Custom upload, select _Upload plugin_**
-
-    ![Upload Plugin DEX](https://github.com/Azure/Copilot-For-Security/blob/main/Plugins/Community%20Based%20Plugins/Microsoft%20Security%20Experts/Microsoft%20Defender%20Experts%20Plugin/Images/uploadpluginDex.png)
+    ![Página principal do DEX](https://github.com/Azure/Copilot-For-Security/blob/main/Plugins/Community%20Based%20Plugins/Microsoft%20Security%20Experts/Microsoft%20Defender%20Experts%20Plugin/Images/mainpageDex.png)
 
 
-5. **Select the Copilot for Security plugin and upload the DEX Plugin**
+2. **Baixe o plugin Defender Experts do GitHub**
 
-    ![Upload Plugin DEX](https://github.com/Azure/Copilot-For-Security/blob/main/Plugins/Community%20Based%20Plugins/Microsoft%20Security%20Experts/Microsoft%20Defender%20Experts%20Plugin/Images/uploadpluginDex.png)
+3. **Selecione o ícone de plugins no canto inferior esquerdo**
 
+4. **Em Custom upload, selecione _Upload plugin_**
 
-6. **Click _Add_**
-
-7. **Under Custom, you will see the plugin**
-
-    ![View Plugin DEX](https://github.com/Azure/Copilot-For-Security/blob/main/Plugins/Community%20Based%20Plugins/Microsoft%20Security%20Experts/Microsoft%20Defender%20Experts%20Plugin/Images/ViewPluginDex.png)
+    ![Carregar o plugin DEX](https://github.com/Azure/Copilot-For-Security/blob/main/Plugins/Community%20Based%20Plugins/Microsoft%20Security%20Experts/Microsoft%20Defender%20Experts%20Plugin/Images/uploadpluginDex.png)
 
 
-8. **The custom package contains the following prompts:** **Under DEX, you will find the following**
+5. **Selecione o plugin do Copilot for Security e carregue o plugin DEX**
 
-    ![Skills DEX](https://github.com/Azure/Copilot-For-Security/blob/main/Plugins/Community%20Based%20Plugins/Microsoft%20Security%20Experts/Microsoft%20Defender%20Experts%20Plugin/Images/SkillsDex.png)
+    ![Carregar o plugin DEX](https://github.com/Azure/Copilot-For-Security/blob/main/Plugins/Community%20Based%20Plugins/Microsoft%20Security%20Experts/Microsoft%20Defender%20Experts%20Plugin/Images/uploadpluginDex.png)
 
 
-Let us get started using this together with the Copilot for Security capabilities.
+6. **Clique em _Add_**
+
+7. **O plugin será exibido em Custom**
+
+    ![Visualizar o plugin DEX](https://github.com/Azure/Copilot-For-Security/blob/main/Plugins/Community%20Based%20Plugins/Microsoft%20Security%20Experts/Microsoft%20Defender%20Experts%20Plugin/Images/ViewPluginDex.png)
+
+
+8. **O pacote personalizado contém os seguintes prompts:** **em DEX, você encontrará:**
+
+    ![Habilidades do DEX](https://github.com/Azure/Copilot-For-Security/blob/main/Plugins/Community%20Based%20Plugins/Microsoft%20Security%20Experts/Microsoft%20Defender%20Experts%20Plugin/Images/SkillsDex.png)
+
+
+Vamos começar a usá-lo em conjunto com os recursos do Copilot for Security.

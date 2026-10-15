@@ -1,190 +1,188 @@
 
-# Prerequisites
+# Pré-requisitos
 
-> <img src="https://raw.githubusercontent.com/Azure/Security-Copilot/refs/heads/main/Logic%20Apps/ciso-reporting/images/yt.png" alt="YouTube" width="28" height="20"> <a href="https://youtu.be/O4gT5yRwIpI" target="_blank">Mini-video showing the prerequisites (2m): [CISO Reporting with Security Copilot - Prototype setup - **#0** Prerequisites]</a>
+> <img src="https://raw.githubusercontent.com/Azure/Security-Copilot/refs/heads/main/Logic%20Apps/ciso-reporting/images/yt.png" alt="YouTube" width="28" height="20"> <a href="https://youtu.be/O4gT5yRwIpI" target="_blank">Minivídeo que apresenta os pré-requisitos (2 min): [Relatórios para CISO com o Security Copilot — configuração do protótipo — **#0** Pré-requisitos]</a>
 
-1. The approach and logic used in this solution can be applied with Security Copilot connected to any data source.
-   However, the sample custom plugins and promptbooks provided are designed to work in an environment where security is managed in the Unified SOC portal (Defender + Sentinel).
+1. A abordagem e a lógica usadas nesta solução podem ser aplicadas com o Security Copilot conectado a qualquer fonte de dados.
+   No entanto, os plugins personalizados e os Promptbooks de exemplo fornecidos foram projetados para funcionar em um ambiente no qual a segurança é gerenciada pelo portal do SOC unificado (Defender + Sentinel).
 
-2. This procedure assumes that you already have some experience with Security Copilot and an existing baseline compute capacity deployed.
-   If this is not the case, before starting the steps described below, create a minimum capacity of at least 1 SCU, which will be needed to access and configure Security Copilot.
-   Later in the procedure, you will be instructed to increase the number of SCUs for the initial test and for scheduled execution.   
+2. Este procedimento pressupõe que você já tenha alguma experiência com o Security Copilot e uma capacidade computacional de base implantada.
+   Caso contrário, antes de iniciar as etapas descritas abaixo, crie uma capacidade mínima de pelo menos 1 SCU, necessária para acessar e configurar o Security Copilot.
+   Mais adiante no procedimento, você será instruído a aumentar o número de SCUs para o teste inicial e para a execução agendada.<br>
 
-4. The custom Logic Apps that invoke Security Copilot access it through an OAuth connection authenticated with user credentials.
-   Security Copilot accesses the target source systems through an impersonated access model; therefore, the credentials used in the OAuth connection from the Logic App
-   must have the right to read the security data in the target source systems. In the promptbooks provided in this solution, the sources are Defender, Entra, and Sentinel.
-   To my knowledge, at the time of this writing, it is not possible to specify 'Managed Identities' for the connection from Logic Apps to Security Copilot.
-   'User credentials' are then required, even though these credentials will generally not be used by humans but only by this Logic App.
-   As a prerequisite for proceeding with this installation, then, it is necessary to create user credentials with the following minimum 'active' permissions
-   (note that 'eligible' permissions in PIM are not adequate for use in automation):
-   - Security Reader at tenant level (for reading data in Defender and Entra)
-   - Microsoft Sentinel Reader at the level of the Sentinel's resource group (for reading data in the Sentinel workspace)
-   - Contributor on Microsoft Security Copilot (for accessing and interacting with Security Copilot)  
+4. Os Logic Apps personalizados que chamam o Security Copilot o acessam por uma conexão OAuth autenticada com credenciais de usuário.
+   O Security Copilot acessa os sistemas de origem de destino por meio de um modelo de acesso por representação. Portanto, as credenciais usadas na conexão OAuth do Logic App
+   devem ter o direito de ler os dados de segurança nos sistemas de origem de destino. Nos Promptbooks fornecidos nesta solução, as fontes são Defender, Entra e Sentinel.
+   Até o momento da redação deste documento, não é possível especificar 'Managed Identities' na conexão dos Logic Apps com o Security Copilot.
+   Portanto, são necessárias 'credenciais de usuário', embora geralmente elas não sejam usadas por pessoas, mas apenas por este Logic App.
+   Como pré-requisito para prosseguir com a instalação, é necessário criar credenciais de usuário com, no mínimo, as seguintes permissões 'ativas'
+   (observe que permissões 'qualificadas' no PIM não são adequadas para uso em automação):
+   - Security Reader no nível do locatário (para ler dados no Defender e no Entra)
+   - Microsoft Sentinel Reader no nível do grupo de recursos do Sentinel (para ler dados no workspace do Sentinel)
+   - Contributor no Microsoft Security Copilot (para acessar e interagir com o Security Copilot)<br>
    
-   These credentials also need to have an Microsoft 365 Exchange Online license assigned because they will be used to send the scheduled report email. 
-   It is recommended to create and use a dedicated user with a clear name (such as 'Security Copilot Automation Account') and to monitor its usage to ensure that
-   any anomalous logon attempts with these credentials generate an alert.  
-   Before starting this setup procedure, it is highly recommended to prepare a browser session authenticated with the credentials of the new Security Copilot Automation Account,
-   where you have already successfully accessed:
-   - The user's mailbox in Exchange Online with Outlook web access
-   - The Unfied SOC Portal (Defender + Sentinel, security.microsoft.com)
-   - The Sentinel blade in Azure (portal.azure.com)
-   - The Security Copilot portal (at the very first access, it requires you to acknowledge some introductory topics)
+   Essas credenciais também precisam ter uma licença do Microsoft 365 Exchange Online atribuída, pois serão usadas para enviar o email do relatório agendado.
+   Recomendamos criar e usar um usuário dedicado com um nome claro, como 'Security Copilot Automation Account', e monitorar seu uso para garantir que
+   qualquer tentativa anômala de entrada com essas credenciais gere um alerta.<br>
+   Antes de iniciar este procedimento de configuração, recomendamos preparar uma sessão do navegador autenticada com as credenciais da nova Security Copilot Automation Account,
+   na qual você já tenha acessado com êxito:
+   - A caixa de correio do usuário no Exchange Online pelo acesso Web do Outlook
+   - O portal do SOC unificado (Defender + Sentinel, security.microsoft.com)
+   - A folha do Sentinel no Azure (portal.azure.com)
+   - O portal do Security Copilot (no primeiro acesso, é necessário confirmar alguns tópicos introdutórios)
 
-6. If you want to generate a report on the recommendations identified by Defender for Cloud (as in the third prompt in the sample Posture Analysis promptbook documented and shared here),
-   you also need to enable Continuous Export from Defender for Cloud (in the relevant Azure subscriptions) to Log Analytics/Sentinel. 
+6. Para gerar um relatório sobre as recomendações identificadas pelo Defender for Cloud, como no terceiro prompt do Promptbook de exemplo de análise de postura documentado e compartilhado aqui,
+   você também precisa habilitar a exportação contínua do Defender for Cloud, nas assinaturas relevantes do Azure, para o Log Analytics/Sentinel.
    
-7. Before starting this setup procedure, make sure to have the following information available:
-   - Credentials for the "Security Copilot Automation Account"
-   - Identification parameters for Sentinel (Subscription ID, Resource Group Name, Sentinel Workspace Name)
-# Setup Procedure
+7. Antes de iniciar este procedimento de configuração, tenha as seguintes informações disponíveis:
+   - Credenciais da "Security Copilot Automation Account"
+   - Parâmetros de identificação do Sentinel (Subscription ID, Resource Group Name, Sentinel Workspace Name)
+# Procedimento de configuração
 
-## [**STEP 1**] Create the promptbooks
+## [**ETAPA 1**] Criar os Promptbooks
 
-   > <img src="https://raw.githubusercontent.com/Azure/Security-Copilot/refs/heads/main/Logic%20Apps/ciso-reporting/images/yt.png" alt="YouTube" width="28" height="20"> <a href="https://youtu.be/JflMLaEJEQ0" target="_blank">Mini-video showing the promptbooks creation (3m): [CISO Reporting with Security Copilot - Prototype setup - **#1** Create promptbooks]</a>
+   > <img src="https://raw.githubusercontent.com/Azure/Security-Copilot/refs/heads/main/Logic%20Apps/ciso-reporting/images/yt.png" alt="YouTube" width="28" height="20"> <a href="https://youtu.be/JflMLaEJEQ0" target="_blank">Minivídeo que apresenta a criação dos Promptbooks (3 min): [Relatórios para CISO com o Security Copilot — configuração do protótipo — **#1** Criar Promptbooks]</a>
 
-On the Security Copilot portal, accessed with credentials with the Owner role:
+No portal do Security Copilot, acessado com credenciais que tenham a função Owner:
 - [promptbook-incident-analysis](https://github.com/Azure/Security-Copilot/blob/main/Logic%20Apps/ciso-reporting/promptbook-incident-analysis.md)
-- [OPTIONAL] [promptbook-posture-analysis](https://github.com/Azure/Security-Copilot/blob/main/Logic%20Apps/ciso-reporting/promptbook-posture-analysis.md)\
-  NOTES:
-  - This promptbook for posture analysis and the related automation are in a very preliminary draft state.
-    Not only are these prompts not optimized in terms of compute capacity consumption, but the overall promptbook is also very incomplete.
-    Please refer to [this article](https://www.linkedin.com/pulse/periodic-reporting-security-managers-cisos-using-stefano-pescosolido-fm80f/)
-    for further details.  
-  - If you have not enabled the Continuous Export feature in Defender for Cloud, you should not include the third prompt in this sample promptbook.
+- [OPCIONAL] [promptbook-posture-analysis](https://github.com/Azure/Security-Copilot/blob/main/Logic%20Apps/ciso-reporting/promptbook-posture-analysis.md)\
+  OBSERVAÇÕES:
+  - Este Promptbook de análise de postura e a automação relacionada estão em uma versão preliminar.
+    Além de os prompts não estarem otimizados quanto ao consumo de capacidade computacional, o Promptbook como um todo ainda está bastante incompleto.
+    Consulte [este artigo](https://www.linkedin.com/pulse/periodic-reporting-security-managers-cisos-using-stefano-pescosolido-fm80f/)
+    para obter mais detalhes.<br>
+  - Se você não habilitou o recurso de exportação contínua no Defender for Cloud, não inclua o terceiro prompt neste Promptbook de exemplo.
 
-## [**STEP 2**] Deploy the Logic App [ciso-get-users-status.json](https://github.com/Azure/Security-Copilot/blob/main/Logic%20Apps/ciso-reporting/ciso-get-users-status.json) used by one of the skills in the custom plugin for Incidents Analysis
+## [**ETAPA 2**] Implantar o Logic App [ciso-get-users-status.json](https://github.com/Azure/Security-Copilot/blob/main/Logic%20Apps/ciso-reporting/ciso-get-users-status.json), usado por uma das habilidades do plugin personalizado para análise de incidentes
 
-   > <img src="https://raw.githubusercontent.com/Azure/Security-Copilot/refs/heads/main/Logic%20Apps/ciso-reporting/images/yt.png" alt="YouTube" width="28" height="20"> <a href="https://youtu.be/ETpt88CddQU" target="_blank">Mini-video showing the creation of the Logic App **ciso-get-users-status** (>2m): [CISO Reporting with Security Copilot - Prototype setup - **#2** Install GetUsersStatus]</a>
+   > <img src="https://raw.githubusercontent.com/Azure/Security-Copilot/refs/heads/main/Logic%20Apps/ciso-reporting/images/yt.png" alt="YouTube" width="28" height="20"> <a href="https://youtu.be/ETpt88CddQU" target="_blank">Minivídeo que apresenta a criação do Logic App **ciso-get-users-status** (>2 min): [Relatórios para CISO com o Security Copilot — configuração do protótipo — **#2** Instalar o GetUsersStatus]</a>
 
-On the Azure portal, accessed with credentials with an administrative role:
-  - NOTE: Currently, it has no "Deploy in Azure" button; it is necessary to perform a manual deployment.
-  - Edit its connection to Security Copilot and authenticate with the credentials of the Security Copilot Automation Account
+No portal do Azure, acessado com credenciais que tenham uma função administrativa:
+  - OBSERVAÇÃO: atualmente, não há um botão "Deploy in Azure"; é necessário realizar uma implantação manual.
+  - Edite a conexão com o Security Copilot e autentique-se com as credenciais da Security Copilot Automation Account.
 
-## [**STEP 3**] Deploy the Logic App [CfS-SendPromptbookResultsByEmail](https://github.com/Azure/Security-Copilot/tree/main/Logic%20Apps/CfS-SendPromptbookResultsByEmail) to create the "**CISO Incidents Analysis**" automation
+## [**ETAPA 3**] Implantar o Logic App [CfS-SendPromptbookResultsByEmail](https://github.com/Azure/Security-Copilot/tree/main/Logic%20Apps/CfS-SendPromptbookResultsByEmail) para criar a automação "**CISO Incidents Analysis**"
 
-   > <img src="https://raw.githubusercontent.com/Azure/Security-Copilot/refs/heads/main/Logic%20Apps/ciso-reporting/images/yt.png" alt="YouTube" width="28" height="20"> <a href="https://youtu.be/F3PMAPl7ptc" target="_blank">Mini-video showing the creation of the Logic App **CISO Incidents Analysis** (>5m): [CISO Reporting with Security Copilot - Prototype setup - **#3** Install Incidents Analysis Automation]</a>
+   > <img src="https://raw.githubusercontent.com/Azure/Security-Copilot/refs/heads/main/Logic%20Apps/ciso-reporting/images/yt.png" alt="YouTube" width="28" height="20"> <a href="https://youtu.be/F3PMAPl7ptc" target="_blank">Minivídeo que apresenta a criação do Logic App **CISO Incidents Analysis** (>5 min): [Relatórios para CISO com o Security Copilot — configuração do protótipo — **#3** Instalar a automação de análise de incidentes]</a>
 
-On the Azure portal, accessed with credentials with an administrative role:
-  - Use the "Deploy in Azure" button
-  - Edit its connection to Security Copilot and authenticate with the credentials of the Security Copilot Automation Account
-  - Edit its connection to Office 365 and authenticate with the credentials of the Security Copilot Automation Account
-  - Chose the promptbook "promptbook-incident-analysis" and specify its parameters. Typically you may want to specify:
+No portal do Azure, acessado com credenciais que tenham uma função administrativa:
+  - Use o botão "Deploy in Azure".
+  - Edite a conexão com o Security Copilot e autentique-se com as credenciais da Security Copilot Automation Account.
+  - Edite a conexão com o Office 365 e autentique-se com as credenciais da Security Copilot Automation Account.
+  - Escolha o Promptbook "promptbook-incident-analysis" e especifique seus parâmetros. Normalmente, você pode definir:
     - TOP_INCIDENTS_NUMBER = 10
     - SEVERITIES = High and Medium
-    - TIME_FRAME = last week (NOTE: if you change this value, you have to modify the content of the ReplacePromptsInOutput workflow paramter accordingly)
-    - RESPONSE_LANGUAGE = set a language supported by Security Copilot
+    - TIME_FRAME = last week (OBSERVAÇÃO: se alterar esse valor, você deverá modificar de modo correspondente o conteúdo do parâmetro ReplacePromptsInOutput do fluxo de trabalho)
+    - RESPONSE_LANGUAGE = defina um idioma compatível com o Security Copilot
     - RESPONSE_LANGUAGE = 10
-    - TOP_IMPACTED_USERS_NUMBER = 5 (the value of this number has an important impact on the consumption - and, then, costs - of the solution.)
-  - Set all the Logic App parameters. Specifically, ensure that you have set:
-    - The Email Title and Email Subject
-    - The EmailRecipients
-    - The SkipPromptsInOutput and ReplacePromptsInOutput as specified at the end of the file
+    - TOP_IMPACTED_USERS_NUMBER = 5 (esse número afeta significativamente o consumo e, portanto, os custos da solução.)
+  - Defina todos os parâmetros do Logic App. Especificamente, verifique se você definiu:
+    - O título e o assunto do email
+    - EmailRecipients
+    - SkipPromptsInOutput e ReplacePromptsInOutput conforme especificado no final do arquivo
       [promptbook-incident-analysis](https://github.com/Azure/Security-Copilot/blob/main/Logic%20Apps/ciso-reporting/promptbook-incident-analysis.md)
-  - Set the recurrence. Typically it has to be set to be run once per week, like on Monday morning at 6 am.
-  - For the time being, keep the Logic App disabled (we will enable it when all the required configurations are in place) 
+  - Defina a recorrência. Normalmente, ela deve ser configurada para uma execução semanal, por exemplo, às segundas-feiras, às 6h.
+  - Por enquanto, mantenha o Logic App desabilitado. Ele será habilitado quando todas as configurações necessárias estiverem prontas.
  
 
-## [**STEP 4**] [OPTIONAL] Deploy the Logic App [CfS-SendPromptbookResultsByEmail](https://github.com/Azure/Security-Copilot/tree/main/Logic%20Apps/CfS-SendPromptbookResultsByEmail) to create the "**CISO Posture Analysis**" automation  
-  NOTE: this automation and the related promptbook are in a very preliminary draft state.
-  Not only are these prompts not optimized in terms of compute capacity consumption, but the overall promptbook is also very incomplete.
-  Please refer to [this article](https://www.linkedin.com/pulse/periodic-reporting-security-managers-cisos-using-stefano-pescosolido-fm80f/)
-  for further details on how this promptbook should be improved.
+## [**ETAPA 4**] [OPCIONAL] Implantar o Logic App [CfS-SendPromptbookResultsByEmail](https://github.com/Azure/Security-Copilot/tree/main/Logic%20Apps/CfS-SendPromptbookResultsByEmail) para criar a automação "**CISO Posture Analysis**"<br>
+  OBSERVAÇÃO: esta automação e o Promptbook relacionado estão em uma versão preliminar.
+  Além de os prompts não estarem otimizados quanto ao consumo de capacidade computacional, o Promptbook como um todo ainda está bastante incompleto.
+  Consulte [este artigo](https://www.linkedin.com/pulse/periodic-reporting-security-managers-cisos-using-stefano-pescosolido-fm80f/)
+  para obter mais detalhes sobre como esse Promptbook deve ser aprimorado.
 
-   > <img src="https://raw.githubusercontent.com/Azure/Security-Copilot/refs/heads/main/Logic%20Apps/ciso-reporting/images/yt.png" alt="YouTube" width="28" height="20"> <a href="https://youtu.be/yBmJhBJohMg" target="_blank">Mini-video showing the creation of the Logic App **CISO Posture Analysis** (~4m): [CISO Reporting with Security Copilot - Prototype setup - **#4** Install Posture Analysis Automation]</a>
+   > <img src="https://raw.githubusercontent.com/Azure/Security-Copilot/refs/heads/main/Logic%20Apps/ciso-reporting/images/yt.png" alt="YouTube" width="28" height="20"> <a href="https://youtu.be/yBmJhBJohMg" target="_blank">Minivídeo que apresenta a criação do Logic App **CISO Posture Analysis** (~4 min): [Relatórios para CISO com o Security Copilot — configuração do protótipo — **#4** Instalar a automação de análise de postura]</a>
   
-  - Use the "Deploy in Azure" button
-  - Edit its connection to Security Copilot and authenticate with the credentials of the Security Copilot Automation Account
-  - Edit its connection to Office 365 and authenticate with the credentials of the Security Copilot Automation Account
-  - Chose the promptbook "promptbook-posture-analysis" and specify its parameters. Typically you may want to specify:
+  - Use o botão "Deploy in Azure".
+  - Edite a conexão com o Security Copilot e autentique-se com as credenciais da Security Copilot Automation Account.
+  - Edite a conexão com o Office 365 e autentique-se com as credenciais da Security Copilot Automation Account.
+  - Escolha o Promptbook "promptbook-posture-analysis" e especifique seus parâmetros. Normalmente, você pode definir:
     - WORDS_NUMBER = 50
     - NUMBER_OF_DAYS = 30
     - NUMBER_OF_RECOMMENDATIONS = 10
     - SEVERITIES = High and Medium 
-  - Set all the Logic App parameters. Specifically, ensure that you have set:
-    - The HtmlBodyHeader to change the color shade of the email
-      (see [promptbook-posture-analysis](https://github.com/Azure/Security-Copilot/blob/main/Logic%20Apps/ciso-reporting/promptbook-posture-analysis.md))
-    - The Email Title and Email Subject
-    - The EmailRecipients
-  - Set the recurrence. Typically it has to be set to be run once per week, like on Monday morning at 6 am.
-  - For the time being, keep the Logic App disabled (we will enable it when all the required configurations are in place)
+  - Defina todos os parâmetros do Logic App. Especificamente, verifique se você definiu:
+    - HtmlBodyHeader para alterar o tom de cor do email
+      (consulte [promptbook-posture-analysis](https://github.com/Azure/Security-Copilot/blob/main/Logic%20Apps/ciso-reporting/promptbook-posture-analysis.md))
+    - O título e o assunto do email
+    - EmailRecipients
+  - Defina a recorrência. Normalmente, ela deve ser configurada para uma execução semanal, por exemplo, às segundas-feiras, às 6h.
+  - Por enquanto, mantenha o Logic App desabilitado. Ele será habilitado quando todas as configurações necessárias estiverem prontas.
 
-## [**STEP 5**] Deploy the Custom Plugins
+## [**ETAPA 5**] Implantar os plugins personalizados
 
-   > <img src="https://raw.githubusercontent.com/Azure/Security-Copilot/refs/heads/main/Logic%20Apps/ciso-reporting/images/yt.png" alt="YouTube" width="28" height="20"> <a href="https://youtu.be/SKWVNzeDx6g" target="_blank">Mini-video showing the creation of the Custom Plugins (8m): [CISO Reporting with Security Copilot - Prototype setup - **#5** Custom plugins]</a>
+   > <img src="https://raw.githubusercontent.com/Azure/Security-Copilot/refs/heads/main/Logic%20Apps/ciso-reporting/images/yt.png" alt="YouTube" width="28" height="20"> <a href="https://youtu.be/SKWVNzeDx6g" target="_blank">Minivídeo que apresenta a criação dos plugins personalizados (8 min): [Relatórios para CISO com o Security Copilot — configuração do protótipo — **#5** Plugins personalizados]</a>
   
-  - Prepare and deploy the [ciso-incidents-summary-man](https://github.com/Azure/Security-Copilot/blob/main/Logic%20Apps/ciso-reporting/ciso-incidents-summary-man.yaml)
-    custom plugin (used by the "**CISO Incidents Analysis**" automation)  
-    NOTES:
-    - This custom plugin loops through the users specified in the input and queries Entra for their enablement status and risk status.
-      Due to the existance of the loop, it may consume a high level of compute units. You should decide if this evidence adds value to your report.
-      If you want to include this evidence in the output report, it is recommended to limit the number of users included in the loop
-      by setting a low value number in the TOP_IMPACTED_USERS_NUMBER parameter specified in the "**CISO Posture Analysis**" Logic App for the call to the
+  - Prepare e implante o plugin personalizado [ciso-incidents-summary-man](https://github.com/Azure/Security-Copilot/blob/main/Logic%20Apps/ciso-reporting/ciso-incidents-summary-man.yaml)
+    (usado pela automação "**CISO Incidents Analysis**").<br>
+    OBSERVAÇÕES:
+    - Este plugin personalizado percorre os usuários especificados na entrada e consulta o Entra para obter o status de habilitação e de risco de cada um.
+      Devido à existência do loop, ele pode consumir muitas unidades computacionais. Avalie se essa evidência agrega valor ao relatório.
+      Para incluir essa evidência no relatório de saída, recomendamos limitar o número de usuários incluídos no loop
+      definindo um valor baixo no parâmetro TOP_IMPACTED_USERS_NUMBER especificado no Logic App "**CISO Posture Analysis**" para a chamada ao Promptbook
       [promptbook-incident-analysis](https://github.com/Azure/Security-Copilot/blob/main/Logic%20Apps/ciso-reporting/promptbook-incident-analysis.md)
-      promptbook.
-      If, instead, you decide to remove the call to that loop, you should not only remove the related prompt in the promptbook but also reorganize
-      accordingly the values for the SkipPromptsInOutput and ReplacePromptsInOutput parameters in the same "**CISO Posture Analysis**" Logic App.
-    - In this first draft release of this solution, the OpenAPI specification file
+      .
+      Se decidir remover a chamada a esse loop, remova também o prompt relacionado no Promptbook e reorganize de modo correspondente
+      os valores dos parâmetros SkipPromptsInOutput e ReplacePromptsInOutput no mesmo Logic App "**CISO Posture Analysis**".
+    - Nesta primeira versão preliminar da solução, o arquivo de especificação OpenAPI
       [ciso-incidents-summary-api-spec.yaml](https://github.com/Azure/Security-Copilot/blob/main/Logic%20Apps/ciso-reporting/ciso-incidents-summary-api-spec.yaml)
-      contains two placeholders whose value must be replaced accorinding to the components of the full URL of the trigger for the deployed Logic App
+      contém dois espaços reservados cujos valores devem ser substituídos de acordo com os componentes da URL completa do gatilho do Logic App implantado
       [ciso-get-users-status.json](https://github.com/Azure/Security-Copilot/blob/main/Logic%20Apps/ciso-reporting/ciso-get-users-status.json).
-      Specifically, you need to set:
-      - <BASE_PATH> equal to the base path of that URL (e.g. https://prod-32.northeurope.logic.azure.com:443)
-      - <WORKFLOW_ID> equal to the Workload ID in that URL (e.g. 836c758b842f46549f57c861ca856c7b)
-      You have then to save the edited file in a public storage on the Internet that is accessible to Security Copilot, for example in another public GitHub repo.
-      You then have to modifiy your copy of the file [ciso-incidents-summary-man.yaml](https://github.com/Azure/Security-Copilot/blob/main/Logic%20Apps/ciso-reporting/ciso-incidents-summary-man.yaml)
-      by replacing the placehoder in the OpenApiSpecUrl parameter with the public URL of your modified OpenAPI specification file.
-  - [OPTIONAL] Deploy the [ciso-posture-summary-man](https://github.com/Azure/Security-Copilot/blob/main/Logic%20Apps/ciso-reporting/ciso-incidents-summary-man.yaml)
-    custom plugin (used by the "**CISO Posture Analysis**" automation). This deployment deployment does not require any specific customization: just download the
-    file from the template in GitHub and upload it in your Security Copilot.
-  - [OPTIONAL] Deploy the [Sentinel-SOC-Optimization-CustomPlugin] https://github.com/stefanpems/cfs/tree/main/Sentinel-SOC-Optimization-CustomPlugin
-    custom plugin (used by the "**CISO Posture Analysis**" automation). This deployment deployment does not require any specific customization: just download the
-    file from the template in GitHub and upload it in your Security Copilot.  
-    NOTES:
-    - While adding this custom plugin, you need to provide the Identification parameters for your Sentinel (Subscroption ID, Resource Group Name, Sentinel Workspace Name)
-    - If you do not want to install this custom plugin, you need to remove the second prompt from the
-      [promptbook-posture-analysis](https://github.com/Azure/Security-Copilot/blob/main/Logic%20Apps/ciso-reporting/promptbook-posture-analysis.md) that you deployed in one of the previous steps.
+      Especificamente, defina:
+      - <BASE_PATH> como o caminho base dessa URL (por exemplo, https://prod-32.northeurope.logic.azure.com:443)
+      - <WORKFLOW_ID> como a Workload ID dessa URL (por exemplo, 836c758b842f46549f57c861ca856c7b)
+      Em seguida, salve o arquivo editado em um armazenamento público na Internet que seja acessível ao Security Copilot, por exemplo, em outro repositório público do GitHub.
+      Depois, modifique sua cópia do arquivo [ciso-incidents-summary-man.yaml](https://github.com/Azure/Security-Copilot/blob/main/Logic%20Apps/ciso-reporting/ciso-incidents-summary-man.yaml)
+      substituindo o espaço reservado do parâmetro OpenApiSpecUrl pela URL pública do arquivo de especificação OpenAPI modificado.
+  - [OPCIONAL] Implante o plugin personalizado [ciso-posture-summary-man](https://github.com/Azure/Security-Copilot/blob/main/Logic%20Apps/ciso-reporting/ciso-incidents-summary-man.yaml)
+    (usado pela automação "**CISO Posture Analysis**"). Essa implantação não requer personalização específica: basta baixar
+    o arquivo do modelo no GitHub e carregá-lo no Security Copilot.<br>
+  - [OPCIONAL] Implante o plugin personalizado [Sentinel-SOC-Optimization-CustomPlugin] https://github.com/stefanpems/cfs/tree/main/Sentinel-SOC-Optimization-CustomPlugin
+    (usado pela automação "**CISO Posture Analysis**"). Essa implantação não requer personalização específica: basta baixar
+    o arquivo do modelo no GitHub e carregá-lo no Security Copilot.<br>
+    OBSERVAÇÕES:
+    - Ao adicionar esse plugin personalizado, forneça os parâmetros de identificação do Sentinel (Subscription ID, Resource Group Name, Sentinel Workspace Name).
+    - Se não quiser instalar esse plugin personalizado, remova o segundo prompt do
+      [promptbook-posture-analysis](https://github.com/Azure/Security-Copilot/blob/main/Logic%20Apps/ciso-reporting/promptbook-posture-analysis.md) implantado em uma das etapas anteriores.
 
 
-## [**STEP 6**] Enable the "**CISO Incidents Analysis**" automation and wait for the completion of its first automatic execution
+## [**ETAPA 6**] Habilitar a automação "**CISO Incidents Analysis**" e aguardar a conclusão da primeira execução automática
 
-   > <img src="https://raw.githubusercontent.com/Azure/Security-Copilot/refs/heads/main/Logic%20Apps/ciso-reporting/images/yt.png" alt="YouTube" width="28" height="20"> <a href="https://youtu.be/eX5VCtuWTac" target="_blank">Mini-video showing the first execution of the Incidents Analysis automation (4m): [CISO Reporting with Security Copilot - Prototype setup - **#6** Run Incidents Analysis]</a>
+   > <img src="https://raw.githubusercontent.com/Azure/Security-Copilot/refs/heads/main/Logic%20Apps/ciso-reporting/images/yt.png" alt="YouTube" width="28" height="20"> <a href="https://youtu.be/eX5VCtuWTac" target="_blank">Minivídeo que apresenta a primeira execução da automação de análise de incidentes (4 min): [Relatórios para CISO com o Security Copilot — configuração do protótipo — **#6** Executar análise de incidentes]</a>
 
-   On the Security Copilot portal, accessed with credentials with the Security Copilot Automation Account:
-   - [**STEP 6.1**] Ensure that all the custom plugins just installed are enabled.
-     Optionally, test the [ciso-get-users-status.json](https://github.com/Azure/Security-Copilot/blob/main/Logic%20Apps/ciso-reporting/ciso-get-users-status.json) Logic App
-     by invoking the "CISO Get Users Staus" skill in the [ciso-incidents-summary-man](https://github.com/Azure/Security-Copilot/blob/main/Logic%20Apps/ciso-reporting/ciso-incidents-summary-man.yaml).
-     For this purpose, use the following inputs:
+   No portal do Security Copilot, acessado com as credenciais da Security Copilot Automation Account:
+   - [**ETAPA 6.1**] Verifique se todos os plugins personalizados recém-instalados estão habilitados.
+     Opcionalmente, teste o Logic App [ciso-get-users-status.json](https://github.com/Azure/Security-Copilot/blob/main/Logic%20Apps/ciso-reporting/ciso-get-users-status.json)
+     chamando a habilidade "CISO Get Users Staus" de [ciso-incidents-summary-man](https://github.com/Azure/Security-Copilot/blob/main/Logic%20Apps/ciso-reporting/ciso-incidents-summary-man.yaml).
+     Para isso, use as seguintes entradas:
      - api-version = 2016-10-01
      - sp = /triggers/AnalyzeUPNsCall/run
      - sv = 1.0
-     - users_upn = one or more comma separated UPNs of users in your tenant
+     - users_upn = uma ou mais UPNs de usuários do seu locatário separadas por vírgulas
 
 
-   On the Security Copilot portal, accessed with credentials with the Owner role:
-   - [**STEP 6.2**] Increment temporarily the number of SCUs to ensure the first "test" executions can be completed successfully.
+   No portal do Security Copilot, acessado com credenciais que tenham a função Owner:
+   - [**ETAPA 6.2**] Aumente temporariamente o número de SCUs para garantir que as primeiras execuções de "teste" sejam concluídas com êxito.
   
-   On the Azure portal, accessed with credentials with an administrative role:   
-   - [**STEP 6.3**] Enable the "**CISO Incidents Analysis**" automation and wait its first automatic execution
+   No portal do Azure, acessado com credenciais que tenham uma função administrativa:<br>
+   - [**ETAPA 6.3**] Habilite a automação "**CISO Incidents Analysis**" e aguarde sua primeira execução automática.
   
-## [**STEP 7**] Enable the "**CISO Posture Analysis**" automation and wait for the completion of its first automatic execution
+## [**ETAPA 7**] Habilitar a automação "**CISO Posture Analysis**" e aguardar a conclusão da primeira execução automática
 
-   > <img src="https://raw.githubusercontent.com/Azure/Security-Copilot/refs/heads/main/Logic%20Apps/ciso-reporting/images/yt.png" alt="YouTube" width="28" height="20"> <a href="https://youtu.be/4wZ4vEebCEo" target="_blank">Mini-video showing the first execution of the Incidents Posture automation (~1m): [CISO Reporting with Security Copilot - Prototype setup - **#7** Run Posture Analysis]</a>
+   > <img src="https://raw.githubusercontent.com/Azure/Security-Copilot/refs/heads/main/Logic%20Apps/ciso-reporting/images/yt.png" alt="YouTube" width="28" height="20"> <a href="https://youtu.be/4wZ4vEebCEo" target="_blank">Minivídeo que apresenta a primeira execução da automação de análise de postura (~1 min): [Relatórios para CISO com o Security Copilot — configuração do protótipo — **#7** Executar análise de postura]</a>
   
-   On the Azure portal, accessed with credentials with an administrative role:   
-   - Enable the "**CISO Posture Analysis**" automation and wait its first automatic execution
+   No portal do Azure, acessado com credenciais que tenham uma função administrativa:<br>
+   - Habilite a automação "**CISO Posture Analysis**" e aguarde sua primeira execução automática.
 
-## [**STEP 8**] Schedule the execution of the reporting together with the required periodic increment of SCUs
+## [**ETAPA 8**] Agendar a execução dos relatórios e o aumento periódico necessário de SCUs
 
-   > <img src="https://raw.githubusercontent.com/Azure/Security-Copilot/refs/heads/main/Logic%20Apps/ciso-reporting/images/yt.png" alt="YouTube" width="28" height="20"> <a href="https://youtu.be/Z6UKUyInMGY" target="_blank">Mini-video showing the setup of the periodic assignment of SCUs and of the recurrence for the reporting automations (>8m): [CISO Reporting with Security Copilot - Prototype setup - **#8** Scheduling SCUs and reporting]</a>
+   > <img src="https://raw.githubusercontent.com/Azure/Security-Copilot/refs/heads/main/Logic%20Apps/ciso-reporting/images/yt.png" alt="YouTube" width="28" height="20"> <a href="https://youtu.be/Z6UKUyInMGY" target="_blank">Minivídeo que apresenta a configuração da atribuição periódica de SCUs e da recorrência das automações de relatório (>8 min): [Relatórios para CISO com o Security Copilot — configuração do protótipo — **#8** Agendar SCUs e relatórios]</a>
    
-  - Set the recurrence on the "**CISO Incidents Analysis**" Logic App
-  - Set the recurrence on the "**CISO Posture Analysis**" Logic App
-  - Schedule the automatic deployment of the compute units (SCUs) dedicated to the execution of these automations
-    to ensure that there is enough capacity (on top of your "baseline" capacity used by your users and other automations) everytime that the are executed.
-    For example, deploy 2 instances of the [cfs-set-X-SCUs](https://github.com/stefanpems/cfs/tree/main/cfs-set-X-SCUs) Logic App:
-    - One to increase the capacity by N SCUs over the baseline
-    - One to decrease the capacity by N SCUs when the execution of these automations is completed 
+  - Defina a recorrência no Logic App "**CISO Incidents Analysis**".
+  - Defina a recorrência no Logic App "**CISO Posture Analysis**".
+  - Agende a implantação automática das unidades computacionais (SCUs) dedicadas à execução dessas automações
+    para garantir capacidade suficiente, além da capacidade "de base" usada pelos usuários e por outras automações, sempre que elas forem executadas.
+    Por exemplo, implante duas instâncias do Logic App [cfs-set-X-SCUs](https://github.com/stefanpems/cfs/tree/main/cfs-set-X-SCUs):
+    - Uma para aumentar a capacidade em N SCUs acima da base
+    - Outra para reduzir a capacidade em N SCUs quando a execução dessas automações for concluída
     
-
-

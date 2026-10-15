@@ -1,20 +1,20 @@
-# Security Copilot Plugin: SCU All-in-One
+# Plugin do Security Copilot: SCU All-in-One
 
-### **This plugin combines previous plugins into a single, all-in-one effort to capture and respond with Security Copilot activity. This plugin will be updated as additional monitoring activity is made available and identified.**
+### **Este plugin reúne plugins anteriores em uma única solução completa para capturar e responder com a atividade do Security Copilot. Ele será atualizado à medida que novas atividades de monitoramento forem disponibilizadas e identificadas.**
 
-### Pre-requisites
+### Pré-requisitos
 
--   [Security Copilot Enabled](https://learn.microsoft.com/en-us/security-copilot/get-started-security-copilot#onboarding-to-microsoft-security-copilot)
--   [Access to upload custom plugins](https://learn.microsoft.com/en-us/security-copilot/manage-plugins?tabs=securitycopilotplugin#managing-custom-plugins)
--   [Microsoft Sentinel Workspace](https://learn.microsoft.com/en-us/azure/sentinel/quickstart-onboard) created.
--   Parameters for KQL Plugin - Microsoft Sentinel Workspace Name, Subscription ID, Resource Group Name and Entra Tenant ID
+-   [Security Copilot habilitado](https://learn.microsoft.com/en-us/security-copilot/get-started-security-copilot#onboarding-to-microsoft-security-copilot)
+-   [Acesso para carregar plugins personalizados](https://learn.microsoft.com/en-us/security-copilot/manage-plugins?tabs=securitycopilotplugin#managing-custom-plugins)
+-   [Workspace do Microsoft Sentinel](https://learn.microsoft.com/en-us/azure/sentinel/quickstart-onboard) criado.
+-   Parâmetros do plugin KQL: nome do workspace do Microsoft Sentinel, ID da assinatura, nome do grupo de recursos e ID do locatário do Entra.
 
-### Instructions
+### Instruções
 
-#### Upload the Custom Plugin
+#### Carregar o plugin personalizado
 
-1.  Obtain the file SCU_All-in-One.yaml from this directory.
-2.  Modify the yaml file to specify your specific Entra TentantId, SubscriptionId, ResourceGroupName and WorkspaceName for your Sentinel instance.
-3.  Upload the custom plugin
+1.  Obtenha o arquivo SCU_All-in-One.yaml deste diretório.
+2.  Modifique o arquivo yaml para especificar Entra TentantId, SubscriptionId, ResourceGroupName e WorkspaceName de sua instância do Sentinel.
+3.  Carregue o plugin personalizado.
 
-For more information, see: [Security Copilot Activity All-in-One Custom Plugin](https://rodtrent.substack.com/p/copilot-for-security-activity-all)
+Para obter mais informações, consulte: [Plugin personalizado completo de atividades do Security Copilot](https://rodtrent.substack.com/p/copilot-for-security-activity-all)

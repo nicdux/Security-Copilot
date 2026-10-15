@@ -1,20 +1,20 @@
-### openSquat Custom Plugin: OSINT Security Tool for Cyber Squatting Threats
-openSquat is an open-source Intelligence (OSINT) security tool designed to identify cyber squatting threats targeting specific companies or domains. It helps detect various threats including:
+### Plugin personalizado do openSquat: ferramenta de segurança OSINT contra ameaças de cybersquatting
+O openSquat é uma ferramenta de segurança de inteligência de código aberto (OSINT), desenvolvida para identificar ameaças de cybersquatting direcionadas a empresas ou domínios específicos. Ela ajuda a detectar diversas ameaças, incluindo:
 https://rapidapi.com/atenreiro/api/opensquat1
 
 
-- Domain squatting
-- Typo squatting
+- Sequestro de domínio
+- Typosquatting
 
-#### Key Features:
-- **Automatic Updates:** Automatically fetches newly registered domains once a day.
-- **Levenshtein Distance:** Calculates word similarity to enhance accuracy.
-- **Phishing Domain Database:** Retrieves active and known phishing domains from the Phishing Database project.
-- **IDN Homograph Attack Detection:** Identifies IDN homograph attacks.
-- **Integration:** Seamlessly integrates with VirusTotal and Quad9 DNS service.
-- **Confidence Threshold:** Allows fine-tuning with different levels of confidence threshold.
-- **Output Formats:** Saves output in various formats including txt, JSON, and CSV.
-- **Integration:** Easily integrates with other threat intelligence tools and DNS sinkholes.
+#### Principais recursos:
+- **Atualizações automáticas:** obtém automaticamente os domínios recém-registrados uma vez por dia.
+- **Distância de Levenshtein:** calcula a semelhança entre palavras para aumentar a precisão.
+- **Banco de dados de domínios de phishing:** obtém domínios de phishing ativos e conhecidos do projeto Phishing Database.
+- **Detecção de ataques homográficos de IDN:** identifica ataques homográficos de IDN.
+- **Integração:** integra-se perfeitamente ao VirusTotal e ao serviço DNS Quad9.
+- **Limite de confiança:** permite ajustes precisos com diferentes níveis de confiança.
+- **Formatos de saída:** salva a saída em vários formatos, incluindo txt, JSON e CSV.
+- **Integração:** integra-se facilmente a outras ferramentas de inteligência contra ameaças e a sumidouros de DNS.
 
-openSquat is a collaborative open-source project. Contributions from the community are highly encouraged.
-Get started with openSquat and fortify your defenses against cyber squatting threats!
+O openSquat é um projeto colaborativo de código aberto. As contribuições da comunidade são muito bem-vindas.
+Comece a usar o openSquat e fortaleça suas defesas contra ameaças de cybersquatting!

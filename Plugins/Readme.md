@@ -1,35 +1,34 @@
-![Security Copilot Overview](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
-# Microsoft Security Copilot  Plugins
-Documentation : https://learn.microsoft.com/en-us/security-copilot/plugin_overview
+![Visão geral do Security Copilot](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
+# Plugins do Microsoft Security Copilot
+Documentação: https://learn.microsoft.com/en-us/security-copilot/plugin_overview
 
-The Microsoft Security Copilot connector now supports custom plugins, boosting its third-party integration and automation capabilities. This document highlights custom plugin functionality, emphasizing bridging the gap for 3rd party connections to Copilot, enabling automation from the Standalone portal, and querying custom tables in KQL.
+O conector do Microsoft Security Copilot agora oferece suporte a plugins personalizados, ampliando os recursos de integração com terceiros e de automação. Este documento destaca as funcionalidades dos plugins personalizados, com ênfase em facilitar conexões de terceiros com o Copilot, permitir automações pelo portal Standalone e consultar tabelas personalizadas em KQL.
 
-# Microsoft Security Copilot  Plugin Features
+# Recursos dos plugins do Microsoft Security Copilot
 
-### Custom Plugin Features
+### Recursos dos plugins personalizados
 
-| Feature               | Description                                                                                   |
+| Recurso               | Descrição                                                                                     |
 |-----------------------|-----------------------------------------------------------------------------------------------|
-| Flexible Integration  | Seamlessly integrate third-party tools and services with Security Copilot to enhance security operations. |
-| Tailored Automation   | Create custom automation workflows tailored to your organization's unique security processes and requirements. |
-| Enhanced Data Querying| Query custom tables in KQL (Kusto Query Language) to retrieve specific security data relevant to your investigations. |
+| Integração flexível   | Integre ferramentas e serviços de terceiros ao Security Copilot de forma transparente para aprimorar as operações de segurança. |
+| Automação personalizada | Crie fluxos de trabalho de automação personalizados para os processos e requisitos de segurança específicos da sua organização. |
+| Consulta de dados aprimorada | Consulte tabelas personalizadas em KQL (Kusto Query Language) para recuperar dados de segurança específicos e relevantes para suas investigações. |
 
-# Security Copilot Plugin Folders
+# Pastas de plugins do Security Copilot
 
-**Please note:** We have three folders:
+**Observação:** há três pastas:
 
-1. [**Published Plugins**](https://github.com/Azure/Copilot-For-Security/tree/main/Plugins/Published%20Plugins)- These are Microsoft certified Custom plugins for Microsoft Security Copilot.
-2. [**Community Based Plugins**](https://github.com/Azure/Copilot-For-Security/tree/main/Plugins/Community%20Based%20Plugins) - These are Plugins created and contibuted by the Microsoft Security Copilot Community.
-3. [**MSFT Plugin Samples**](https://github.com/Azure/Copilot-For-Security/tree/main/Plugins/MSFT_Plugin_Samples) - These are samples of Custom Plugins that will act as a guide you and give you the ability to create a custom plugin for Security Copilot. The samples are API, GPT, and KQL samples.
+1. [**Published Plugins**](https://github.com/Azure/Copilot-For-Security/tree/main/Plugins/Published%20Plugins) — plugins personalizados certificados pela Microsoft para o Microsoft Security Copilot.
+2. [**Community Based Plugins**](https://github.com/Azure/Copilot-For-Security/tree/main/Plugins/Community%20Based%20Plugins) — plugins criados e fornecidos pela comunidade do Microsoft Security Copilot.
+3. [**MSFT Plugin Samples**](https://github.com/Azure/Copilot-For-Security/tree/main/Plugins/MSFT_Plugin_Samples) — exemplos de plugins personalizados que servem como guia e permitem criar um plugin personalizado para o Security Copilot. Há exemplos de API, GPT e KQL.
 
 
-Should you be interested in participating in a workshop designed to instruct on the creation of custom plugins, you are welcome to access our [Technical workshops](https://github.com/Azure/Copilot-For-Security/tree/main/Technical%20Workshops)
+Se tiver interesse em participar de um workshop sobre a criação de plugins personalizados, acesse nossos [workshops técnicos](https://github.com/Azure/Copilot-For-Security/tree/main/Technical%20Workshops).
 
-### Microsoft Tech Community blog posts
+### Publicações no blog da Microsoft Tech Community
 
-1. [How to build a Security Copilot API Plugin – Part 1](https://techcommunity.microsoft.com/t5/microsoft-security-copilot-blog/how-to-build-a-copilot-for-security-api-plugin-part-1/ba-p/4107604)
-2. [How to build a Security Copilot API Plugin – Part 2](https://techcommunity.microsoft.com/t5/microsoft-security-copilot-blog/how-to-build-a-copilot-for-security-api-plugin-part-2/ba-p/4163829)
-3. [Using Microsoft Graph as a Microsoft Security Copilot Plugin with Delegated Access](https://techcommunity.microsoft.com/t5/microsoft-security-copilot-blog/using-microsoft-graph-as-a-microsoft-copilot-for-security-plugin/ba-p/4198148)
-
+1. [Como criar um plugin de API do Security Copilot – Parte 1](https://techcommunity.microsoft.com/t5/microsoft-security-copilot-blog/how-to-build-a-copilot-for-security-api-plugin-part-1/ba-p/4107604)
+2. [Como criar um plugin de API do Security Copilot – Parte 2](https://techcommunity.microsoft.com/t5/microsoft-security-copilot-blog/how-to-build-a-copilot-for-security-api-plugin-part-2/ba-p/4163829)
+3. [Como usar o Microsoft Graph como plugin do Microsoft Security Copilot com acesso delegado](https://techcommunity.microsoft.com/t5/microsoft-security-copilot-blog/using-microsoft-graph-as-a-microsoft-copilot-for-security-plugin/ba-p/4198148)
 
 

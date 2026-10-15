@@ -1,36 +1,36 @@
-# Ingest Microsoft Security Copilot Audit logs and Deploy Audit Workbook
-Technical community blog : [Monitor User Activities and System Events with Security Copilot](https://techcommunity.microsoft.com/blog/securitycopilotblog/monitor-user-activities-and-system-events-with-security-copilot-and-microsoft-se/4303368)
+# Ingerir logs de auditoria do Microsoft Security Copilot e implantar a pasta de trabalho de auditoria
+Blog da comunidade técnica: [Monitorar atividades de usuários e eventos do sistema com o Security Copilot](https://techcommunity.microsoft.com/blog/securitycopilotblog/monitor-user-activities-and-system-events-with-security-copilot-and-microsoft-se/4303368)
 
-Auditing is a critical feature in any security solution, providing visibility into user activities and system events, detect usage and activities anomalies, and ensure compliance with regulatory requirements. By sending Copilot for Security audit logs into your cloud native SIEM - Microsoft Sentinel, users can gain deeper insights into their Security Copilot usage and take proactive measures to mitigate risks  
+A auditoria é um recurso essencial em qualquer solução de segurança, pois oferece visibilidade das atividades dos usuários e dos eventos do sistema, permite detectar anomalias de uso e atividade e ajuda a garantir a conformidade com requisitos regulatórios. Ao enviar os logs de auditoria do Copilot for Security para seu SIEM nativo de nuvem, o Microsoft Sentinel, os usuários podem obter informações mais detalhadas sobre o uso do Security Copilot e tomar medidas proativas para reduzir os riscos.
 
-# Prerequisites  
-### Enable the audit log capability in Security Copilot  
-During the first run experience, a Security Administrator is given the option of opting into allowing Microsoft Purview to access, process, copy and store admin actions, user actions, and Copilot responses. For more information, see Get started with Security Copilot.  
+# Pré-requisitos
+### Habilitar o recurso de log de auditoria no Security Copilot
+Durante a experiência da primeira execução, um Security Administrator pode optar por permitir que o Microsoft Purview acesse, processe, copie e armazene ações de administradores, ações de usuários e respostas do Copilot. Para obter mais informações, consulte a introdução ao Security Copilot.
 
-Security Administrators can also access this option through the Owner settings page.  
+Os Security Administrators também podem acessar essa opção na página de configurações de Owner.
 
-Use the following steps to update the audit log settings:  
+Siga estas etapas para atualizar as configurações do log de auditoria:
 
-1. Sign in to Microsoft Security Copilot (https://securitycopilot.microsoft.com).  
-2. Select the home menu icon.  
-3. Navigate to the Owner settings > Logging audit data in Microsoft Purview.  
+1. Entre no Microsoft Security Copilot (https://securitycopilot.microsoft.com).
+2. Selecione o ícone do menu inicial.
+3. Acesse Owner settings > Logging audit data in Microsoft Purview.
 ![Security Copilot](./images/cfs_setting_1.png)<br>  
 
-### Enable Microsoft Defender for Cloud Apps logs via Microsoft Defender XDR Data connector  
-To integrate with Microsoft Defender XDR make sure you have:  
-1. Sentinel Log Analytics Workspace: read and write permissions.  
-2. Connector Access Control: the user applying changes to the connector must be a member of the Microsoft Entra ID associated with the tenant that the workspace belongs to.  
-3. Tenant Permissions: 'Global Administrator' or 'Security Administrator' on the workspace's tenant.  
-4. License: M365 E5, M365 A5 or any other Microsoft Defender XDR eligible license.  
+### Habilitar os logs do Microsoft Defender for Cloud Apps pelo conector de dados do Microsoft Defender XDR
+Para integrar ao Microsoft Defender XDR, verifique se você tem:
+1. Workspace do Sentinel Log Analytics: permissões de leitura e gravação.
+2. Controle de acesso ao conector: o usuário que aplicar alterações ao conector deve ser membro do Microsoft Entra ID associado ao locatário ao qual o workspace pertence.
+3. Permissões do locatário: 'Global Administrator' ou 'Security Administrator' no locatário do workspace.
+4. Licença: M365 E5, M365 A5 ou qualquer outra licença qualificada para o Microsoft Defender XDR.
 
 ![Microsoft Defender XDR](./images/sentinel_XDR.png)<br>  
 
 
-### Deploy Analytical Rules
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FSecurity-Copilot%2Fmain%2FMonitoring%2FIngestSecurityCopilotAuditlogs%2Fazuredeploy_analytics.json)
-![image](https://github.com/user-attachments/assets/c0def0de-9fe0-41e8-9ec4-69866094fa55)
+### Implantar regras analíticas
+[![Implantar no Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FSecurity-Copilot%2Fmain%2FMonitoring%2FIngestSecurityCopilotAuditlogs%2Fazuredeploy_analytics.json)
+![Regras analíticas](https://github.com/user-attachments/assets/c0def0de-9fe0-41e8-9ec4-69866094fa55)
 
 
-### Deploy Workbook 
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FSecurity-Copilot%2Fmain%2FMonitoring%2FIngestSecurityCopilotAuditlogs%2Fazuredeploy_workbook.json)
-![image](https://github.com/user-attachments/assets/ea8f42f4-afb2-4bb2-9f9f-d9c4b44d0a31)
+### Implantar a pasta de trabalho
+[![Implantar no Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FSecurity-Copilot%2Fmain%2FMonitoring%2FIngestSecurityCopilotAuditlogs%2Fazuredeploy_workbook.json)
+![Pasta de trabalho de auditoria](https://github.com/user-attachments/assets/ea8f42f4-afb2-4bb2-9f9f-d9c4b44d0a31)

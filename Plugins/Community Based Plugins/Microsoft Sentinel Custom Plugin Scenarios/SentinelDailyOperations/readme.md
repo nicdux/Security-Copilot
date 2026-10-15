@@ -1,15 +1,15 @@
-# Security Copilot Custom Plugin - Sentinel KQL - SentinelDailyOperations
+# Plugin personalizado do Security Copilot — KQL do Sentinel — SentinelDailyOperations
 
-### Pre-requisites
+### Pré-requisitos
 
-* [Security Copilot Enabled](https://learn.microsoft.com/en-us/security-copilot/get-started-security-copilot#onboarding-to-microsoft-security-copilot)
-* [Access to upload custom plugins](https://learn.microsoft.com/en-us/security-copilot/manage-plugins?tabs=securitycopilotplugin#managing-custom-plugins)
-* [Microsoft Sentinel Workspace](https://learn.microsoft.com/en-us/azure/sentinel/quickstart-onboard) created.
-* Parameters for KQL Plugin - Microsoft Sentinel Workspace Name, Subscription ID, Resource Group Name and Entra Tenant ID
+* [Security Copilot habilitado](https://learn.microsoft.com/en-us/security-copilot/get-started-security-copilot#onboarding-to-microsoft-security-copilot)
+* [Acesso para carregar plugins personalizados](https://learn.microsoft.com/en-us/security-copilot/manage-plugins?tabs=securitycopilotplugin#managing-custom-plugins)
+* [Workspace do Microsoft Sentinel](https://learn.microsoft.com/en-us/azure/sentinel/quickstart-onboard) criado.
+* Parâmetros do plugin KQL: nome do workspace do Microsoft Sentinel, ID da assinatura, nome do grupo de recursos e ID do locatário do Entra.
 
-### Instructions
-#### Upload the Custom Plugin
+### Instruções
+#### Carregar o plugin personalizado
 
-1. Obtain the file [KQL_SentinelDailyOperationsSample.yaml](https://github.com/Azure/Copilot-For-Security/blob/main/Plugins/Community%20Based%20Plugins/Microsoft%20Sentinel%20Custom%20Plugin%20Scenarios/SentinelDailyOperations/KQL_SentinelDailyOperationsSample.yml) from this directory.
-2. Modify the yaml file to specify your specific Entra `TentantId`, `SubscriptionId`, `ResourceGroupName` and `WorkspaceName` for your Sentinel instance.
-3. Upload the custom plugin
+1. Obtenha o arquivo [KQL_SentinelDailyOperationsSample.yaml](https://github.com/Azure/Copilot-For-Security/blob/main/Plugins/Community%20Based%20Plugins/Microsoft%20Sentinel%20Custom%20Plugin%20Scenarios/SentinelDailyOperations/KQL_SentinelDailyOperationsSample.yml) deste diretório.
+2. Modifique o arquivo yaml para especificar Entra `TentantId`, `SubscriptionId`, `ResourceGroupName` e `WorkspaceName` de sua instância do Sentinel.
+3. Carregue o plugin personalizado.

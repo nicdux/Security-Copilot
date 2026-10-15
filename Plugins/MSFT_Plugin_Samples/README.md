@@ -1,56 +1,56 @@
-![Security Copilot Overview](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
+![Visão geral do Security Copilot](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
 
-# Security Copilot Guide to Create your Custom Plug-in
+# Guia do Security Copilot para criar seu plugin personalizado
 
-**Name of Plugin
-**Author: John DOE**
-**Publisher: Example**
+**Nome do plugin
+**Autor: John DOE**
+**Publicador: Example**
 
-This plugin enables users to enrich investigations using threat intelligence from custom sources:   
-	1. Scan a URL or domain
-	2. Scan an IP Address
+Este plugin permite enriquecer investigações usando inteligência contra ameaças de fontes personalizadas:
+	1. Verificar uma URL ou um domínio
+	2. Verificar um endereço IP
 
-Technical Blog
+Blog técnico
 https://learn.microsoft.com/en-us/security-copilot/
 
-**Note**  
-Ensure you have enough API tokens before invoking any skills to avoid displeasure
+**Observação**
+Verifique se você tem tokens de API suficientes antes de invocar qualquer habilidade para evitar falhas.
 
-## **Pre-requisites**
-1. Login to your Example Account  
+## **Pré-requisitos**
+1. Entre em sua conta Example.
 
-2. To create new "API Key", click on "Add & Integration Key"  
+2. Para criar uma nova "API Key", clique em "Add & Integration Key".
 
    ![APIKey](https://learn.microsoft.com/en-us/security-copilot/media/plugin-button.png)  
    
-3. You’ll see a dialog box to enter your API name. Give your key a short, but descriptive name, such as "Security Copilot API Key"  
+3. Será exibida uma caixa de diálogo para inserir o nome da API. Dê à chave um nome curto, mas descritivo, como "Security Copilot API Key".
 
-4. Copy the API key to a safe place and then dispose carefully. 
+4. Copie a chave de API para um local seguro e descarte qualquer cópia desnecessária com cuidado.
 
 
-## Select or upload the attached manifest file into your Security Copilot console
-1. Click on Deploy to Azure  
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://aka.ms/LINK)
+## Selecione ou carregue o arquivo de manifesto anexado no console do Security Copilot
+1. Clique em Deploy to Azure.
+[![Implantar no Azure](https://aka.ms/deploytoazurebutton)](https://aka.ms/LINK)
   
 
-2. Enter the following API key in the value key
+2. Insira a seguinte chave de API no campo value:
 	```
 	"API Key": x-apikey
 	```
-	## Invoking the Plugin and Skills
-1. **Important**  
-   After selecting or uploading, click the "Set Up" button and enter the copied API key from the Pre-requisites above and press "Save."
+	## Como invocar o plugin e as habilidades
+1. **Importante**
+   Depois de selecionar ou carregar o arquivo, clique no botão "Set Up", insira a chave de API copiada conforme os pré-requisitos acima e pressione "Save".
 
-2. Use a Natural Language prompt from below examples or use Direct Skill Invocation ("/")
-
-
-## Skills & Prompts
-1. Skill 1: Ask Example Plugin about this URL 
-- Example Prompt(s): Tell me about this [URL]; What does Example Plugin say about this [domain]
-- Inputs: [URL] 
-2. Skill 2: Ask Example Plugin about this IP address
+2. Use um prompt em linguagem natural dos exemplos abaixo ou use a invocação direta de habilidade ("/").
 
 
-## Frequently Asked Questions (FAQ)
-1. **Important**  
-   If prompts fail to invoke, please ensure you're using a supported Prompt above. Otherwise, invoke it using Direct Skill Invocation "/"      
+## Habilidades e prompts
+1. Habilidade 1: pergunte ao Example Plugin sobre esta URL.
+- Exemplos de prompt: Informe sobre esta [URL]; O que o Example Plugin informa sobre este [domain]
+- Entradas: [URL]
+2. Habilidade 2: pergunte ao Example Plugin sobre este endereço IP.
+
+
+## Perguntas frequentes (FAQ)
+1. **Importante**
+   Se os prompts não funcionarem, verifique se você está usando um dos prompts compatíveis acima. Caso contrário, use a invocação direta de habilidade "/".

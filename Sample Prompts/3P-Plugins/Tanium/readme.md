@@ -2,12 +2,12 @@
 # Tanium
 
 - [Tanium](#Tanium)
-  - [Endpoint Information](#Endpoint-Information)
-  - [CVE and Security Information](#CVE-and-Security-Information)
+  - [Informações de endpoint](#Endpoint-Information)
+  - [Informações de CVE e segurança](#CVE-and-Security-Information)
     
 ***
 &nbsp;
-## Endpoint Information
+## Informações de endpoint
 <a name="Endpoint Information"></a>
 - Using Tanium return the installed applications in **_`<Hostname>`_**. Display the results in a table, and return a Tanium Console Question Results URL so that I can view the real-time list of endpoints.
 - Using Tanium, return the Driver Details of **_`<Hostname>`_**. Display the results in a table, alphabetically sorted by computer name, and return a Tanium Console Question Results URL so that I can view the real-time list of endpoints.
@@ -18,9 +18,10 @@
 
 
 &nbsp;
-[![alt text](../../../Images/backtotop.svg)](#Tanium)
+[![Voltar ao início](../../../Images/backtotop.svg)](#Tanium)
 
-## CVE and Security Information
+<a name="CVE-and-Security-Information"></a>
+## Informações de CVE e segurança
 - Using Tanium, return the endpoints vulnerable to **_`<CVE>`_**, so that I can remediate the vulnerability on these endpoints. Display the results in a table, sorted alphabetically by host name, and return a Tanium Console Question Results URL so that I can view the real-time list of endpoints.
 - Using Tanium Skills, examine the reasons why endpoint **_`<Hostname>`_** is vulnerable to **_`<CVE>`_**, along with a suggested plan of action to remediate the vulnerability.
 - Using Tanium, list all autoruns details on **_`<Hostname>`_**. 
@@ -29,10 +30,10 @@
 
 
 &nbsp;
-[![alt text](../../../Images/backtotop.svg)](#Tanium)
+[![Voltar ao início](../../../Images/backtotop.svg)](#Tanium)
 
 
 &nbsp;
-**Disclaimer**: Please know these are sample prompts and are subject to Change
+**Aviso de isenção de responsabilidade**: estes prompts são apenas exemplos e estão sujeitos a alterações.
 
 ***

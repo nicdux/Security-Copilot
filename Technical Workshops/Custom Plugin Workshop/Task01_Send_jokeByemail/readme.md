@@ -1,31 +1,31 @@
-# Introduction
-![Security CoPilot Logo](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
-#### ⌛ Estimated time to complete this lab: 10 minutes
-#### 🎓 Level: 100 (Beginner)
+# Introdução
+![Logotipo do Security CoPilot](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
+#### ⌛ Tempo estimado para concluir este laboratório: 10 minutos
+#### 🎓 Nível: 100 (iniciante)
 
-#### Objectives
+#### Objetivos
 
-Upon completing this technical guide, you will gain the following abilities:<br>
+Ao concluir este guia técnico, você terá as seguintes habilidades:<br>
 
-* Upload a Microsoft Security Copilot custom plugin of the Logic App type.<br>
-* Deploy an Azure Logic App capable of handling Microsoft Security Copilot prompts.<br>
-* Create a Microsoft Security Copilot session that triggers this Logic App.<br>
+* Carregar um plugin personalizado do Microsoft Security Copilot do tipo Logic App.<br>
+* Implantar um Azure Logic App capaz de processar prompts do Microsoft Security Copilot.<br>
+* Criar uma sessão do Microsoft Security Copilot que acione esse Logic App.<br>
 
-#### Scenario
-In this technical workshop, participants will learn how to upload a Microsoft Security Copilot custom plugin of the Logic App type and deploy the corresponding Logic App. To successfully complete this task, you must meet the following prerequisites:<br>
+#### Cenário
+Neste workshop técnico, os participantes aprenderão a carregar um plugin personalizado do Microsoft Security Copilot do tipo Logic App e implantar o Logic App correspondente. Para concluir esta tarefa com êxito, você precisa atender aos seguintes pré-requisitos:<br>
 
-* You need your own tenant and Microsoft Security Copilot instance.<br>
-* You should have permission to upload a custom plugin.<br>
-* You should have permission to deploy a Logic App.<br>
+* Você precisa ter seu próprio locatário e uma instância do Microsoft Security Copilot.<br>
+* Você precisa ter permissão para carregar um plugin personalizado.<br>
+* Você precisa ter permissão para implantar um Logic App.<br>
 
 
-####  Instruction
+#### Instruções
 
-## Deploy Logic app 
+## Implantar o aplicativo lógico
 
-	1. Deploy the Logic App above by clicking the "Deploy to Azure" button
+	1. Implante o Logic App acima clicando no botão "Implantar no Azure".
 
-Select the subscription, resource group and logicapp name.
+Selecione a assinatura, o grupo de recursos e o nome do aplicativo lógico.
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FYaniv-Shasha%2FSecurityCopilot%2Fmain%2FWorkshop%2FCustom_Plugin%2FTask01_Send_jokeByemail%2FWorkshop01-sendJokeByemail%2Fazuredeploy.json" target="_blank">
     <img src="https://aka.ms/deploytoazurebutton"/>
@@ -35,42 +35,41 @@ Select the subscription, resource group and logicapp name.
 <img src="./Images/deploy_logic_app.jpg"/>
 
 <br>
-	2. Once the Logic App is created, locate it and authenticate the "send email" action with a user who has a mailbox in O365.
+	2. Depois que o Logic App for criado, localize-o e autentique a ação "enviar email" com um usuário que tenha uma caixa de correio no O365.
 
 <img src="./Images/auth_logicapp.jpg"/>
 
-    
+<br>
 
-### Upload the Custom Plugin 
+### Carregar o plugin personalizado
 
-Downalod a local copy of "SendJokeByEmail.yml" file located in the same folder and edit it.<br>
-Add the following information:
+Baixe uma cópia local do arquivo "SendJokeByEmail.yml" localizado na mesma pasta e edite-o.<br>
+Adicione as seguintes informações:
 
-1. The SubscriptionId where you deployed your Logic App.
-2. The ResourceGroup where you deployed the Logic App.
-2. If you changed the default logic app name adapt the logic app name.
+1. O SubscriptionId em que você implantou seu Logic App.
+2. O ResourceGroup em que você implantou o Logic App.
+2. Se você alterou o nome padrão do aplicativo lógico, ajuste o nome no arquivo.
 
 <img src="./Images/yaml_subid.jpg"/>
 
-3. Upload the custom plugin and check if its turn on
+3. Carregue o plugin personalizado e verifique se ele está ativado.
 
 <img src="./Images/upload_plugin.jpg"/>
 
 
 <img src="./Images/check_if_plugin_isON.jpg"/>
 
-4. **Execute the following prompts:**
+4. **Execute os seguintes prompts:**
 
-* Tell me a security-related joke for today.<br>
-* Run the logic to send the above joke to this email: <youremailaddress@email.com>..<br>
+* Conte-me uma piada relacionada à segurança para hoje.<br>
+* Execute a lógica para enviar a piada acima para este email: <youremailaddress@email.com>..<br>
 
 <img src="./Images/prompts.jpg"/>
 
-5. To monitor the process, open the Logic App you just created and check the last runs.
+5. Para monitorar o processo, abra o Logic App que acabou de criar e verifique as últimas execuções.
 
 <img src="./Images/run_history.jpg"/>
 
-6. Open your inbox and examine the email.<br>
+6. Abra sua caixa de entrada e examine o email.<br>
 
-###  See you in the next Task!
-
+### Até a próxima tarefa!

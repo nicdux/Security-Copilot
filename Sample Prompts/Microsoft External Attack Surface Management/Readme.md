@@ -1,17 +1,17 @@
 # Microsoft Defender External Attack Surface Management (EASM)
 <a name="EASM"></a>
 
-## Overview
+## Visão geral
 - Show me the attack surface summary for **_`<Woodgrove Bank>`_**
 
-## Domain Management
+## Gerenciamento de domínios
 - How many domains are expired in the **_`<Woodgrove Bank>`_** organization's attack surface?
 - Get the most recent whois record for **_`<tmanniewith98.com>`_**
 
-## SSL Certificates
+## Certificados SSL
 - How many SSL certificates are expired in the **_`<Woodgrove Bank>`_** attack surface?
 
-## Vulnerabilities and Threats
+## Vulnerabilidades e ameaças
 - Are there any vulnerabilities impacting the host **_`<testsd.woodgrovebank.com>`_**?
 - Provide the CVSS scores for the CVE IDs on the asset **_`<testsd.woodgrovebank.com>`_**
 - What are the mitigation steps for the CVE **_`<CVE-ID>`_**?
@@ -20,7 +20,7 @@
 - Is my environment vulnerable to CVE **_`<CVE-ID>`_**?
 - Check my cloud assets for vulnerabilities related to **_`<CVE-XXXX>`_**
 
-## Threat Intelligence
+## Inteligência contra ameaças
 - Show me the intel profile for **_`<Hazel Sandstorm>`_**
 - Show me any associated indicators for the above actor.
 - What are some of the domain indicators for this actor.
@@ -28,15 +28,15 @@
 - Are there any threat intelligence articles that reference the IOCs that were found?
 - Show me the profiles of any threat actors referenced.
 
-## Web Components and Hostnames
+## Componentes Web e nomes de host
 - What are some of the web components for the ip address mentioned above?
 - Get me the reputations for hostname "service-logins.com"
 
-## Reporting
+## Relatórios
 - Create a report for this copilot session and include sections for: An Overview of MDEASM, The Summary of the Attack Surface for **_`<Woodgrove Bank>`_**, List of Expired Domains and whois info, The list of Common Names from Expired SSL Certificates, Describe the Vulnerabilities on the Host **_`<testsd.woodgrovebank.com>`_** with CVSS scores, Detailed Steps for Mitigating Vulnerabilities on **_`<testsd.woodgrovebank.com>`_**
 
 &nbsp;
-[![alt text](../../Images/backtotop.svg)](#microsoft-defender-external-attack-surface-management-easm)
+[![Voltar ao início](../../Images/backtotop.svg)](#microsoft-defender-external-attack-surface-management-easm)
 
-Disclaimer: Please know these are sample prompts and are subject to Change
+Aviso de isenção de responsabilidade: estes prompts são apenas exemplos e estão sujeitos a alterações.
 ***

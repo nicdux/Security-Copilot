@@ -1,29 +1,29 @@
-# Welcome to Microsoft Copilot for Security Labs!
+# Boas-vindas aos laboratórios do Microsoft Copilot for Security!
 
-![Security CoPilot Logo](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
+![Logotipo do Security CoPilot](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
 
-## Introduction
+## Introdução
 
-Our labs project helps you get ramped up with Microsoft Copilot for Security and provides hands-on practical experience for managing custom Plugins.
+Nosso projeto de laboratórios ajuda você a começar a usar o Microsoft Copilot for Security e oferece experiência prática no gerenciamento de plugins personalizados.
 
-## What are Custom plugins
+## O que são plugins personalizados?
 
-Microsoft Copilot for Security custom plugins enable developers\power users to seamlessly integrate the power of the GPT models into third-party platforms, enhancing functionality and user experience. These plugins act as a bridge between the raw capabilities of the model and specific applications, allowing for tailored outputs in diverse use-cases. By utilizing custom plugins, users can harness the expansive knowledge of Microsoft Copilot for Security models in a contextually relevant and user-friendly manner.
+Os plugins personalizados do Microsoft Copilot for Security permitem que desenvolvedores e usuários avançados integrem perfeitamente o poder dos modelos GPT a plataformas de terceiros, aprimorando a funcionalidade e a experiência do usuário. Esses plugins funcionam como uma ponte entre os recursos brutos do modelo e aplicativos específicos, permitindo resultados personalizados para diversos casos de uso. Com plugins personalizados, os usuários podem aproveitar o amplo conhecimento dos modelos do Microsoft Copilot for Security de maneira relevante ao contexto e fácil de usar.
 
-Documentation: [https://learn.microsoft.com/en-us/security-copilot/plugin_overview](https://learn.microsoft.com/en-us/security-copilot/plugin_overview)
+Documentação: [https://learn.microsoft.com/en-us/security-copilot/plugin_overview](https://learn.microsoft.com/en-us/security-copilot/plugin_overview)
 
-## Workshop Modules
+## Módulos do workshop
 
-- [**Module 1 – The fun module- Logicapp plugin**](https://github.com/Azure/Copilot-For-Security/tree/main/Technical%20Workshops/Custom%20Plugin%20Workshop/Task01_Send_jokeByemail)
-- [**Module 2 – DefangUrl - GPT plugin**](https://github.com/Azure/Copilot-For-Security/tree/main/Technical%20Workshops/Custom%20Plugin%20Workshop/Task02_Defang_URL)
-- [**Module 3 – GeoIP01 - API plugin**](https://github.com/Azure/Copilot-For-Security/tree/main/Technical%20Workshops/Custom%20Plugin%20Workshop/Task03_GEO_IP_report)
-- [**Module 4 – GeoIp02 - GPT plugin**](https://github.com/Azure/Copilot-For-Security/tree/main/Technical%20Workshops/Custom%20Plugin%20Workshop/Task04_GEO_IP_script)
-- [**Module 5 – KQL - KQL plugin**](https://github.com/Azure/Copilot-For-Security/tree/main/Technical%20Workshops/Custom%20Plugin%20Workshop/Task05_KQL)
+- [**Módulo 1 – O módulo divertido: plugin do Logic App**](https://github.com/Azure/Copilot-For-Security/tree/main/Technical%20Workshops/Custom%20Plugin%20Workshop/Task01_Send_jokeByemail)
+- [**Módulo 2 – DefangUrl: plugin GPT**](https://github.com/Azure/Copilot-For-Security/tree/main/Technical%20Workshops/Custom%20Plugin%20Workshop/Task02_Defang_URL)
+- [**Módulo 3 – GeoIP01: plugin de API**](https://github.com/Azure/Copilot-For-Security/tree/main/Technical%20Workshops/Custom%20Plugin%20Workshop/Task03_GEO_IP_report)
+- [**Módulo 4 – GeoIp02: plugin GPT**](https://github.com/Azure/Copilot-For-Security/tree/main/Technical%20Workshops/Custom%20Plugin%20Workshop/Task04_GEO_IP_script)
+- [**Módulo 5 – KQL: plugin KQL**](https://github.com/Azure/Copilot-For-Security/tree/main/Technical%20Workshops/Custom%20Plugin%20Workshop/Task05_KQL)
 
-## Other GitHub Plugins
+## Outros plugins do GitHub
 
-| Plugins                | Description                                                                                                    |
+| Plugins                | Descrição                                                                                                    |
 |------------------------|----------------------------------------------------------------------------------------------------------------|
-| [Certified Plugins](https://github.com/Azure/Copilot-For-Security/tree/main/Custom%20Plugins/Certified%20Plugins) | These are Microsoft certified Custom plugins for Copilot for Security.                                       |
-| [Community Based Plugins](https://github.com/Azure/Copilot-For-Security/tree/main/Custom%20Plugins/Community%20Based%20Plugins) | These are Plugins created and curated by The Copilot for Security Community.                                    |
-| [MSFT_Plugin_Samples](https://github.com/Azure/Copilot-For-Security/tree/main/Custom%20Plugins/MSFT_Plugin_Samples)   | These are samples of Custom Plugins that will act as a guide you and give you the ability to create a custom plugin for Copilot For Security. The samples are API, GPT, and KQL samples. |
+| [Plugins certificados](https://github.com/Azure/Copilot-For-Security/tree/main/Custom%20Plugins/Certified%20Plugins) | Estes são plugins personalizados do Copilot for Security certificados pela Microsoft.                                       |
+| [Plugins da comunidade](https://github.com/Azure/Copilot-For-Security/tree/main/Custom%20Plugins/Community%20Based%20Plugins) | Estes são plugins criados e selecionados pela comunidade do Copilot for Security.                                    |
+| [MSFT_Plugin_Samples](https://github.com/Azure/Copilot-For-Security/tree/main/Custom%20Plugins/MSFT_Plugin_Samples)   | Estes são exemplos de plugins personalizados que servirão de guia e permitirão criar um plugin personalizado para o Copilot for Security. Há exemplos de API, GPT e KQL. |

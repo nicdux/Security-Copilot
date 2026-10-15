@@ -1,7 +1,7 @@
 # Microsoft Defender Threat Intelligence
 <a name="Threat_Intelligence"></a>
 
-## Threat Actor Profiles and Activities
+## Perfis e atividades de agentes de ameaça
 - Summarize recent threat intelligence.
 - What threat actors have been active lately?
 - Can you tell me about more specific threat intelligence related to the **_`<Financial services industry>`_**?
@@ -12,22 +12,22 @@
 - Provide a summary of **_`<Manatee Tempest>`_** and a list of their brokered access methodologies.
 - Show threat intelligence info for **_`<Aqua Blizzard>`_**
 
-## KQL Queries and Log Analysis
+## Consultas KQL e análise de logs
 - Can you help me with creating a KQL to search for relevant public IOCs from **_`<Evilproxy>`_** Phishing Attacks in Microsoft Defender? I would like to be able to search from a list of domains, IP addresses, and file hashes and add searching from alert evidence as well.
 - Can you explain line by line what this KQL above is doing?
 - Can you create the same KQL but adapt it for Sentinel?
 - Write a KQL query to identity Log4J in my M365Defender and list resources that are impacted with the Log4J vulnerability.
 
-## Hardening and Prevention
+## Proteção e prevenção
 - How should I harden my environment to prevent these attacks?
 
-## Indicators of Compromise (IOCs) and Tactics, Techniques, and Procedures (TTPs)
+## Indicadores de comprometimento (IOCs) e táticas, técnicas e procedimentos (TTPs)
 - Summarize threat intelligence articles for **_`<T1585.001>`_**
 - Show me 5 indicators per actor for the actors above
 - Show relevant TTPs.
 - Show a relevant list of indicators.
 
 &nbsp;
-[![alt text](../../Images/backtotop.svg)](#threat-intelligence)
-Disclaimer: Please know these are sample prompts and are subject to Change
+[![Voltar ao início](../../Images/backtotop.svg)](#threat-intelligence)
+Aviso de isenção de responsabilidade: estes prompts são apenas exemplos e estão sujeitos a alterações.
 ***

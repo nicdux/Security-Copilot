@@ -3,6 +3,7 @@
 ## Idioma
 
 - Escreva toda documentação, explicação, mensagem destinada ao usuário, exemplo e texto de interface em português do Brasil (PT-BR).
+- Use redação clara e neutra, compreensível também para leitores de Portugal e de outros países lusófonos, evitando regionalismos desnecessários.
 - Escreva em PT-BR os comentários necessários para explicar regras de negócio, decisões de segurança, limitações ou comportamentos não evidentes.
 - Não adicione comentários que apenas repitam o código. Quando um comentário for necessário, explique com clareza o motivo da implementação, suas restrições e os efeitos esperados.
 - Preserve em inglês nomes impostos por schemas, APIs, protocolos, produtos e ferramentas.

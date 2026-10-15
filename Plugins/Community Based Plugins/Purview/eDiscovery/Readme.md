@@ -1,86 +1,84 @@
-# eDiscovery Plugin for Security Copilot
-Author: Amit Singh
+# Plugin do eDiscovery para o Security Copilot
+Autor: Amit Singh
 
-This custom Security Copilot plugin enhances your organization's eDiscovery capabilities in Microsoft Purview. It is designed for workflows where you create a case and export artifacts directly. You can initiate an export from Search after indexing and estimating the artifacts. However, this plugin does not support workflows that involve attaching searches to a review set for further analysis in eDiscovery. Attaching searches to a review set is a manual process that must be completed within the case in the Purview portal.
+Este plugin personalizado do Security Copilot aprimora os recursos de eDiscovery da organização no Microsoft Purview. Ele foi desenvolvido para fluxos de trabalho em que você cria um caso e exporta os artefatos diretamente. É possível iniciar uma exportação em Search após indexar e estimar os artefatos. No entanto, o plugin não oferece suporte a fluxos de trabalho que associam pesquisas a um conjunto de revisão para análise adicional no eDiscovery. A associação de pesquisas a um conjunto de revisão é um processo manual que deve ser concluído no caso, no portal do Purview.
 
-### Prerequisites for Using Security Copilot
+### Pré-requisitos para usar o Security Copilot
 
-- **Ensure Security Copilot is Enabled**  
-  Before you start, make sure Security Copilot is enabled in your environment. Follow the onboarding steps here:  
-  [Get Started with Security Copilot](https://learn.microsoft.com/en-us/security-copilot/get-started-security-copilot#onboarding-to-microsoft-security-copilot)
+- **Verifique se o Security Copilot está habilitado**
+  Antes de começar, verifique se o Security Copilot está habilitado em seu ambiente. Siga estas etapas de integração:
+  [Introdução ao Security Copilot](https://learn.microsoft.com/en-us/security-copilot/get-started-security-copilot#onboarding-to-microsoft-security-copilot)
 
-- **Check Your Access to Upload Custom Plugins**  
-  To use custom plugins, you need the proper permissions to upload them in Security Copilot. Learn how to manage and enable this feature here:  
-  [Managing Custom Plugins](https://learn.microsoft.com/en-us/security-copilot/manage-plugins?tabs=securitycopilotplugin#managing-custom-plugins)
+- **Verifique seu acesso para carregar plugins personalizados**
+  Para usar plugins personalizados, você precisa ter as permissões adequadas para carregá-los no Security Copilot. Saiba como gerenciar e habilitar esse recurso:
+  [Gerenciamento de plugins personalizados](https://learn.microsoft.com/en-us/security-copilot/manage-plugins?tabs=securitycopilotplugin#managing-custom-plugins)
 
-- **Set Up the Required Permissions for Your Application**  
-  Your application must have the following permissions for Microsoft Graph (`https://graph.microsoft.com`):  
+- **Configure as permissões necessárias para seu aplicativo**
+  O aplicativo deve ter as seguintes permissões no Microsoft Graph (`https://graph.microsoft.com`):
   - `offline_access`  
   - `user.read`  
   - `eDiscovery.Read.All`  
   - `eDiscovery.ReadWrite.All`  
 
-  To register your application and configure these permissions, follow the steps here:  
-  [Register an Application in Entra ID](https://learn.microsoft.com/en-us/graph/auth-register-app-v2#register-an-application)
+  Para registrar o aplicativo e configurar essas permissões, siga estas etapas:
+  [Registrar um aplicativo no Entra ID](https://learn.microsoft.com/en-us/graph/auth-register-app-v2#register-an-application)
 
-## Setting Up the Custom Plugin in Security Copilot
+## Configurar o plugin personalizado no Security Copilot
 
-### Uploading the Custom Plugin  
+### Carregar o plugin personalizado
 
-1. **Download the Required File**  
-   - Obtain the file **[`eDiscovery_OAuth_API_manifest.yaml`](https://github.com/samitks77/Copilot-For-Security/blob/main/Plugins/Community%20Based%20Plugins/Purview/eDiscovery/eDiscovery_OAuth_API_manifest.yaml)** from the designated directory. This YAML file will be uploaded to **Security Copilot** during the setup process.
+1. **Baixar o arquivo necessário**
+   - Obtenha o arquivo **[`eDiscovery_OAuth_API_manifest.yaml`](https://github.com/samitks77/Copilot-For-Security/blob/main/Plugins/Community%20Based%20Plugins/Purview/eDiscovery/eDiscovery_OAuth_API_manifest.yaml)** no diretório especificado. Esse arquivo YAML será carregado no **Security Copilot** durante a configuração.
    
-2. **Add Client ID & Tenant ID**  
-   - From your **Entra ID App Registration**, make sure to add your **Client ID** and **Tenant ID** before proceeding with the 
-   upload.    
-   ![alt text](EntraID-ClientID-TenantID.png)  
+2. **Adicionar Client ID e Tenant ID**
+   - Em **Entra ID App Registration**, adicione o **Client ID** e o **Tenant ID** antes de prosseguir com o carregamento.
+   ![Client ID e Tenant ID do Entra ID](EntraID-ClientID-TenantID.png)
    
-3. **Generate and Copy Your Secret Value**
-   - During the plugin upload process in **Security Copilot**, you will need a **Secret Value** from **Certificates & Secrets** in your Entra ID App.  
-   - This **Secret Value** acts as your **API key** for the plugin to function correctly.  
-   - **Important:** Copy your **Secret Value** immediately after creating it. If you navigate away from the page, the value will no longer be readable.
+3. **Gerar e copiar o Secret Value**
+   - Durante o carregamento do plugin no **Security Copilot**, você precisará de um **Secret Value** obtido em **Certificates & Secrets** no aplicativo do Entra ID.
+   - Esse **Secret Value** funciona como a **chave de API** necessária ao funcionamento correto do plugin.
+   - **Importante:** copie o **Secret Value** imediatamente após criá-lo. Se você sair da página, o valor não poderá mais ser lido.
      
-     ![alt text](EntraID-SecretValue.png)
+     ![Secret Value do Entra ID](EntraID-SecretValue.png)
 
-4. **Create Secrets in Entra ID**
+4. **Criar segredos no Entra ID**
 
-   - Follow these steps to create and manage secrets for your application: 
-   **[`How to Add Credentials in Entra ID`](https://learn.microsoft.com/en-us/graph/auth-register-app-v2#add-credentials)**
+   - Siga estas etapas para criar e gerenciar segredos para o aplicativo:
+   **[`Como adicionar credenciais no Entra ID`](https://learn.microsoft.com/en-us/graph/auth-register-app-v2#add-credentials)**
 
-5. **Navigate to Custom Plugins**
+5. **Acessar Custom Plugins**
 
-   - Go to the **Manage Sources** on the home page of **Security Copilot**, and scroll down to the **Custom Plugins** section.
+   - Acesse **Manage Sources** na página inicial do **Security Copilot** e role até a seção **Custom Plugins**.
 
-   ![alt text](scp-upload-custom-plugins.png)
+   ![Carregar plugins personalizados](scp-upload-custom-plugins.png)
 
-   ![alt text](scp-upload-custom-plugins-2.png)
-6. **Upload the Plugin File**
+   ![Segunda etapa para carregar plugins personalizados](scp-upload-custom-plugins-2.png)
+6. **Carregar o arquivo do plugin**
 
-   - Click on **Security Copilot Plugin**, then upload the **`eDiscovery_OAuth_API_manifest.yaml`** file.
+   - Clique em **Security Copilot Plugin** e carregue o arquivo **`eDiscovery_OAuth_API_manifest.yaml`**.
 
-   ![alt text](scp-upload-custom-plugins-api-manifest.png)
+   ![Carregar o manifesto de API do plugin](scp-upload-custom-plugins-api-manifest.png)
 
-7.  **Enter the Client Secret and Connect**
+7.  **Inserir o Client Secret e conectar**
    
-    - Paste the **Client Secret Value** from your **Entra ID App Registration**.  
-    - Click **Connect** to proceed.
+    - Cole o **Client Secret Value** obtido em **Entra ID App Registration**.
+    - Clique em **Connect** para continuar.
 
-     ![alt text](CfS-Secret.png)
+     ![Segredo do Security Copilot](CfS-Secret.png)
 
-8.  **Sign-In**
+8.  **Entrar**
 
-    Once you click **Connect**, a new window will open where you will need to sign in with your credentials.
+    Depois de clicar em **Connect**, uma nova janela será aberta para que você entre com suas credenciais.
 
-### Plugin Setup Complete  
+### Configuração do plugin concluída
 
-You have successfully set up the **eDiscovery Plugin** in **Security Copilot**. With the plugin uploaded, Client ID, Tenant ID, and Secret Value configured, and authentication completed, your integration is now ready to use. Security Copilot can now leverage this plugin for enhanced **eDiscovery capabilities**, allowing you to streamline investigations and data retrieval processes. If you encounter any issues, verify your Entra ID settings, ensure your Client Secret is valid, and check your Security Copilot permissions. 
+Você configurou o **eDiscovery Plugin** no **Security Copilot** com sucesso. Com o plugin carregado, o Client ID, Tenant ID e Secret Value configurados e a autenticação concluída, a integração está pronta para uso. O Security Copilot agora pode usar esse plugin para ampliar os **recursos de eDiscovery**, simplificando as investigações e os processos de obtenção de dados. Se encontrar algum problema, verifique as configurações do Entra ID, confirme se o Client Secret é válido e confira as permissões do Security Copilot.
 
-### Skills & Prompts
+### Habilidades e prompts
 
-🔹 **These are **suggested prompts** that you can use to interact with this plugin in **Security Copilot**. Each prompt helps you execute specific **eDiscovery actions efficiently**. You can modify these prompts based on your use case and organizational requirements. Below, you'll find structured input fields required for each action, ensuring precise execution of eDiscovery tasks. For a cleaner, structured view of the prompts, check out the HTML version below:**
+🔹 **Estes são **prompts sugeridos** que você pode usar para interagir com o plugin no **Security Copilot**. Cada prompt ajuda a executar com eficiência determinadas **ações do eDiscovery**. Você pode modificá-los de acordo com seu caso de uso e os requisitos da organização. Abaixo, você encontrará os campos de entrada estruturados necessários para cada ação, garantindo a execução precisa das tarefas do eDiscovery. Para uma visualização mais clara e estruturada dos prompts, consulte a versão HTML:**
 
-👉 **[`Suggested Prompts in HTML`](https://htmlpreview.github.io/?https://raw.githubusercontent.com/samitks77/Copilot-For-Security/main/Plugins/Community%20Based%20Plugins/Purview/eDiscovery/sampleprompts.html)**
-
+👉 **[`Prompts sugeridos em HTML`](https://htmlpreview.github.io/?https://raw.githubusercontent.com/samitks77/Copilot-For-Security/main/Plugins/Community%20Based%20Plugins/Purview/eDiscovery/sampleprompts.html)**
 
 
 

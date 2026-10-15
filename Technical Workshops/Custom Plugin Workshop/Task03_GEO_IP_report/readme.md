@@ -1,41 +1,41 @@
-# Introduction 
-![Security CoPilot Logo](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
-#### 🎓 Level: 100 (Beginner)
-#### ⌛ Estimated time to complete this lab: 10 minutes
+# Introdução
+![Logotipo do Security CoPilot](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
+#### 🎓 Nível: 100 (iniciante)
+#### ⌛ Tempo estimado para concluir este laboratório: 10 minutos
 
-### Objectives
+### Objetivos
 
-Upon completing this technical guide, you will gain the following abilities:<br>
+Ao concluir este guia técnico, você terá as seguintes habilidades:<br>
 
-* Upload a cusotm plug from API type.<br>
-* Learn how to use the fetchUrl skill.<br>
-* Generete report that will levrage the custom plugin source.<br>
+* Carregar um plugin personalizado do tipo API.<br>
+* Aprender a usar a habilidade fetchUrl.<br>
+* Gerar um relatório que aproveite a fonte do plugin personalizado.<br>
 
 
 
-### Scenario
-In this technical workshop, participants will learn how to upload a Microsoft Security Copilot custom plugin of the API type.<br> 
+### Cenário
+Neste workshop técnico, os participantes aprenderão a carregar um plugin personalizado do Microsoft Security Copilot do tipo API.<br>
 
-> ⭐ Notice: <br>
-**When utilizing a custom plugin from an API type, be aware that data is transferred out of your tenant and sent to a remote endpoint. In this lab, we are working with sample data. Please keep this in consideration when handling internal data.**
+> ⭐ Observação: <br>
+**Ao usar um plugin personalizado do tipo API, lembre-se de que os dados são transferidos para fora do seu locatário e enviados a um ponto de extremidade remoto. Neste laboratório, trabalhamos com dados de exemplo. Leve isso em consideração ao manipular dados internos.**
 <br>
 
-To successfully complete this task, you must meet the following prerequisites:<br>
+Para concluir esta tarefa com êxito, você precisa atender aos seguintes pré-requisitos:<br>
 
-* You need your own tenant and Microsoft Security Copilot instance.<br>
-* You should have permission to upload a custom plugin.<br>
-
-
-
-###  Instruction
-    
-
-#### Upload the Custom Plugin 
+* Você precisa ter seu próprio locatário e uma instância do Microsoft Security Copilot.<br>
+* Você precisa ter permissão para carregar um plugin personalizado.<br>
 
 
-1. Obtain the file named **"Geo.yaml"** from this directory.<br>
-2. Inspect it to appreciate the simplicity of creating a API-type plugin.<br>
-3. Upload the custom plugin and verify if it's activated.<br>
+
+### Instruções
+<br>
+
+#### Carregar o plugin personalizado
+
+
+1. Obtenha o arquivo chamado **"Geo.yaml"** neste diretório.<br>
+2. Examine-o para entender a simplicidade da criação de um plugin do tipo API.<br>
+3. Carregue o plugin personalizado e verifique se ele está ativado.<br>
 
 <img src="https://github.com/Yaniv-Shasha/SecurityCopilot/blob/5cd2b8bb01eb8e3762371631aef03dd55697aded/Workshop/Custom_Plugin/Task03_GEO_IP_report/images/upload_plugin.jpg"/>
 
@@ -43,55 +43,51 @@ To successfully complete this task, you must meet the following prerequisites:<b
 <img src="./images/plugin_turn_on.jpg"/>
 
 
-####  Use case
+#### Caso de uso
 
-You are preparing an enrichment report based on a previous incident. As part of the evidence collection, you have received a file containing lists of IP addresses.<br> 
-Your task is to assess the reputation score of these IPs and share the ones with a reputation score exceeding 70.<br> 
+Você está preparando um relatório de enriquecimento com base em um incidente anterior. Como parte da coleta de evidências, recebeu um arquivo com listas de endereços IP.<br>
+Sua tarefa é avaliar a pontuação de reputação desses IPs e compartilhar aqueles com pontuação acima de 70.<br>
 
-Your SOC manager has requested that you include both the IP address and its complete geographical location in the report.<br> 
-
-
-
-**Your task is:**<br>
-
-1. Input this information from the CSV into Copilot Pilot.(use the raw version)
-2. Extract only the IPs from this file.
-3. Employ the MDTI reputation score to assess these Ips.
-4. Identify IPs with scores exceeding 75.
-5. In order to compile a report with your findings, utilize the custom plugin you recently uploaded to GeoIP the suspicious Ips.
-6. Share report that include the reputation score and the Geo IP data.
+O gerente do SOC solicitou que você inclua no relatório tanto o endereço IP quanto sua localização geográfica completa.<br>
 
 
-####  How to accomplish this
 
-1. Use the **"fetchurl"** skill to access the file located in the same directory. It's important to ensure you retrieve the raw representation of the file.<br> 
+**Sua tarefa é:**<br>
 
-####   Example prompts:
+1. Inserir essas informações do CSV no Copilot (use a versão bruta).
+2. Extrair somente os IPs desse arquivo.
+3. Usar a pontuação de reputação do MDTI para avaliar esses IPs.
+4. Identificar IPs com pontuação acima de 75.
+5. Para compilar um relatório com suas conclusões, usar o plugin personalizado que você acabou de carregar para obter a geolocalização dos IPs suspeitos.
+6. Compartilhar um relatório que inclua a pontuação de reputação e os dados de GeoIP.
 
-1. Fetchurl https://raw.githubusercontent.com/Yaniv-Shasha/SecurityCopilot/main/Workshop/Custom_Plugin/Task03_GEO_IP_report/CiscoSEG.csv<br> 
 
-> ⭐ Notice: <br>
+#### Como realizar esta tarefa
 
-To use the FetchURL option, the Public **Web plugin** must be enabled
+1. Use a habilidade **"fetchurl"** para acessar o arquivo localizado no mesmo diretório. É importante obter a representação bruta do arquivo.<br>
+
+#### Exemplos de prompts:
+
+1. Fetchurl https://raw.githubusercontent.com/Yaniv-Shasha/SecurityCopilot/main/Workshop/Custom_Plugin/Task03_GEO_IP_report/CiscoSEG.csv<br>
+
+> ⭐ Observação: <br>
+
+Para usar a opção FetchURL, o **plugin Web** público precisa estar habilitado.
 
 <img src="./images/public_web.jpg"/><br>
 
-<br> 
+<br>
 
-2. From this file distinct all the DeviceAddress.<br> 
+2. Liste separadamente todos os DeviceAddress desse arquivo.<br>
 
-3. Check reputation score for the above Ip's.<br> 
+3. Verifique a pontuação de reputação dos IPs acima.<br>
 
-4. Tell me the Geolocation for the IP that its reputation is above 75.<br> 
+4. Informe a geolocalização do IP cuja reputação esteja acima de 75.<br>
 
-5. Generate reports that include ip address reputation score and geo location information.<br> 
+5. Gere relatórios que incluam a pontuação de reputação do endereço IP e informações de geolocalização.<br>
 
 
-####  ✅  Final Results:
+#### ✅ Resultados finais:
 
 
 <img src="./images/final_results.jpg"/>
-
-
-
-

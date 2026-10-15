@@ -1,84 +1,84 @@
-![Security CoPilot Logo](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
-# Microsoft Security Copilot 
-## Featured Capability: Generate Hunting Queries
+![Logotipo do Security CoPilot](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
+# Microsoft Security Copilot
+## Recurso em destaque: gerar consultas de busca
 
-### Introduction
-**Advanced Hunting in Security Copilot **  
-Security Copilot  is now enabled with purpose-built skills that leverage the generative AI capabilities of GPT-4 to reason over a natural-language prompt and generate a KQL query capable of retrieving data from Advanced Hunting tables in Microsoft Defender and top data tables in Microsoft Sentinel. See the full list of supported tables in [Appendix](#appendix).  
-This new functionality replaces an earlier implementation with a vastly improved algorithm and access to the latest Azure OpenAI models. Research is underway that would extend the functionality to additional data tables in Sentinel.
+### Introdução
+**Busca avançada no Security Copilot**<br>
+O Security Copilot agora conta com habilidades específicas que aproveitam os recursos de IA generativa do GPT-4 para raciocinar sobre um prompt em linguagem natural e gerar uma consulta KQL capaz de recuperar dados das tabelas de Busca Avançada do Microsoft Defender e das principais tabelas de dados do Microsoft Sentinel. Consulte a lista completa de tabelas compatíveis no [Apêndice](#appendix).<br>
+Essa nova funcionalidade substitui uma implementação anterior por um algoritmo muito melhor e pelo acesso aos modelos mais recentes do Azure OpenAI. Estão em andamento pesquisas para estender a funcionalidade a outras tabelas de dados do Sentinel.
 
-### Getting Started
-**Prerequisites**
-1. Access to Microsoft Security Copilot 
-2. Access to Defender Advanced Hunting and Microsoft Sentinel with the same credentials used to access Security Copilot .
-3. Access to the necessary features and licenses in Defender and Sentinel to activate all supported tables.
+### Introdução
+**Pré-requisitos**
+1. Acesso ao Microsoft Security Copilot.
+2. Acesso à Busca Avançada do Defender e ao Microsoft Sentinel com as mesmas credenciais usadas para acessar o Security Copilot.
+3. Acesso aos recursos e às licenças necessários no Defender e no Sentinel para ativar todas as tabelas compatíveis.
 
-**Activating the Skillset**
-- Enable “Natural language to Defender 365 KQL” and “Natural language to Sentinel KQL” in the admin console under “My connections”.
-- The NL2KQL skills can be automatically selected by Security Copilot  based on your prompt.
-- In the prompt box, type “/kql” to select the skill explicitly before entering a prompt.
+**Ativação do conjunto de habilidades**
+- Habilite “Natural language to Defender 365 KQL” e “Natural language to Sentinel KQL” no console de administração, em “Minhas conexões”.
+- As habilidades NL2KQL podem ser selecionadas automaticamente pelo Security Copilot com base no seu prompt.
+- Na caixa de prompt, digite “/kql” para selecionar explicitamente a habilidade antes de inserir um prompt.
 
-### Use Case Scenarios
-You can start the investigation from an incident and ask follow-up questions:
-- Tell me about incident [incidentID]
-- What are the recent logon events from the user in the alert?
-- Give me all the recent AAD logins from the IP address
-- Did the user login from outside the US lately?
-- Did the user have any alerts?
-- What are the other entities associated with this user?
+### Cenários de casos de uso
+Você pode iniciar a investigação a partir de um incidente e fazer perguntas complementares:
+- Fale sobre o incidente [incidentID].
+- Quais são os eventos de logon recentes do usuário presente no alerta?
+- Mostre todos os logons recentes do AAD originados do endereço IP.
+- O usuário entrou recentemente a partir de fora dos EUA?
+- O usuário recebeu algum alerta?
+- Quais outras entidades estão associadas a esse usuário?
 
-You can also ask questions such as:
-- Show me a list of the latest URL clicks
-- Find all users who have clicked on a link in the past day
-- Show me recent sign-in events from [IPaddress]
-- Give me the number of logons per user in the last 12 hrs by Location and sort it descending
-- Is there a file in my organization with the name [file name, e.g. notepad.exe]
-- Give me a list of 10 critical software vulnerabilities
+Você também pode fazer perguntas como:
+- Mostre uma lista dos cliques mais recentes em URLs.
+- Encontre todos os usuários que clicaram em um link no último dia.
+- Mostre os eventos de entrada recentes de [IPaddress].
+- Informe o número de logons por usuário nas últimas 12 horas, agrupado por localização e em ordem decrescente.
+- Existe um arquivo em minha organização com o nome [nome do arquivo, por exemplo, notepad.exe]?
+- Forneça uma lista de dez vulnerabilidades críticas de software.
 
-### Best Practices for Writing Prompts to Generate Hunting Queries
-**General guidelines** when you write prompts to generate hunting queries:
-1. Be unambiguous: try to ask questions with a clear subject.
-2. Ask one question at a time: ask for a single task/type of information at a time when possible.
-3. Be specific: if you know anything about the data you are looking for, help provide that information in your question.
-4. Use other skills: You can use Security Copilot 's other skills to help gather information that might provide useful context while writing hunting queries.
+### Práticas recomendadas para escrever prompts que geram consultas de busca
+**Diretrizes gerais** para escrever prompts que geram consultas de busca:
+1. Não deixe ambiguidades: tente fazer perguntas com um assunto claro.
+2. Faça uma pergunta por vez: sempre que possível, solicite uma única tarefa ou um único tipo de informação por vez.
+3. Seja específico: se souber algo sobre os dados que procura, forneça essa informação na pergunta.
+4. Use outras habilidades: você pode usar outras habilidades do Security Copilot para coletar informações que forneçam contexto útil ao escrever consultas de busca.
 
-**Example guidelines:**
-| Ambiguous | Good | Explanation |
+**Exemplos de diretrizes:**
+| Ambíguo | Bom | Explicação |
 | --- | --- | --- |
-| Have any users logged in from suspicious locations in the last week? | Which individual accounts had suspicious or impossible travel activities in the last week? | "Suspicious locations" is subjective and might not give as consistent results. |
-| Which users had the most failed login attempts in the last 72h? | Show me the 5 users with the most failed login attempts to local devices in the last 72h? | The better prompt specifies scope (5 users) and clarifies that we are looking for local device logins instead of cloud logins. |
-| Network activity from suspicious Ips | Network activity from known proxy or tor-associated IP addresses | Defining what you consider suspicious is almost always better than letting the model decide. |
+| Algum usuário entrou a partir de locais suspeitos na última semana? | Quais contas individuais apresentaram atividades de viagem suspeita ou impossível na última semana? | "Locais suspeitos" é subjetivo e pode gerar resultados menos consistentes. |
+| Quais usuários tiveram mais tentativas de logon com falha nas últimas 72 horas? | Mostre os cinco usuários com mais tentativas de logon com falha em dispositivos locais nas últimas 72 horas. | O prompt melhor especifica o escopo (cinco usuários) e esclarece que procuramos logons em dispositivos locais, não na nuvem. |
+| Atividade de rede de IPs suspeitos | Atividade de rede de endereços IP associados a proxies ou ao Tor conhecidos | Definir o que você considera suspeito quase sempre é melhor do que deixar o modelo decidir. |
 
-### Feedback
-To help us improve, it is important that you share feedback with us. Please use the feedback buttons in the product to provide feedback so we can understand whether the model generated the right queries for you.
-- If the query is correct and the results are as expected, please select “Confirm”.
-- If the LookupDataFromDefender365Hunting skill is not being used properly, please use “Off-target” as described above.
-- If the skill is run as expected but the query is incorrect, please use “Off-target”. It would be great if you provide details on why the query is incorrect and an example of the correct query.
-  - **For example:**  
-    **NL prompt:** Get devices with high exposure level  
-    **Query generated by the model:**  
+### Comentários
+Para nos ajudar a melhorar, é importante que você compartilhe seus comentários. Use os botões de comentários no produto para que possamos entender se o modelo gerou as consultas corretas para você.
+- Se a consulta estiver correta e os resultados forem os esperados, selecione “Confirmar”.
+- Se a habilidade LookupDataFromDefender365Hunting não estiver sendo usada corretamente, selecione “Fora do esperado”, conforme descrito acima.
+- Se a habilidade for executada conforme o esperado, mas a consulta estiver incorreta, selecione “Fora do esperado”. Se possível, explique por que a consulta está incorreta e forneça um exemplo da consulta correta.
+  - **Por exemplo:**<br>
+    **Prompt em linguagem natural:** obtenha dispositivos com alto nível de exposição.<br>
+    **Consulta gerada pelo modelo:**<br>
     ```
     DeviceRegistryEvents
     | where ActionType == "Create"
     | where InitiatingProcessIntegrityLevel == "High"
     | summarize count() by DeviceId, DeviceName
     ```  
-    **When you share feedback, please let us know it’s off-target and share an example of the correct query as well as the failure category.**
+    **Ao compartilhar seus comentários, informe que o resultado está fora do esperado e forneça um exemplo da consulta correta, além da categoria da falha.**
     ```
     KQL ground truth:
     DeviceInfo
     | summarize arg_max(Timestamp, *) by DeviceId
     | where ExposureLevel == "High"
     ```  
-    **Failure category:** Wrong table
+    **Categoria da falha:** tabela incorreta
 
-### Appendix
-**Supported Defender table list**  
-All Defender Advanced Hunting tables are supported by NL2KQL. Please note that the AdditionalFields columns are not supported.
+### Apêndice
+**Lista de tabelas compatíveis do Defender**<br>
+Todas as tabelas da Busca Avançada do Defender são compatíveis com NL2KQL. Observe que as colunas AdditionalFields não são compatíveis.
 
-**Supported Sentinel table list**  
-The skill might still generate KQL queries for the Sentinel tables not included in the list below. The KQL queries generated for these tables are a best-effort attempt and may come with a lower level of confidence.  
-*Updated 11/10*
+**Lista de tabelas compatíveis do Sentinel**<br>
+A habilidade ainda pode gerar consultas KQL para tabelas do Sentinel que não estão incluídas na lista abaixo. As consultas KQL geradas para essas tabelas representam a melhor tentativa possível e podem apresentar um nível de confiança menor.<br>
+*Atualizado em 11/10*
 - AADManagedIdentitySignInLogs
 - AADNonInteractiveUserSignInLogs
 - AADProvisioningLogs

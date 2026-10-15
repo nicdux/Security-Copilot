@@ -1,112 +1,112 @@
-![Security CoPilot Logo](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
-# Microsoft Security Copilot Community
-Welcome to the Security Copilot Repository!
+![Logotipo do Security Copilot](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
+# Comunidade do Microsoft Security Copilot
+Boas-vindas ao repositório do Security Copilot!
 
-Microsoft Security Copilot is a generative AI-powered assistant for daily operations in security and IT that empowers teams to protect at the speed and scale of AI.
-- https://learn.microsoft.com/en-us/security-copilot/
-- https://learn.microsoft.com/en-us/security-copilot/get-started-security-copilot
+O Microsoft Security Copilot é um assistente baseado em IA generativa para operações diárias de segurança e TI, que permite às equipes oferecer proteção na velocidade e na escala da IA.
+- https://learn.microsoft.com/pt-br/security-copilot/
+- https://learn.microsoft.com/pt-br/security-copilot/get-started-security-copilot
 - https://learn.microsoft.com/en-us/security-copilot/plugin_overview
-- https://learn.microsoft.com/en-us/security-copilot/connectors-overview
+- https://learn.microsoft.com/pt-br/security-copilot/connectors-overview
 - https://aka.ms/copilotforsecurity
 
-## Contributing
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
+## Como contribuir
+Este projeto aceita contribuições e sugestões. A maioria das contribuições exige que você aceite um Contrato de Licença de Colaborador (Contributor License Agreement — CLA), declarando que tem o direito de nos conceder, e de fato nos concede,
+os direitos de uso da sua contribuição. Para obter detalhes, acesse https://cla.opensource.microsoft.com.
 
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
+Quando você enviar uma pull request (solicitação de pull), um bot de CLA determinará automaticamente se é necessário fornecer um CLA e identificará a PR adequadamente (por exemplo, com uma verificação de status ou um comentário). Basta seguir as instruções
+fornecidas pelo bot. Você precisará fazer isso apenas uma vez para todos os repositórios que usam nosso CLA.
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). 
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+Este projeto adotou o [Código de Conduta de Código Aberto da Microsoft](https://opensource.microsoft.com/codeofconduct/).
+Para obter mais informações, consulte as [Perguntas frequentes sobre o Código de Conduta](https://opensource.microsoft.com/codeofconduct/faq/) ou entre em contato pelo e-mail [opencode@microsoft.com](mailto:opencode@microsoft.com) caso tenha outras dúvidas ou comentários.
 
-Here are the steps you can take to begin contributing to this project:
+Estas são as etapas para começar a contribuir com o projeto:
 
-**GitHub account**: 
-- Get a GitHub account – ([www.github.com](http://www.github.com) ) - Free account works fine.
-- Login with your new account
+**Conta do GitHub**:
+- Crie uma conta do GitHub em ([www.github.com](http://www.github.com)) — uma conta gratuita é suficiente.
+- Entre com sua nova conta
   
-**Fork the Repository**:
-- Go to the community page: https://github.com/Azure/Copilot-For-Security
-- Make sure you are on the master branch
-- Click "Fork" -> "Create a new fork"
-  ![Github New Fork](https://github.com/Azure/Copilot-For-Security/blob/main/Images/CFSGithubfork.png)
-  ![Create New Fork](https://github.com/Azure/Copilot-For-Security/blob/main/Images/CFSGithubforkCreate.png)
-- This will create a copy of the Security Copilot repository in your own GitHub account:
-  ![View Your New Fork](https://github.com/Azure/Copilot-For-Security/blob/main/Images/CFSGithubforknew.png)
+**Crie um fork do repositório**:
+- Acesse a página da comunidade: https://github.com/Azure/Copilot-For-Security
+- Verifique se você está na branch master
+- Clique em "Fork" -> "Create a new fork"
+  ![Novo fork no GitHub](https://github.com/Azure/Copilot-For-Security/blob/main/Images/CFSGithubfork.png)
+  ![Criar novo fork](https://github.com/Azure/Copilot-For-Security/blob/main/Images/CFSGithubforkCreate.png)
+- Isso criará uma cópia do repositório do Security Copilot na sua conta do GitHub:
+  ![Ver seu novo fork](https://github.com/Azure/Copilot-For-Security/blob/main/Images/CFSGithubforknew.png)
 
-**Clone the fork to your local machine:**:
-- You can install Gitbash from https://git-scm.com/downloads if you dont already have it.
--	Create a directory on your local machine where you will pull down the repository to and where you will be working from. 
-    Example: “C:\Users\(username)\Documents\GitForks”
--	Open Gitbash and move into the directory “C:\Users\(username)\Documents\GitForks” 
--	Run : Git init
--	Run : Git clone <url of your fork> example: Git clone “https://github.com/(username)/ Copilot-For-Security-Fork”
--	Cd into the new directory that is created ie cd Copilot-For-Security-Fork
--	Set the upstream which is the original repo that you forked from ie the Copilot-For-Security community repo
--	Run : Git remote add upstream https://github.com/Azure/Copilot-For-Security
--	Run : Git remote -v
+**Clone o fork em seu computador local**:
+- Se ainda não tiver o Git Bash, instale-o por meio de https://git-scm.com/downloads
+- Crie um diretório no computador local no qual você baixará o repositório e trabalhará.
+    Exemplo: “C:\Users\(username)\Documents\GitForks”
+- Abra o Git Bash e acesse o diretório “C:\Users\(username)\Documents\GitForks”
+- Execute: Git init
+- Execute: Git clone <url of your fork> example: Git clone “https://github.com/(username)/ Copilot-For-Security-Fork”
+- Acesse o novo diretório criado, por exemplo: cd Copilot-For-Security-Fork
+- Configure como upstream o repositório original do qual o fork foi criado, isto é, o repositório da comunidade do Copilot-For-Security
+- Execute: Git remote add upstream https://github.com/Azure/Copilot-For-Security
+- Execute: Git remote -v
 
- 	 ![Clone to Local Dir](https://github.com/Azure/Copilot-For-Security/blob/main/Images/Clonethefork.png)
+  ![Clonar em um diretório local](https://github.com/Azure/Copilot-For-Security/blob/main/Images/Clonethefork.png)
 
-You can do this using GitHub Desktop as well by downloading it from https://desktop.github.com
+Você também pode fazer isso com o GitHub Desktop, disponível em https://desktop.github.com
 
-**Create a branch**:
-- You can work with the local main branch, but it is recommended to work with a branch so if you have separate projects you are working on you can keep them isolated. 
-- First you want to sync your local repository to the upstream master (the Azure community itself – not your fork)
-    Run : git pull upstream main
-- You should see a list of updates that are processed or a message saying you are up to date
-- Now that you are in sync create your new branch
-    Run : Git checkout -b <branch name> example Git checkout -b Sojeshs_CFSContributions
+**Crie uma branch**:
+- Você pode trabalhar com a branch main local, mas é recomendável usar uma branch para manter isolados os diferentes projetos em que estiver trabalhando.
+- Primeiro, sincronize o repositório local com a branch master do upstream (a própria comunidade do Azure, não o seu fork)
+    Execute: git pull upstream main
+- Você verá uma lista das atualizações processadas ou uma mensagem informando que tudo está atualizado
+- Após a sincronização, crie sua nova branch
+    Execute: Git checkout -b <branch name> example Git checkout -b Sojeshs_CFSContributions
 
-![Create new Branch](https://github.com/Azure/Copilot-For-Security/blob/main/Images/Createnewbranch.png)
+![Criar nova branch](https://github.com/Azure/Copilot-For-Security/blob/main/Images/Createnewbranch.png)
 
-**Install VS Code:**
+**Instale o VS Code:**
 
-[[Download Visual Studio Code - Mac, Linux, Windows](https://code.visualstudio.com/Download)]
+[[Baixar o Visual Studio Code — Mac, Linux e Windows](https://code.visualstudio.com/Download)]
 
-**Open Branch in VS Code:**
+**Abra a branch no VS Code:**
 
-Run VS Code and then File > Open Folder the local repository directory (Example: C:\Users\\(username)\Documents\GitForks\Copilot-For-Security-Fork)
+Inicie o VS Code, selecione File > Open Folder e abra o diretório do repositório local (exemplo: C:\Users\\(username)\Documents\GitForks\Copilot-For-Security-Fork).
 
-You should see all the directories and files in the repository and at the bottom you can see which branch you are working on. Ensure you have the right branch selected before making any changes.
+Você verá todos os diretórios e arquivos do repositório. Na parte inferior, é possível conferir em qual branch você está trabalhando. Antes de fazer qualquer alteração, verifique se a branch correta está selecionada.
 
-![Branch Selection](https://github.com/Azure/Copilot-For-Security/blob/main/Images/VSCodeBranchConfirmation.png)
+![Seleção da branch](https://github.com/Azure/Copilot-For-Security/blob/main/Images/VSCodeBranchConfirmation.png)
 
-**Stage, Commit and Publish your changes**
+**Prepare, confirme e publique suas alterações**
 
-When you have created the content that you want in VS Code you will need to stage and commit your changes. This will commit them to the branch you have created locally on you machine. For example, I created a new folder by name "SentinelDailyOperations" and KQL Plugin called “KQL_SentinelDailyOperationsSample.yml” within the "Community Based Plugins" directory. You can also add any additional content needed to document and deploy this Plugin. 
+Depois de criar o conteúdo desejado no VS Code, será necessário preparar (stage) e confirmar (commit) as alterações. Elas serão confirmadas na branch criada localmente em seu computador. Por exemplo, foi criada uma pasta chamada "SentinelDailyOperations" e um plugin KQL chamado “KQL_SentinelDailyOperationsSample.yml” dentro do diretório "Community Based Plugins". Você também pode adicionar qualquer conteúdo necessário para documentar e implantar esse plugin.
 
-![Branch Selection](https://github.com/Azure/Copilot-For-Security/blob/main/Images/CFSGithubCreateNewContent.png)
+![Seleção da branch](https://github.com/Azure/Copilot-For-Security/blob/main/Images/CFSGithubCreateNewContent.png)
 
-Now, when you are ready to commit your changes click on the Source Control icon on the left, enter a Message summarizing your changes and hit “+”. This stages the changes. Next click the checkmark to commit your changes.  These are still local to your machine. 
-![Branch Selection](https://github.com/Azure/Copilot-For-Security/blob/main/Images/CFSGithubCreateNewContentStageandCommit.png)
+Quando estiver tudo pronto para confirmar as alterações, clique no ícone Source Control à esquerda, insira uma mensagem que resuma as mudanças e clique em “+”. Isso prepara as alterações. Em seguida, clique na marca de seleção para confirmá-las. Nesse momento, elas ainda estão apenas no computador local.
+![Seleção da branch](https://github.com/Azure/Copilot-For-Security/blob/main/Images/CFSGithubCreateNewContentStageandCommit.png)
 
-![Branch Selection](https://github.com/Azure/Copilot-For-Security/blob/main/Images/CFSGithubCreateNewContentCommitChanges.png)
+![Seleção da branch](https://github.com/Azure/Copilot-For-Security/blob/main/Images/CFSGithubCreateNewContentCommitChanges.png)
 
-You can now publish this work off to your personal GitHub by clicking the icon next to the branch name (if it throws up a list up top of repositories pick yours <youraccount>/Copilot-For-Security *NOT* Azure/Copilot-For-Security). In this example case we are picking the main branch iteself to publish my changes with new plugin.
+Agora, você pode publicar esse trabalho em seu GitHub pessoal clicando no ícone ao lado do nome da branch. Se aparecer uma lista de repositórios na parte superior, selecione o seu, <youraccount>/Copilot-For-Security, e *NÃO* Azure/Copilot-For-Security. Neste exemplo, selecionamos a própria branch main para publicar as alterações com o novo plugin.
 
-![Branch Selection](https://github.com/Azure/Copilot-For-Security/blob/main/Images/CFSPushChangestoYourGithub.png)
+![Seleção da branch](https://github.com/Azure/Copilot-For-Security/blob/main/Images/CFSPushChangestoYourGithub.png)
 
-You can now review your commited changes in your GitHub going to the respective branch:
-![Branch Selection](https://github.com/Azure/Copilot-For-Security/blob/main/Images/CFSSeeYourGithubCommittedChanges.png)
+Agora, você pode revisar as alterações confirmadas no GitHub acessando a branch correspondente:
+![Seleção da branch](https://github.com/Azure/Copilot-For-Security/blob/main/Images/CFSSeeYourGithubCommittedChanges.png)
 
-If you are done with all your work and ready to submit to the main repository, then you need to do a Pull Request. This request will kick off a set of automated checks and if those pass then it goes to a board of reviewers – one of whom has to check your work and accept the request and merge it to the master branch. 
+Se o trabalho estiver concluído e pronto para envio ao repositório principal, será necessário abrir uma pull request. Essa solicitação iniciará um conjunto de verificações automatizadas. Se todas forem aprovadas, a solicitação seguirá para um grupo de revisores, e um deles deverá revisar seu trabalho, aceitar a solicitação e mesclá-la à branch master.
 
-![Branch Selection](https://github.com/Azure/Copilot-For-Security/blob/main/Images/CFSUpdateChangestoMainRepository.png)
+![Seleção da branch](https://github.com/Azure/Copilot-For-Security/blob/main/Images/CFSUpdateChangestoMainRepository.png)
 
-The top portion of the "Open a pull request" page is critical. This shows from which repository and branch are you pulling from and to which repository are you pulling to. You should fill in the comments section with a meaningful name and a list of what you have done since the reviewer will be reading this. Then click “Create pull request”
+A parte superior da página "Open a pull request" é essencial. Ela mostra de qual repositório e branch vêm as alterações e para qual repositório elas serão enviadas. Preencha a seção de comentários com um título significativo e uma lista do que foi feito, pois o revisor lerá essas informações. Em seguida, clique em “Create pull request”.
 
-![Branch Selection](https://github.com/Azure/Copilot-For-Security/blob/main/Images/CFSSeeChangesandCommitMainRepository.png)
+![Seleção da branch](https://github.com/Azure/Copilot-For-Security/blob/main/Images/CFSSeeChangesandCommitMainRepository.png)
 
-![Branch Selection](https://github.com/Azure/Copilot-For-Security/blob/main/Images/CFSCreaePullRequestFinal.png)
+![Seleção da branch](https://github.com/Azure/Copilot-For-Security/blob/main/Images/CFSCreaePullRequestFinal.png)
 
-Once the changes are merged to the main GitHub, you should be able to see changes committed to the main GitHub repository.
+Depois que as alterações forem mescladas ao GitHub principal, elas ficarão visíveis no repositório principal do GitHub.
 
-![Branch Selection](https://github.com/Azure/Copilot-For-Security/blob/main/Images/CFSMergePullRequesttoMainGithub.png)
+![Seleção da branch](https://github.com/Azure/Copilot-For-Security/blob/main/Images/CFSMergePullRequesttoMainGithub.png)
 
-**Check your pull request status and sync from main repository**
+**Confira o status da pull request e sincronize com o repositório principal**
 
-After your Pull Request has been merged, please check to make sure it got into the main repository. We recommend checking both in the GitHub website as well as by doing a sync to your local repo and verifying the changes are now in place.
+Depois que a pull request for mesclada, confirme se ela foi incorporada ao repositório principal. Recomendamos verificar tanto no site do GitHub quanto por meio de uma sincronização com o repositório local, garantindo que as alterações estejam presentes.
 
 
-**Good Luck and Happy Contributing to Security Copilot Community !!!!**
+**Boa sorte e boas contribuições para a comunidade do Security Copilot!**

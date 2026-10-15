@@ -1,29 +1,29 @@
-# Security Copilot Login Activities
+# Atividades de entrada no Security Copilot
 
-## DESCRIPTION
-This plugin enables you to track how many logins there have been to the Security Copilot standalone experience and who did it. For each identity, the count of logins performed is returned.
-
----
-
-## TYPE AND REQUIREMENTS
-**TYPE**: KQL (Sentinel) <br>
-**SOURCE**: _Signinlogs_ table <br>
-**REQUIREMENTS**: Log Analytics Workspace with Sentinel enabled 
+## DESCRIÇÃO
+Este plugin permite acompanhar quantas entradas ocorreram na experiência autônoma do Security Copilot e quem as realizou. Para cada identidade, é retornada a quantidade de entradas realizadas.
 
 ---
 
-## SKILLS
+## TIPO E REQUISITOS
+**TIPO**: KQL (Sentinel) <br>
+**FONTE**: tabela _Signinlogs_ <br>
+**REQUISITOS**: workspace do Log Analytics com o Sentinel habilitado
+
+---
+
+## HABILIDADES
 
 <table>
   <tbody>
     <tr>
       <th>SkillName</th>
-      <th align="center">Description</th>
-      <th align="center">Parameters</th>
+      <th align="center">Descrição</th>
+      <th align="center">Parâmetros</th>
     </tr>
     <tr>
       <td><b>SecurityCopilotLogins</b></td>
-      <td align="center">Fetches Security Copilot Standalone Portal logins in the last 3 days</td>
+      <td align="center">Obtém as entradas no portal autônomo do Security Copilot nos últimos três dias</td>
       <td>
         <ul>
         </ul>
@@ -35,15 +35,15 @@ This plugin enables you to track how many logins there have been to the Security
 
 ---
 
-## SAMPLE PROMPTS
+## PROMPTS DE EXEMPLO
 
-- `« Fetches Security Copilot Standalone Portal logins in the last 3 days and detect if there are anomalies in user accesses »`
+- `« Obtenha as entradas no portal autônomo do Security Copilot nos últimos três dias e detecte se há anomalias nos acessos dos usuários »`
 ---
 
-## SCREENSHOTS
+## CAPTURAS DE TELA
 <div align="center">
   <img src="https://github.com/mariocuomo/Security-Copilot/blob/main/Images/Community%20Plugins/SecurityCopilotLogins/LoginsAndAnomalies.png" width="700"> </img>
 </div>
 
 
-For more information, see: [Security Copilot Plugin: Security Copilot Portal Logins](https://rodtrent.substack.com/p/copilot-for-security-plugin-copilot)
+Para obter mais informações, consulte: [Plugin do Security Copilot: entradas no portal do Security Copilot](https://rodtrent.substack.com/p/copilot-for-security-plugin-copilot)

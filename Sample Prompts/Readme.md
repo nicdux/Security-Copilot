@@ -1,10 +1,10 @@
-![Security CoPilot Logo](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
-# Microsoft Security Copilot Sample Prompts Library 
+![Logotipo do Security Copilot](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
+# Biblioteca de prompts de exemplo do Microsoft Security Copilot
 
-Welcome to our page of sample prompts! Here, we offer a variety of examples to demonstrate how prompts can be used to achieve different security tasks. Our examples showcase how specific prompts can be utilized to perform a range of tasks. This is a collaborative page where people can learn from the examples and contribute their own.
+Boas-vindas à nossa página de prompts de exemplo! Aqui, oferecemos diversos exemplos para demonstrar como os prompts podem ser usados em diferentes tarefas de segurança. Nossos exemplos mostram como prompts específicos podem executar várias tarefas. Esta é uma página colaborativa na qual as pessoas podem aprender com os exemplos e contribuir com os seus.
 
 
-We have organized our examples into the following categories:
+Organizamos os exemplos nas seguintes categorias:
 
 
 
@@ -13,13 +13,13 @@ We have organized our examples into the following categories:
   - [Microsoft Intune](https://github.com/Azure/Copilot-For-Security/blob/main/Sample%20Prompts/Microsoft%20Intune/Readme.md)
   - [Microsoft Defender and Microsoft Sentinel](https://github.com/Azure/Copilot-For-Security/tree/main/Sample%20Prompts/Microsoft%20Defender%20and%20Microsoft%20Sentinel)
   - [Microsoft Defender Threat Intelligence](https://github.com/Azure/Copilot-For-Security/blob/main/Sample%20Prompts/Microsoft%20Defender%20for%20Threat%20Intelligence/Readme.md)
-  - [Vulnerabilities](./Vulnerabilities/Readme.md)
+  - [Vulnerabilidades](./Vulnerabilities/Readme.md)
   - [Microsoft Purview](https://github.com/Azure/Copilot-For-Security/blob/main/Sample%20Prompts/Microsoft%20Purview/Readme.md)
-  - [Script Analysis](./Scripts/)
+  - [Análise de scripts](./Scripts/)
 
 
 
 
-**Disclaimer**: Please know these are sample prompts and are subject to Change
+**Aviso de isenção de responsabilidade**: estes prompts são apenas exemplos e estão sujeitos a alterações.
 
 ***

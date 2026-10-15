@@ -1,38 +1,38 @@
 # SGNL Access Intelligence
-**Author: Marc Jordan**
-**Publisher: SGNL**
+**Autor: Marc Jordan**
+**Publicador: SGNL**
 
-This plugin enables SGNL Administrators to use Microsoft Security Copilot to understand and identify fine-grained access decisions and trends across their enterprise.
+Este plugin permite que administradores da SGNL usem o Microsoft Security Copilot para compreender e identificar decisões e tendências de acesso detalhadas em toda a organização.
 
-[Technical Blog](https://sgnl.ai/2023/11/sgnl-for-microsoft-security-copilot/)
+[Blog técnico](https://sgnl.ai/2023/11/sgnl-for-microsoft-security-copilot/)
 
-**Note**  
-Ensure your account has sufficient permission to read the SGNL Access Decision Logs prior to proceeding.
+**Observação**
+Antes de continuar, verifique se sua conta tem permissão suficiente para ler os SGNL Access Decision Logs.
 
-## **Pre-requisites**
-1. Authenticate to SGNL (via the Console or API) and retrieve your Tenant ID (Admin-->Environment) and your ID Token, you'll need these to configure Security Copilot
+## **Pré-requisitos**
+1. Autentique-se na SGNL (pelo Console ou pela API) e obtenha seu Tenant ID (Admin-->Environment) e seu ID Token. Esses dados serão necessários para configurar o Security Copilot.
 
 
-## Select or upload the attached manifest file into your Security Copilot console
-1. From the plugin manager, locate the SGNL Plugin and enable it
-![Enable Plugin](images/plugin-manager.png)
+## Selecione ou carregue o arquivo de manifesto anexado no console do Security Copilot
+1. No gerenciador de plugins, localize o plugin SGNL e habilite-o.
+![Habilitar plugin](images/plugin-manager.png)
   
 
-2. When configuring the plugin, use your Tenant ID as your Username and your ID Token as your password, e.g.
+2. Ao configurar o plugin, use seu Tenant ID como Username e seu ID Token como senha, por exemplo:
 	```
 	Username: 4b1...
     Password: eyJ......
 	```
-    ![Configure Plugin](images/config.png)
-3.  Save the Configuration
+    ![Configurar plugin](images/config.png)
+3. Salve a configuração.
 
 
-## Skills & Prompts
-1. Skill 1: Tell me about access from SGNL 
-- Example Prompt(s): Summarize the logs from SGNL for today; Which principals have accessed sensitive assets today; Tell me about [Principal] access over the last 7 days; Which Principals have accessed [Asset]
-- Inputs: [Principal], [Asset], [Action]
+## Habilidades e prompts
+1. Habilidade 1: informe sobre acessos da SGNL.
+- Exemplos de prompt: Resuma os logs da SGNL de hoje; Quais entidades de segurança acessaram ativos confidenciais hoje; Informe sobre os acessos de [Principal] nos últimos 7 dias; Quais entidades de segurança acessaram [Asset]
+- Entradas: [Principal], [Asset], [Action]
 
 
-## Frequently Asked Questions (FAQ)
-1. **Important**  
-   If prompts fail to invoke, please ensure you're using a supported prompt above. Otherwise, invoke it using Direct Skill Invocation "/"      
+## Perguntas frequentes (FAQ)
+1. **Importante**
+   Se os prompts não funcionarem, verifique se você está usando um dos prompts compatíveis acima. Caso contrário, use a invocação direta de habilidade "/".

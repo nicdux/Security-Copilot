@@ -1,28 +1,28 @@
 # SecurityCopilot-Sentinel-Incident-Investigation
-**Author: Pratik Lal, Innocent Wafula, Stefano Pescosolido**
+**Autores: Pratik Lal, Innocent Wafula, Stefano Pescosolido**
 
-## Overview
+## Visão geral
 
-This Logic App automates incident investigation within Microsoft Sentinel using the Microsoft Security Copilot prompt and built-in skills. It is designed to:
-- Read Microsoft Sentinel incident entities.
-- Process and normalize the entities.
-- Submit prompts to Security Copilot to analyze each entity type.
-- Summarize the outputs in a predefined format.
-- Update the Microsoft Sentinel incident comments for the incident investigator to review (writing to the Sentinel incident can be disabled for facilitating the initial testing).
-- Optionally send the result of the investigation by email.
+Este Logic App automatiza a investigação de incidentes no Microsoft Sentinel usando prompts e habilidades internas do Microsoft Security Copilot. Ele foi projetado para:
+- Ler as entidades de incidentes do Microsoft Sentinel.
+- Processar e normalizar as entidades.
+- Enviar prompts ao Security Copilot para analisar cada tipo de entidade.
+- Resumir as saídas em um formato predefinido.
+- Atualizar os comentários do incidente do Microsoft Sentinel para análise pelo investigador (a gravação no incidente do Sentinel pode ser desabilitada para facilitar os testes iniciais).
+- Opcionalmente, enviar por email o resultado da investigação.
 
-By leveraging this Logic App, Security Operations Center (SOC) and incident response teams can significantly reduce investigation time, gain consistent analysis outputs, and enhance their incident response process.
+Ao usar este Logic App, as equipes do Centro de Operações de Segurança (SOC) e de resposta a incidentes podem reduzir significativamente o tempo de investigação, obter resultados de análise consistentes e aprimorar o processo de resposta a incidentes.
 
-## Prerequisites
-- The user or service principal deploying this logic app should have Contributor role on the Azure Resource Group.
-- Microsoft Security Copilot should be enabled on the Azure tenant.
-- The user should have access to Microsoft Security Copilot to submit prompts by authenticating to Microsoft Security Copilot connector within the logic app.
-- Microsoft Sentinel workspace should be set up.
-- Optionally get AbuseIPDB API key to perform IP address reputation check. [Learn more.](https://learn.microsoft.com/en-us/copilot/security/plugin-abuseipdb)
-- Enable Defender, Sentinel, Entra, Intune, MDTI and AbuseIPDB plugins from copilot settings for the user account configured on the API connection of the Logic App to Security Copilot.
+## Pré-requisitos
+- O usuário ou a entidade de serviço que implanta este Logic App deve ter a função Contributor no grupo de recursos do Azure.
+- O Microsoft Security Copilot deve estar habilitado no locatário do Azure.
+- O usuário deve ter acesso ao Microsoft Security Copilot para enviar prompts por meio da autenticação no conector do Microsoft Security Copilot no Logic App.
+- O workspace do Microsoft Sentinel deve estar configurado.
+- Opcionalmente, obtenha uma chave de API do AbuseIPDB para verificar a reputação de endereços IP. [Saiba mais.](https://learn.microsoft.com/en-us/copilot/security/plugin-abuseipdb)
+- Nas configurações do Copilot, habilite os plugins Defender, Sentinel, Entra, Intune, MDTI e AbuseIPDB para a conta de usuário configurada na conexão de API do Logic App com o Security Copilot.
 
 
-## Deployment
+## Implantação
 
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FSecurity-Copilot%2Fmain%2FLogic%2520Apps%2FSecurityCopilot-Sentinel-Incident-Investigation%2Fazuredeploy.json" target="_blank">
@@ -30,45 +30,45 @@ By leveraging this Logic App, Security Operations Center (SOC) and incident resp
 </a>
 <br>
 
-## Post-Deployment
-- Authenticate Microsoft Sentinel and Security Copilot connectors within the logic app. You can choose Oauth, Service principal or Managed identity based authentication for Microsoft Sentinel trigger.
+## Pós-implantação
+- Autentique os conectores do Microsoft Sentinel e do Security Copilot no Logic App. Para o gatilho do Microsoft Sentinel, você pode escolher a autenticação baseada em OAuth, entidade de serviço ou identidade gerenciada.
      <br>
      <img src="https://github.com/pratik-lal/Security-Copilot/blob/SecurityCopilot-Sentinel-Incident-Investigation/Logic%20Apps/SecurityCopilot-Sentinel-Incident-Investigation/images/sentinel-trigger-authentication.png"/></br>
-- Choose Client Certificate Auth or Oauth (using user account that can submit prompts) to create connection with Microsoft Security Copilot logic app connector.
+- Escolha Client Certificate Auth ou OAuth (usando uma conta de usuário que possa enviar prompts) para criar a conexão com o conector dos Logic Apps para o Microsoft Security Copilot.
      <br>
      <img src="https://github.com/pratik-lal/Security-Copilot/blob/SecurityCopilot-Sentinel-Incident-Investigation/Logic%20Apps/SecurityCopilot-Sentinel-Incident-Investigation/images/copilot-for-security-authentication.png"/>
      </br>
-- Important: the account selected for the authentication to Security Copilot must have the Contributor role on Security Copilot and reader privileges on Defender, Sentinel, Entra and Intune.
-- Similarly, authenticate the API connection to Exchange Online (the correct setup of connection is needed even if the Logic App is configured to not send emails)  
-- Assign the role of 'Microsoft Sentinel Responder' to the Managed Identity of the Logic App within the Resource Group that contains the Sentinel's Log Analytics workspace.  
-- Set the values for the Logic App parameters  
+- Importante: a conta selecionada para autenticação no Security Copilot deve ter a função Contributor no Security Copilot e privilégios de leitor no Defender, Sentinel, Entra e Intune.
+- Da mesma forma, autentique a conexão de API com o Exchange Online (a configuração correta da conexão é necessária mesmo que o Logic App esteja configurado para não enviar emails).<br>
+- Atribua a função 'Microsoft Sentinel Responder' à identidade gerenciada do Logic App no grupo de recursos que contém o workspace do Log Analytics do Sentinel.<br>
+- Defina os valores dos parâmetros do Logic App.<br>
 <img src="./images/params.png"/>
-- Automate Sentinel incident investigation by adding the Logic App to Microsoft Sentinel automation rule. Alternatively, this logic app can be called on-demand by right-clicking on a Sentinel incident, choose **Run Playbook** option.
+- Automatize a investigação de incidentes do Sentinel adicionando o Logic App a uma regra de automação do Microsoft Sentinel. Como alternativa, este Logic App pode ser chamado sob demanda: clique com o botão direito em um incidente do Sentinel e escolha a opção **Run Playbook**.
 
-## Microsoft Security Copilot skills
-- Following built-in skills are being used to perform investigation on a given incident entity type
+## Habilidades do Microsoft Security Copilot
+- As habilidades internas a seguir são usadas para investigar cada tipo de entidade de incidente.
 
-| Incident entity | Security Copilot skill |
+| Entidade do incidente | Habilidade do Security Copilot |
 | --------------- | -------------------------- |
-| Process name / commandline | ProcessAnalyzer |
-| Account name | GetEntraUserDetails |
-| Account names | GetEntraRiskyUsers | 
-| Device name | GetIntuneDevices |
-| IP address | AbuseIPDB |
-| Indicator of Compromise (IoC) | GetReputationsForIndicators |
+| Nome do processo/linha de comando | ProcessAnalyzer |
+| Nome da conta | GetEntraUserDetails |
+| Nomes das contas | GetEntraRiskyUsers |
+| Nome do dispositivo | GetIntuneDevices |
+| Endereço IP | AbuseIPDB |
+| Indicador de comprometimento (IoC) | GetReputationsForIndicators |
 
 
-## Incident Investigation Template
-- Automated incident investigation summary is structured in following order. Modify the prompt to re-order or change the investigation template.
-    - Incident Overview, 
-    - Incident Description, 
-    - IP Addresses Analysis, 
-    - Account Analysis, 
-    - Users Risk Analysis, 
-    - Devices Analysis, 
-    - Processes Analysis, 
-    - Indicators Analysis from MDTI, 
-    - Possible mitigation steps and Conclusion
+## Modelo de investigação de incidentes
+- O resumo da investigação automatizada do incidente segue a ordem abaixo. Modifique o prompt para reordenar ou alterar o modelo de investigação.
+    - Visão geral do incidente,
+    - Descrição do incidente,
+    - Análise de endereços IP,
+    - Análise de contas,
+    - Análise de risco dos usuários,
+    - Análise de dispositivos,
+    - Análise de processos,
+    - Análise de indicadores do MDTI,
+    - Possíveis etapas de mitigação e conclusão
 <br>
 <img src="https://github.com/pratik-lal/Security-Copilot/blob/SecurityCopilot-Sentinel-Incident-Investigation/Logic%20Apps/SecurityCopilot-Sentinel-Incident-Investigation/images/copilot-for-security-investigation-prompt.png"/>
 </br>

@@ -1,33 +1,33 @@
-# Welcome to Microsoft Copilot for Security Labs!
+# Boas-vindas aos laboratórios do Microsoft Copilot for Security!
 
-![Security Copilot Logo](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
+![Logotipo do Security Copilot](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
 
-## Introduction
+## Introdução
 
-This workshop is designed to help you get up to speed with Microsoft Security Copilot. It offers hands-on experience in using Markdown, which can significantly enhance how our Large Language Models (LLMs) reason through data and format the results you receive.
+Este workshop foi desenvolvido para ajudar você a começar a usar o Microsoft Security Copilot. Ele oferece experiência prática no uso de Markdown, o que pode aprimorar significativamente a maneira como nossos LLMs (modelos de linguagem de grande porte) raciocinam sobre os dados e formatam os resultados recebidos.
 
-## Recommendations
+## Recomendações
 
-It's highly recommended that you review the following two pages prior to starting these modules.
- - [Prompting in Microsoft Security Copilot](https://learn.microsoft.com/en-us/copilot/security/prompting-security-copilot)
- - [Create effective prompts](https://learn.microsoft.com/en-us/copilot/security/prompting-tips)
+É altamente recomendável examinar as duas páginas a seguir antes de iniciar estes módulos.
+ - [Criação de prompts no Microsoft Security Copilot](https://learn.microsoft.com/en-us/copilot/security/prompting-security-copilot)
+ - [Criar prompts eficazes](https://learn.microsoft.com/en-us/copilot/security/prompting-tips)
 
-## What is markdown
+## O que é Markdown?
 
-Markdown is a lightweight markup language developed by John Gruber in 2004 that is used to format plain text. It allows you to easily add formatting elements such as headers, lists, links, images, bold or italic text, and more, using simple symbols or characters.
+Markdown é uma linguagem de marcação leve desenvolvida por John Gruber em 2004 e usada para formatar texto sem formatação. Ela permite adicionar facilmente elementos como títulos, listas, links, imagens, texto em negrito ou itálico e muito mais, usando símbolos ou caracteres simples.
 
-## Why use markdown?
-Markdown improves human readability and acts as a delimiter, helping Large Language Models (LLMs) better understand user intent and desired output by providing structure and clarity.
+## Por que usar Markdown?
+O Markdown melhora a legibilidade para as pessoas e funciona como um delimitador, ajudando os LLMs a entender melhor a intenção do usuário e a saída desejada por meio de estrutura e clareza.
 
-Using Markdown provides:
- - Clear separation of content
- - Enhancing context recognition
- - Distinguishing between input and output
- - Highlighting intent with emphasis
- - Prompting LLMs with specific formatting
- - Facilitating conditional output
+O uso de Markdown oferece:
+ - Separação clara do conteúdo
+ - Melhor reconhecimento do contexto
+ - Distinção entre entrada e saída
+ - Destaque da intenção com ênfase
+ - Prompts para LLMs com formatação específica
+ - Facilidade para gerar saídas condicionais
 
-## Workshop Modules
+## Módulos do workshop
 
-- [**Module 1 – Using Markdown for formatting**](./Module%201%20-%20Formatting%20with%20markdown)
-- [**Module 2 – Enhancing reasoning and formatting with markdown**](./Module%202%20-%20Enhancing%20reasoning%20and%20formatting%20with%20markdown)
+- [**Módulo 1 – Usar Markdown para formatação**](./Module%201%20-%20Formatting%20with%20markdown)
+- [**Módulo 2 – Aprimorar o raciocínio e a formatação com Markdown**](./Module%202%20-%20Enhancing%20reasoning%20and%20formatting%20with%20markdown)

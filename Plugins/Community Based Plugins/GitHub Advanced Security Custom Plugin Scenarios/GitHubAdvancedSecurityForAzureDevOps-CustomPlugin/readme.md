@@ -1,17 +1,17 @@
-**GitHub Advanced Security for Azure DevOps (GAzDO) Custom Plugin**
+**Plugin personalizado do GitHub Advanced Security for Azure DevOps (GAzDO)**
 
-GitHub Advanced Security for Azure DevOps (GAzDO) executes code scanning (Static Application Security Testing, SAST, via CodeQL), dependabot analysis (Software Composition Analysis, SCA) and secret scanning on the files in the repos of Azure DevOps organizations.
-This folder contains a plugin for Security Copilot that queries the "List" and "Get" API exposed by Azure DevOps and related to Advanced Security (GAzDO).
+O GitHub Advanced Security for Azure DevOps (GAzDO) executa verificação de código (teste estático de segurança de aplicações, ou SAST, por meio do CodeQL), análise do Dependabot (análise de composição de software, ou SCA) e verificação de segredos nos arquivos dos repositórios de organizações do Azure DevOps.
+Esta pasta contém um plugin para o Security Copilot que consulta as APIs "List" e "Get" expostas pelo Azure DevOps e relacionadas ao Advanced Security (GAzDO).
 
-Instructions
-- In Azure DevOps, create a Personal Access Token (PAT). Assign to it at least the scope of "Read" in "Advanced Security"
-- Generate the Base64 version of the string "Basic:<your-personal-access-token>". For example, use this PowerShell command:
+Instruções
+- No Azure DevOps, crie um Personal Access Token (PAT). Atribua a ele pelo menos o escopo "Read" em "Advanced Security".
+- Gere a versão em Base64 da cadeia de caracteres "Basic:<your-personal-access-token>". Por exemplo, use este comando do PowerShell:
   [System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes("Basic:<your-personal-access-token>"))
-- Download the file *Manifest.yaml from this folder
-- Create the custom plugins in Security Copilot by uploading this manifest file 
-- After the upload, configure the custom plugins by setting the 2 requested parameters: the name of your organization in Azure DevOps (write it at the end of the proposed URL) and the Base64 version of your Personal Access Token, created as described above.
-- You can now use the skills available in this plugin. 
+- Baixe o arquivo *Manifest.yaml desta pasta.
+- Crie o plugin personalizado no Security Copilot carregando esse arquivo de manifesto.
+- Após o carregamento, configure o plugin personalizado definindo os dois parâmetros solicitados: o nome da organização no Azure DevOps (escreva-o no final da URL proposta) e a versão em Base64 do Personal Access Token criado conforme descrito acima.
+- Agora você pode usar as habilidades disponíveis neste plugin.
 
-Initial release author:
+Autor da versão inicial:
 Stefano Pescosolido
 https://linkedin.com/in/stefanopescosolido

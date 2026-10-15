@@ -1,31 +1,30 @@
-# Enrichment Plugin Suite
-**Author: Craig Freyman**
+# Conjunto de plugins de enriquecimento
+**Autor: Craig Freyman**
 
-## EmailEnrichment Plugin
-This suite of email enrichment skill is designed to enhance security investigations by providing detailed insights into email activity. These tools allow analysts to identify email interactions based on domains, recipients, or senders and investigate related activity for comprehensive threat analysis.
+## Plugin EmailEnrichment
+Este conjunto de habilidades de enriquecimento de email foi desenvolvido para aprimorar investigações de segurança, fornecendo informações detalhadas sobre atividades de email. Essas ferramentas permitem identificar interações de email com base em domínios, destinatários ou remetentes e investigar atividades relacionadas para uma análise abrangente de ameaças.
 
 ### DomainEmailSearch
-Search for emails in the `EmailEvents` table containing a specified domain name. Provides key details, including the time, sender, recipient, subject, body, and attachment count, to support threat analysis and investigations.
+Pesquisa na tabela `EmailEvents` emails que contenham um nome de domínio especificado. Fornece detalhes importantes, incluindo horário, remetente, destinatário, assunto, corpo e quantidade de anexos, para apoiar análises e investigações de ameaças.
 
-Example Prompt: Identify emails containing the domain "example.com" in the past 7 days.
+Prompt de exemplo: identifique emails que contenham o domínio "example.com" nos últimos sete dias.
 
 ### RecipientEmailSearch
-Search for emails in the `EmailEvents` table sent to a specific recipient. Provides key details, including the time, sender, recipient, subject, body, and attachment count, to support threat investigations.
+Pesquisa na tabela `EmailEvents` emails enviados a um destinatário específico. Fornece detalhes importantes, incluindo horário, remetente, destinatário, assunto, corpo e quantidade de anexos, para apoiar investigações de ameaças.
 
-Example Prompt: Find all emails sent to user@example.com in the past 7 days.
+Prompt de exemplo: encontre todos os emails enviados para user@example.com nos últimos sete dias.
 
 ### SenderEmailSearch
-Search for emails in the `EmailEvents` table sent from a specific sender. Provides key details, including the time, sender, recipient, subject, body, and attachment count, to assist in analyzing sender activity.
+Pesquisa na tabela `EmailEvents` emails enviados por um remetente específico. Fornece detalhes importantes, incluindo horário, remetente, destinatário, assunto, corpo e quantidade de anexos, para auxiliar na análise da atividade do remetente.
 
-Example Prompt: Retrieve all emails sent from admin@example.com in the past week.
+Prompt de exemplo: obtenha todos os emails enviados por admin@example.com na última semana.
 
 ### NetworkMessageIdEmailSearch
-Search for emails in the `EmailEvents` table by a specified `NetworkMessageId`. Provides key email details, including time, sender, recipient, and subject. This skill helps security analysts pinpoint specific email messages in investigations, enabling focused threat analysis and remediation.
+Pesquisa na tabela `EmailEvents` emails por um `NetworkMessageId` especificado. Fornece detalhes importantes do email, incluindo horário, remetente, destinatário e assunto. Essa habilidade ajuda os analistas de segurança a localizar mensagens específicas nas investigações, permitindo análises de ameaças e correções direcionadas.
 
-Example Prompt: Retrieve email details for NetworkMessageId "1d6ce5463-10b7-4c1e-e0a9-08dd529394bc".
+Prompt de exemplo: obtenha os detalhes do email com NetworkMessageId "1d6ce5463-10b7-4c1e-e0a9-08dd529394bc".
 
 ### QuarantineRequestInsights
-Analyze email quarantine requests and their approvals to understand user actions and email security patterns. Retrieves key details for thorough investigation.
+Analisa solicitações de quarentena de email e suas aprovações para compreender as ações dos usuários e os padrões de segurança de email. Obtém detalhes importantes para uma investigação completa.
 
-Example Prompt: Analyze quarantine requests and approvals for email security insights.
-
+Prompt de exemplo: analise solicitações e aprovações de quarentena para obter informações de segurança de email.

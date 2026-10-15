@@ -1,33 +1,33 @@
 
-### EchoTrail Insights reports Custom Plugin
+### Plugin personalizado de relatórios do EchoTrail Insights
 
-Welcome to the EchoTrail Insights reports custom plugin! Here, you'll discover a Skills for looking up reports using EchoTrail to search for an exe or a hash and check the prevalence of a file in Windows environments. Also gives a rank- prevalence - the most common filepath and an overview along with some security information.
+Boas-vindas ao plugin personalizado de relatórios do EchoTrail Insights! Aqui você encontrará habilidades para consultar relatórios usando o EchoTrail, pesquisar um executável ou hash e verificar a prevalência de um arquivo em ambientes Windows. O plugin também fornece classificação, prevalência, o caminho de arquivo mais comum, uma visão geral e algumas informações de segurança.
 
-#### Features:
+#### Recursos:
 
 - **EchoTrailInsightsFullSummary:** 
-Get a full summary of a requested filename or hash, The name or hash of an endpoint process to lookup. Must be a Windows filename with extension or a SHA256 hash of a Windows process or an MD5 hash of a Windows process.
+Obtenha um resumo completo do nome de arquivo ou hash solicitado. O nome ou hash do processo do ponto de extremidade a ser consultado deve ser um nome de arquivo do Windows com extensão, um hash SHA256 de um processo do Windows ou um hash MD5 de um processo do Windows.
 - **EchoTrailInsightsFieldSearch:** 
-Get one particular field from the results of a process search. Useful for efficiently fetching data when you only need one field, The name or hash of an endpoint process to lookup. Must be a Windows filename with extension or a SHA256 hash of a Windows process or an MD5 hash of a Windows process.
+Obtenha um campo específico dos resultados de uma pesquisa de processo. Isso é útil para buscar dados com eficiência quando apenas um campo é necessário. O nome ou hash do processo do ponto de extremidade a ser consultado deve ser um nome de arquivo do Windows com extensão, um hash SHA256 de um processo do Windows ou um hash MD5 de um processo do Windows.
 - **EchoTrailInsightsSubSearch:** 
-Perform a search within a list of results from a process search. For example, searching for a particular port in the network table of the cmd.exe process.
+Realize uma pesquisa em uma lista de resultados de uma pesquisa de processo. Por exemplo, pesquise uma porta específica na tabela de rede do processo cmd.exe.
 
-**How to Use the Custom Plugin**
+**Como usar o plugin personalizado**
 
-1. Add the custom plugin in Microsoft Security Copilot 
+1. Adicione o plugin personalizado ao Microsoft Security Copilot.
 
-![Echo1](https://github.com/Azure/Copilot-For-Security/blob/main/Images/Logicapp%20images/Echo1.jpg)
+![Etapa 1 do EchoTrail](https://github.com/Azure/Copilot-For-Security/blob/main/Images/Logicapp%20images/Echo1.jpg)
 
-2. Add in the API value for the plugin
+2. Adicione o valor da API ao plugin.
 
-![Echo1](https://github.com/Azure/Copilot-For-Security/blob/main/Images/Logicapp%20images/Echo2.jpg)
-
-
-3. Get visibility of the Skills asscociated with the Custom Plugin 
-
-![Echo1](https://github.com/Azure/Copilot-For-Security/blob/main/Images/Logicapp%20images/Echo3.jpg)
+![Etapa 2 do EchoTrail](https://github.com/Azure/Copilot-For-Security/blob/main/Images/Logicapp%20images/Echo2.jpg)
 
 
-4. Try the Echo trail insight Skill plugin by providing a hash ( should be a windows filename with extenstion or a sha256 fo a windows process or an MD5 has of a windows process)
+3. Visualize as habilidades associadas ao plugin personalizado.
 
-![Echo1](https://github.com/Azure/Copilot-For-Security/blob/main/Images/Logicapp%20images/Echo4.jpg)
+![Etapa 3 do EchoTrail](https://github.com/Azure/Copilot-For-Security/blob/main/Images/Logicapp%20images/Echo3.jpg)
+
+
+4. Experimente a habilidade EchoTrail Insights fornecendo um hash. Ele deve ser um nome de arquivo do Windows com extensão, um hash SHA256 de um processo do Windows ou um hash MD5 de um processo do Windows.
+
+![Etapa 4 do EchoTrail](https://github.com/Azure/Copilot-For-Security/blob/main/Images/Logicapp%20images/Echo4.jpg)

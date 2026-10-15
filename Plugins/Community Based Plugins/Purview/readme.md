@@ -1,25 +1,25 @@
-# Custom Data Security Plugin for Security Copilot
+# Plugin personalizado de segurança de dados para o Security Copilot
 
-The custom Data Security plugin for Security Copilot offers a range of functionalities to enhance your organization's cybersecurity capabilities. Here are the key features:
+O plugin personalizado de segurança de dados para o Security Copilot oferece diversas funcionalidades para aprimorar os recursos de segurança cibernética da organização. Estes são os principais recursos:
 
-## Key Features
+## Principais recursos
 
-### Anomaly Detection
-The plugin can detect anomalies in Data Loss Prevention (DLP) and sensitivity content by analyzing data over specific intervals.
+### Detecção de anomalias
+O plugin pode detectar anomalias na Prevenção contra Perda de Dados (DLP) e em conteúdo confidencial analisando dados em intervalos específicos.
 
-### Access Tracking
-It tracks access to sensitive information by compromised accounts and can identify who accessed sensitive emails and documents.
+### Acompanhamento de acesso
+Ele acompanha o acesso a informações confidenciais por contas comprometidas e pode identificar quem acessou emails e documentos confidenciais.
 
-### CVE Exposure
-The plugin helps check the exposure of sensitive information to Common Vulnerabilities and Exposures (CVE) and can pivot based on Internet Service Providers (ISP).
+### Exposição a CVEs
+O plugin ajuda a verificar a exposição de informações confidenciais a Common Vulnerabilities and Exposures (CVE) e pode dinamizar a análise com base em provedores de serviços de Internet (ISP).
 
-### Policy Tuning
-It provides suggestions for tuning DLP policies across various platforms like Exchange, Teams, SharePoint, and more.
+### Ajuste de políticas
+Ele fornece sugestões para ajustar as políticas de DLP em várias plataformas, como Exchange, Teams e SharePoint.
 
-### Application Monitoring
-The plugin can monitor applications accessing sensitive content and provide details on network connectivity and processes used.
+### Monitoramento de aplicativos
+O plugin pode monitorar os aplicativos que acessam conteúdo confidencial e fornecer detalhes sobre a conectividade de rede e os processos usados.
 
 ### Promptbooks
-These are valuable resources for implementing standard operating procedures for security incidents, helping to identify various dimensions of an incident and summarize outcomes.
+São recursos valiosos para implementar procedimentos operacionais padrão para incidentes de segurança, ajudando a identificar as várias dimensões de um incidente e a resumir os resultados.
 
-[Learn more](https://techcommunity.microsoft.com/t5/security-compliance-and-identity/learn-how-to-customize-and-optimize-copilot-for-security-with/ba-p/4120147)
+[Saiba mais](https://techcommunity.microsoft.com/t5/security-compliance-and-identity/learn-how-to-customize-and-optimize-copilot-for-security-with/ba-p/4120147)

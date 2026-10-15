@@ -1,29 +1,29 @@
-# Redact Personally Identifiable Information 
+# Ocultar informações de identificação pessoal
 
-## DESCRIPTION
-This plugin will redcat PII content from a session or a prompt ouput. It will also redact Entra ID object IDs theat may also be sensistive, for example GUIDs for an identity
-
----
-
-## TYPE AND REQUIREMENTS
-**TYPE**: GPT <br>
-**SOURCE**: None <br>
-**REQUIREMENTS**: None 
+## DESCRIÇÃO
+Este plugin oculta conteúdo de informações de identificação pessoal (PII) de uma sessão ou da saída de um prompt. Ele também oculta IDs de objetos do Entra ID que podem ser confidenciais, como GUIDs de uma identidade.
 
 ---
 
-## SKILLS
+## TIPO E REQUISITOS
+**TIPO**: GPT <br>
+**FONTE**: nenhuma <br>
+**REQUISITOS**: nenhum
+
+---
+
+## HABILIDADES
 
 <table>
   <tbody>
     <tr>
       <th>SkillName</th>
-      <th align="center">Description</th>
-      <th align="center">Parameters</th>
+      <th align="center">Descrição</th>
+      <th align="center">Parâmetros</th>
     </tr>
     <tr>
       <td><b>RedactPII</b></td>
-      <td align="center">Redacts Personally Identifiable Information (PII) from the provided text</td>
+      <td align="center">Oculta informações de identificação pessoal (PII) do texto fornecido</td>
       <td>
         <ul>
           <li>
@@ -38,15 +38,14 @@ This plugin will redcat PII content from a session or a prompt ouput. It will al
 
 ---
 
-## SAMPLE PROMPTS
+## PROMPTS DE EXEMPLO
 
-- `« Redacts Personally Identifiable Information (PII) from the provided text: <YOUR-TEXT> »`
+- `« Oculte as informações de identificação pessoal (PII) do texto fornecido: <YOUR-TEXT> »`
 
 ---
 
-## SCREENSHOTS
+## CAPTURAS DE TELA
 <div align="center">
   <img src="https://github.com/mariocuomo/Security-Copilot/blob/main/Images/Community%20Plugins/RedactPII/RedactPIIPrompt.png" width="700"> </img>
 </div>
-
 

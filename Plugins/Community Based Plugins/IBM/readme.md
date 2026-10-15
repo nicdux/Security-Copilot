@@ -1,99 +1,99 @@
 # # IBM X-Force Thread Intelligence
-**Publisher: Microsoft**
+**Publicador: Microsoft**
 
-Product Information:
+Informações do produto:
 https://www.ibm.com/products/xforce-threat-intelligence
 
-## Overview  
-IBM X-Force is an online platform designed to help you understand and respond to security threats. It's a cloud service that lets you access, distribute, and take action on information about potential security risks. With this platform, you can quickly find out about new security threats around the world, gather information that you can use to protect yourself, talk to experts for advice, and work with other people who are also trying to stay safe. IBM X-Force Exchange is powered by both human expertise and automated processes, and it uses IBM X-Force's extensive resources to help users get ahead of threats that are just starting to appear. 
+## Visão geral
+O IBM X-Force é uma plataforma online desenvolvida para ajudar você a compreender e responder a ameaças de segurança. Esse serviço de nuvem permite acessar e distribuir informações sobre possíveis riscos de segurança, além de agir com base nelas. Com a plataforma, você pode descobrir rapidamente novas ameaças de segurança em todo o mundo, coletar informações úteis para sua proteção, conversar com especialistas e colaborar com outras pessoas que também buscam manter a segurança. O IBM X-Force Exchange combina conhecimento humano e processos automatizados, usando os amplos recursos do IBM X-Force para ajudar os usuários a se anteciparem a ameaças emergentes.
 
-## Invoking the Plugin and Skills
+## Como invocar o plugin e as habilidades
 
-1. A window entitled, Manage plugins, will open. Scroll down, until you see the IBM X-Force plugin.
-<img src="images/ibm_settings.png" alt="settings" width="500"/>
-
-
-2. Click on the Setup button for the IBM X-Force plugin highlighted in the image above, a new model will appear.
-<img src="images/ibm_select.png" alt="settings" width="500"/>
+1. Uma janela intitulada "Manage plugins" será aberta. Role para baixo até encontrar o plugin IBM X-Force.
+<img src="images/ibm_settings.png" alt="configurações" width="500"/>
 
 
-3. Enter the IBM X-Force API key and password in the Value input box and click on the Save button. Once saved, you would see an acknowledgement.
-<img src="images/ibm_insert.png" alt="settings" width="500"/>
+2. Clique no botão "Setup" do plugin IBM X-Force destacado na imagem acima. Uma nova janela será exibida.
+<img src="images/ibm_select.png" alt="configurações" width="500"/>
 
 
-4. Use the IBM X-Force Skillset
-   1. Make sure the IBM X-Force Plugin is enabled, verify by navigating to the Manage plugins tab and making sure the toggle is active.
-   2. Run a sample prompt such as `how me the IBM whois for www.bing.com.`
+3. Insira a chave de API e a senha do IBM X-Force no campo "Value" e clique no botão "Save". Após salvar, você verá uma confirmação.
+<img src="images/ibm_insert.png" alt="configurações" width="500"/>
+
+
+4. Use o conjunto de habilidades do IBM X-Force.
+   1. Verifique se o plugin IBM X-Force está habilitado acessando a guia "Manage plugins" e confirmando que o seletor está ativo.
+   2. Execute um prompt de exemplo, como `Mostre o WHOIS do IBM para www.bing.com.`
 
 
 
-## Skills & Prompts
+## Habilidades e prompts
 
-1. Get Threat Intelligence Reports IBM: Get premium threat intelligence reports based on a given report type
-   - Example Prompt(s): 
-     - Tell me about recent IBM threat intelligence report
-     - Show me IBM X-Force threat intelligence reports
-   - Inputs: 
+1. Get Threat Intelligence Reports IBM: obtém relatórios premium de inteligência contra ameaças com base em determinado tipo de relatório.
+   - Prompts de exemplo:
+     - Fale sobre relatórios recentes de inteligência contra ameaças da IBM.
+     - Mostre os relatórios de inteligência contra ameaças do IBM X-Force.
+   - Entradas:
      - reportType
-       - Description: The type of Threat Intelligence report. Possible report types are threatanalysis, osintadvisory, malware, industry, and threatgroup. 
+       - Description: o tipo de relatório de inteligência contra ameaças. Os tipos possíveis são threatanalysis, osintadvisory, malware, industry e threatgroup.
        - Required: true
        - Type: string
        - Example: "threatanalysis"
      - added_after
-       - Description: To get reports created after specified date, For example, 2022-10-12. If not specified, the query will return the newest IPs.
+       - Description: obtém relatórios criados após a data especificada, por exemplo, 2022-10-12. Se não for informado, a consulta retornará os IPs mais recentes.
        - Required: false
        - Type: string
        - Example: "2022-10-12"
      - added_before
-       - Description: To get reports created before specified date, For example, 2022-10-12. If not specified, the query will return the newest IPs.
+       - Description: obtém relatórios criados antes da data especificada, por exemplo, 2022-10-12. Se não for informado, a consulta retornará os IPs mais recentes.
        - Required: false
        - Type: string
        - Example: "2022-10-12"
      - limit
-       - Description: The number of returned Malware Analysis Reports, default value is 200. The limit must not be larger than 200.
+       - Description: a quantidade de relatórios de análise de malware retornados. O valor padrão é 200 e o limite não pode ser maior que 200.
        - Required: false
        - Type: integer
        - Example: 201
      - skip
-       - Description: The startingpoint to retrieve entries, default value is 0
+       - Description: o ponto inicial para obter entradas. O valor padrão é 0.
        - Required: false
        - Type: integer
        - Example: 10
-2. Get Threat Group Profiles IBM: Get a List of Threat Group Profiles.
-   - Example Prompt(s): 
-     - What are the most recent X-Force threat group profiles?
-     - What are the IBM threat group profiles?
-     - Show me the top 20 IBM threat group profiles.
-   - Inputs: 
+2. Get Threat Group Profiles IBM: obtém uma lista de perfis de grupos de ameaças.
+   - Prompts de exemplo:
+     - Quais são os perfis de grupos de ameaças mais recentes do X-Force?
+     - Quais são os perfis de grupos de ameaças da IBM?
+     - Mostre os 20 principais perfis de grupos de ameaças da IBM.
+   - Entradas:
      - limit
-       - Description: The number of returned Malware Analysis Reports, default value is 200. The limit must not be larger than 200.
+       - Description: a quantidade de relatórios de análise de malware retornados. O valor padrão é 200 e o limite não pode ser maior que 200.
        - Required: false
        - Type: integer
        - Example: 201
      - skip
-       - Description: The startingpoint to retrieve entries, default value is 0
+       - Description: o ponto inicial para obter entradas. O valor padrão é 0.
        - Required: false
        - Type: integer
        - Example: 10
-3. Get Dns Records IBM: Verify a domain name, IP address, or URL against IBM X-Force DNS records.
-   - Example Prompt(s): 
-     - Show me the IBM DNS records for www.bing.com
-     - What are the IBM X-Force DNS records for https://www.bing.com/search?q=microsoft&form=QBLH&sp=-1&lq=0&pq=microsof&sc=11-8&qs=n&sk=&cvid=166E76706804404BAA7390129EE88004&ghsh=0&ghacc=0&ghpl=?
-     - What is the IBM DNS record for www.https://www.microsoft.com/?
-   - Inputs: 
+3. Get Dns Records IBM: verifica um nome de domínio, endereço IP ou URL nos registros DNS do IBM X-Force.
+   - Prompts de exemplo:
+     - Mostre os registros DNS da IBM para www.bing.com.
+     - Quais são os registros DNS do IBM X-Force para https://www.bing.com/search?q=microsoft&form=QBLH&sp=-1&lq=0&pq=microsof&sc=11-8&qs=n&sk=&cvid=166E76706804404BAA7390129EE88004&ghsh=0&ghacc=0&ghpl=?
+     - Qual é o registro DNS da IBM para www.https://www.microsoft.com/?
+   - Entradas:
      - input
-       - Description: The domain name, IP Address, or URL to check for DNS information.
+       - Description: o nome de domínio, endereço IP ou URL a ser verificado para obter informações de DNS.
        - Required: true
        - Type: string
        - Example: "www.bing.com"
-4. Get WHOIS IBM: Returns the WHOIS information for an IP, URL, or domain.
-   - Example Prompt(s): 
-     - Show me the IBM whois records for www.bing.com
-     - What is the IBM WHOIS for https://www.bing.com/search?q=microsoft&form=QBLH&sp=-1&lq=0&pq=microsof&sc=11-8&qs=n&sk=&cvid=166E76706804404BAA7390129EE88004&ghsh=0&ghacc=0&ghpl=?
+4. Get WHOIS IBM: retorna as informações WHOIS de um IP, URL ou domínio.
+   - Prompts de exemplo:
+     - Mostre os registros WHOIS da IBM para www.bing.com.
+     - Qual é o WHOIS da IBM para https://www.bing.com/search?q=microsoft&form=QBLH&sp=-1&lq=0&pq=microsof&sc=11-8&qs=n&sk=&cvid=166E76706804404BAA7390129EE88004&ghsh=0&ghacc=0&ghpl=?
      - IBM WHOIS www.https://www.microsoft.com/?
-   - Inputs: 
+   - Entradas:
      - host
-       - Description: The domain name,IP Address, or URL to check for WHOIS information.
+       - Description: o nome de domínio, endereço IP ou URL a ser verificado para obter informações WHOIS.
        - Required: true
        - Rype: string
        - Example: "www.bing.com"

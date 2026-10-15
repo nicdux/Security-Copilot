@@ -1,22 +1,22 @@
-# Security Copilot Plugin: Leveraging Security Copilot with ASIM-based KQL plugins for investigation scenarios
+# Plugin do Security Copilot: uso do Security Copilot com plugins KQL baseados no ASIM em cenários de investigação
 
-### **Bring in insights from Microsoft Sentinel using source-agnostic queries based on ASIM - Advanced Security Information Model**
+### **Obtenha informações do Microsoft Sentinel usando consultas independentes de fonte baseadas no ASIM — Advanced Security Information Model**
 
-### Pre-requisites
+### Pré-requisitos
 
--   [Security Copilot Enabled](https://learn.microsoft.com/en-us/security-copilot/get-started-security-copilot#onboarding-to-microsoft-security-copilot)
--   [Access to upload custom plugins](https://learn.microsoft.com/en-us/security-copilot/manage-plugins?tabs=securitycopilotplugin#managing-custom-plugins)
--   [Microsoft Sentinel Workspace](https://learn.microsoft.com/en-us/azure/sentinel/quickstart-onboard) created.
--   Parameters for KQL Plugin - Microsoft Sentinel Workspace Name, Subscription ID, Resource Group Name and Entra Tenant ID
+-   [Security Copilot habilitado](https://learn.microsoft.com/en-us/security-copilot/get-started-security-copilot#onboarding-to-microsoft-security-copilot)
+-   [Acesso para carregar plugins personalizados](https://learn.microsoft.com/en-us/security-copilot/manage-plugins?tabs=securitycopilotplugin#managing-custom-plugins)
+-   [Workspace do Microsoft Sentinel](https://learn.microsoft.com/en-us/azure/sentinel/quickstart-onboard) criado.
+-   Parâmetros do plugin KQL: nome do workspace do Microsoft Sentinel, ID da assinatura, nome do grupo de recursos e ID do locatário do Entra.
 
-### Instructions
+### Instruções
 
-#### Upload the Custom Plugin
+#### Carregar o plugin personalizado
 
-1.  Obtain the file PotentialNetworkBeaconingActivity.yaml from this directory.
-2.  Upload the custom plugin
-3.  Input your specific Entra TentantId, SubscriptionId, ResourceGroupName and WorkspaceName in the resulting dialog box within Security Copilot
+1.  Obtenha o arquivo PotentialNetworkBeaconingActivity.yaml deste diretório.
+2.  Carregue o plugin personalizado.
+3.  Na caixa de diálogo exibida no Security Copilot, insira Entra TentantId, SubscriptionId, ResourceGroupName e WorkspaceName específicos.
 
-### Link to blog post
+### Link para a publicação
 
-Refer to the blog in this [link](https://techcommunity.microsoft.com/blog/securitycopilotblog/leveraging-asim-based-kql-plugins-in-microsoft-security-copilot-for-investigatio/4357680)
+Consulte a publicação neste [link](https://techcommunity.microsoft.com/blog/securitycopilotblog/leveraging-asim-based-kql-plugins-in-microsoft-security-copilot-for-investigatio/4357680).

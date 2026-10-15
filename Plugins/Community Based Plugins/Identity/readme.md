@@ -1,23 +1,23 @@
-# Custom Identity Security Analyst plugin for Security Copilot
+# Plugin personalizado de analista de segurança de identidade para o Security Copilot
 
-The custom Identity Security skills to query Identity events for detection and forensics hunting across User Risk Assessment, Sign-in Monitoring, Admin Activity Monitoring, Application Usage Monitoring, Privileged Identity Management, Access Review:
+Habilidades personalizadas de segurança de identidade para consultar eventos de identidade, realizar detecção e busca forense em avaliação de risco de usuários, monitoramento de entradas, monitoramento de atividades administrativas, monitoramento do uso de aplicativos, Privileged Identity Management e revisão de acesso:
 
-## Key Features
+## Principais recursos
 
-### User Risk Assessment
-Fetches the user risk levels based on their activities. This could include sign-in attempts from unfamiliar locations, repeated failed sign-in attempts, or other suspicious behavior.
+### Avaliação de risco de usuários
+Obtém os níveis de risco dos usuários com base em suas atividades. Isso pode incluir tentativas de entrada em locais desconhecidos, tentativas de entrada com falha recorrentes ou outros comportamentos suspeitos.
 
-### Users Sign-in activities
-Fetches all user sign-in activities. This includes successful sign-ins, failed attempts, and the location and device used for sign-in. Any unusual sign-in activity could be a sign of a potential security threat.
+### Atividades de entrada dos usuários
+Obtém todas as atividades de entrada dos usuários. Isso inclui entradas bem-sucedidas, tentativas com falha e o local e dispositivo usados. Qualquer atividade de entrada incomum pode indicar uma possível ameaça à segurança.
 
-### Admin activities monitoring
-Fetches Admin Activity Monitoring logs. Admin accounts have high-level access and can be a prime target for attackers. Monitor all admin activities, especially those involving changes to security settings, user privileges, or access controls.
+### Monitoramento de atividades administrativas
+Obtém os logs de monitoramento de atividades administrativas. As contas de administrador têm acesso de alto nível e podem ser alvos prioritários de invasores. Monitore todas as atividades administrativas, especialmente as que envolvem alterações nas configurações de segurança, nos privilégios de usuários ou nos controles de acesso.
 
-### Applications usage monitoring
-Fetches Application Usage Monitoring logs to keep an eye on the usage of applications within your organization. Unusual application activity, such as a high number of downloads or an increase in usage outside of normal business hours, could indicate a potential security issue.
+### Monitoramento do uso de aplicativos
+Obtém os logs de monitoramento do uso de aplicativos para acompanhar o uso dentro da organização. Atividades incomuns em aplicativos, como um grande número de downloads ou o aumento do uso fora do horário comercial habitual, podem indicar um possível problema de segurança.
 
-### Privileged Identity Management (PIM) monitoring
-Fetches Privileged Identity Management logs to monitor the lifecycle of privileged identities within your organization. This includes the creation, modification, and deletion of privileged accounts.
+### Monitoramento do Privileged Identity Management (PIM)
+Obtém os logs do Privileged Identity Management para monitorar o ciclo de vida das identidades privilegiadas na organização. Isso inclui a criação, a modificação e a exclusão de contas privilegiadas.
 
-### Access Review monitoring
-Fetches Access Review logs to regularly review user access to various resources within your organization. This can help ensure that users only have access to the resources they need for their job functions, reducing the risk of insider threats.
+### Monitoramento de revisões de acesso
+Obtém os logs de revisão de acesso para revisar regularmente o acesso dos usuários a diversos recursos da organização. Isso ajuda a garantir que os usuários tenham acesso somente aos recursos necessários para suas funções, reduzindo o risco de ameaças internas.

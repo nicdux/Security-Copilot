@@ -1,15 +1,15 @@
 
-### Network (CEF) anomaly detection activity Custom Plugin
+### Plugin personalizado de detecção de atividades anômalas de rede (CEF)
 
-Welcome to the Network (CEF) anomaly detection activity custom plugin! Here, you'll discover a Skills that that look up network CEF CommonSecurityLog Sentinel data anomaly activity - events.
+Boas-vindas ao plugin personalizado de detecção de atividades anômalas de rede (CEF)! Aqui você encontrará habilidades que pesquisam eventos de atividades anômalas nos dados CEF de rede da tabela CommonSecurityLog do Sentinel.
 
-#### Features:
+#### Recursos:
 
 - StartTime:
-            Description: Set startTime Number of Days for the localback Network (CEF) anomaly detection activity in Microsoft Sentinel
+            Description: define em startTime a quantidade de dias do período retrospectivo para a detecção de atividades anômalas de rede (CEF) no Microsoft Sentinel
             Required: true
             DefaultValue: 21d
 - EndTime:
-            Description: Set endTime Number of Days for the localback Network (CEF) anomaly detection activity in Microsoft Sentinel
+            Description: define em endTime a quantidade de dias do período retrospectivo para a detecção de atividades anômalas de rede (CEF) no Microsoft Sentinel
             Required: true
             DefaultValue: 0d

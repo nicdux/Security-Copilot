@@ -1,24 +1,24 @@
-# Security Copilot Custom Plugin - KQL - DevSecOps with Defender for Cloud (based on GhAS and GAzDO)
+# Plugin personalizado do Security Copilot — KQL — DevSecOps com o Defender for Cloud (baseado no GhAS e no GAzDO)
 
-This custom plugins contains two skills: 
-* The first skill (GetNewDevSecOpsAlertsInTheLastTimespan) returns the list of new alerts related to DevSecOps and generated within a user-defined past period, relative to the current timestamp. The user must specificy the timespan to consider in the past (e.g. 1d for 1 day, 4h for 4 hours, etc...). Only new alerts are shown: if an alert is repeated but was already fired with the same identical information in a period of time before the considered timespan, then this alert is not returned. 
-* The second skill (GetDevSecOpsAlertsInTheLastTimespan) returns the list of all the unique alerts related to DevSecOps and generated within a user-defined past period, relative to the current timestamp. The user must specificy the timespan to consider in the past (e.g. 1d for 1 day, 4h for 4 hours, etc...). All alerts are considered but they are listed only once, considering all their details (name of the alert, target resources, ect...). Additionally, for each of these unique alerts, the query returns the timestamp (within the considered timespan) of the first and last occurrence as well as the number of occurrences.
+Este plugin personalizado contém duas habilidades:
+* A primeira habilidade (GetNewDevSecOpsAlertsInTheLastTimespan) retorna a lista de novos alertas relacionados ao DevSecOps e gerados em um período anterior definido pelo usuário em relação ao carimbo de data/hora atual. O usuário deve especificar o intervalo a considerar (por exemplo, 1d para um dia, 4h para quatro horas etc.). Somente novos alertas são exibidos: se um alerta for repetido, mas já tiver sido disparado com informações idênticas antes do intervalo considerado, ele não será retornado.
+* A segunda habilidade (GetDevSecOpsAlertsInTheLastTimespan) retorna a lista de todos os alertas exclusivos relacionados ao DevSecOps e gerados em um período anterior definido pelo usuário em relação ao carimbo de data/hora atual. O usuário deve especificar o intervalo a considerar (por exemplo, 1d para um dia, 4h para quatro horas etc.). Todos os alertas são considerados, mas cada um é listado apenas uma vez, incluindo todos os detalhes (nome do alerta, recursos de destino etc.). Para cada alerta exclusivo, a consulta também retorna o carimbo de data/hora da primeira e da última ocorrência dentro do intervalo considerado, bem como o número de ocorrências.
 
-### Prerequisites:
-* DevOps Security enabled in Defender for Cloud (https://learn.microsoft.com/en-us/azure/defender-for-cloud/devops-support)
-* Continuous Export enabled in Defender for Cloud (https://learn.microsoft.com/en-us/azure/defender-for-cloud/continuous-export)
+### Pré-requisitos:
+* DevOps Security habilitado no Defender for Cloud (https://learn.microsoft.com/en-us/azure/defender-for-cloud/devops-support)
+* Continuous Export habilitado no Defender for Cloud (https://learn.microsoft.com/en-us/azure/defender-for-cloud/continuous-export)
 
-### Notes: 
-* The DevSecOps alerts returned by these skills are produced by Code Scanning (SAST by CodeQL), Dependency Scanning (SCA), Secrets Scanning  and Infrastructure as Code (IaC) Scanning. Code Scanning, Dependency Scanning and Secrets Scanning are made available by GitHub Advanced Security (GhAS) in GitHub and GitHub Advanced Security for Azure DevOps (GAzDO) in Azure DevOps. Infrastructure as Code (IaC) Scanning is made available by enabling the DevOps Security capability of Defender for Cloud (Defender CSPM) in GitHub or Azure DevOps.
-* DevOps Security in Defender for Cloud supports also GitLab Enterprise environments but the KQL in this plugin doesn't support this source 
+### Observações:
+* Os alertas de DevSecOps retornados por essas habilidades são produzidos por Code Scanning (SAST por meio do CodeQL), Dependency Scanning (SCA), Secrets Scanning e Infrastructure as Code (IaC) Scanning. Code Scanning, Dependency Scanning e Secrets Scanning são disponibilizados pelo GitHub Advanced Security (GhAS) no GitHub e pelo GitHub Advanced Security for Azure DevOps (GAzDO) no Azure DevOps. O Infrastructure as Code (IaC) Scanning é disponibilizado ao habilitar o recurso DevOps Security do Defender for Cloud (Defender CSPM) no GitHub ou no Azure DevOps.
+* O DevOps Security no Defender for Cloud também é compatível com ambientes do GitLab Enterprise, mas o KQL deste plugin não oferece suporte a essa fonte.
 
 
-### Instructions: 
-1. Download the YAML file in this folder. Save it locally in your PC and open in for editing its content
-2. Set the values for these parameters: 
-    * TenantId: [Write your Tenant Id]
-    * SubscriptionId: [Write your Subscription Id]
-    * ResourceGroupName: [Write the name of your resource group]
-    * WorkspaceName: [Write the name of your Log Analytics or Sentinel workspace] 
-   Note: these parameters should be set in both skills defined in the YAML file.
-3. Add the plugin by uploading the customized YAML in Security Copilot (https://learn.microsoft.com/en-us/copilot/security/manage-plugins?tabs=securitycopilotplugin)
+### Instruções:
+1. Baixe o arquivo YAML desta pasta. Salve-o localmente em seu computador e abra-o para editar o conteúdo.
+2. Defina os valores destes parâmetros:
+    * TenantId: [Insira o ID do locatário]
+    * SubscriptionId: [Insira o ID da assinatura]
+    * ResourceGroupName: [Insira o nome do grupo de recursos]
+    * WorkspaceName: [Insira o nome do workspace do Log Analytics ou do Sentinel]
+   Observação: esses parâmetros devem ser definidos nas duas habilidades especificadas no arquivo YAML.
+3. Adicione o plugin carregando o YAML personalizado no Security Copilot (https://learn.microsoft.com/en-us/copilot/security/manage-plugins?tabs=securitycopilotplugin)

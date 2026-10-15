@@ -1,29 +1,29 @@
-# Security Copilot Custom Plugin - API - Get IP Information from IP Quality Score
+# Plugin personalizado do Security Copilot — API — Obter informações de IP no IP Quality Score
 
-#### Security Copilot Plugin to gather type, location, reputation score, and abuse velocity for an IP Address using IP Quality Score
+#### Plugin do Security Copilot para coletar o tipo, a localização, a pontuação de reputação e a velocidade de abuso de um endereço IP usando o IP Quality Score
 
-### Pre-requisites
+### Pré-requisitos
 
-* [Security Copilot Enabled](https://learn.microsoft.com/en-us/security-copilot/get-started-security-copilot#onboarding-to-microsoft-security-copilot)
-* [Access to upload custom plugins](https://learn.microsoft.com/en-us/security-copilot/manage-plugins?tabs=securitycopilotplugin#managing-custom-plugins)
-* [API Key](https://www.ipqualityscore.com/proxy-vpn-tor-detection-service) from IP Quality Score
+* [Security Copilot habilitado](https://learn.microsoft.com/en-us/security-copilot/get-started-security-copilot#onboarding-to-microsoft-security-copilot)
+* [Acesso para carregar plugins personalizados](https://learn.microsoft.com/en-us/security-copilot/manage-plugins?tabs=securitycopilotplugin#managing-custom-plugins)
+* [Chave de API](https://www.ipqualityscore.com/proxy-vpn-tor-detection-service) do IP Quality Score
 
-### Instructions
-#### Upload the Custom Plugin
+### Instruções
+#### Carregar o plugin personalizado
 
-1. Obtain the file [ipqs-manifest.yaml](https://github.com/Azure/Copilot-For-Security/blob/main/Plugins/Community%20Based%20Plugins/IPQualityScore/ipqs-manifest.yaml) from this directory.
-2. [Upload the custom plugin](https://learn.microsoft.com/en-us/security-copilot/manage-plugins?tabs=securitycopilotplugin#add-custom-plugins) and verify it's activated.
-3. After plugin upload put in your [IPQS API Key](https://learn.microsoft.com/en-us/security-copilot/plugin_api#configure-authentication-1).
+1. Obtenha o arquivo [ipqs-manifest.yaml](https://github.com/Azure/Copilot-For-Security/blob/main/Plugins/Community%20Based%20Plugins/IPQualityScore/ipqs-manifest.yaml) deste diretório.
+2. [Carregue o plugin personalizado](https://learn.microsoft.com/en-us/security-copilot/manage-plugins?tabs=securitycopilotplugin#add-custom-plugins) e verifique se ele está ativado.
+3. Após carregar o plugin, insira sua [chave de API do IPQS](https://learn.microsoft.com/en-us/security-copilot/plugin_api#configure-authentication-1).
 
 ![CopilotForSecurity](https://learn.microsoft.com/en-us/security-copilot/media/add-plugin-button.png)
 
-### Plugin Utilization
+### Uso do plugin
 
-Here's some sample queries you can utilize to trigger this plugin
+A seguir estão algumas consultas de exemplo que você pode usar para acionar este plugin:
 
-* Summarize the information for the IP 1.1.1.1 from IPQS
-* Summarize the information for the IP 4.4.4.4 from IPQS as bullet points
-* Give me the location, ISP and reputation score of the IP address 8.8.8.8 from IPQS in form of a table
+* Resuma as informações do IP 1.1.1.1 no IPQS.
+* Resuma em tópicos as informações do IP 4.4.4.4 no IPQS.
+* Forneça a localização, o ISP e a pontuação de reputação do endereço IP 8.8.8.8 no IPQS em formato de tabela.
 <br>
 <img src="https://github.com/Azure/Copilot-For-Security/blob/main/Plugins/Community%20Based%20Plugins/Images/ipqs-example-screenshot-1.png"/>
 <br>

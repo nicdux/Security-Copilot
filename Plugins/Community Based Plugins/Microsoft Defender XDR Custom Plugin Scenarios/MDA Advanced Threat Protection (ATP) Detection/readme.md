@@ -1,36 +1,36 @@
-# Copilot for Security Plugin: MDA Advanced Threat Protection (ATP) Detection
+# Plugin do Copilot for Security: detecção do MDA Advanced Threat Protection (ATP)
 
-### **This KQL plugin enables SOC analysts and managers to get insights about potential malware in their Cloud App environments based on the Defender for Cloud Apps CloudAppEvents table and Sentinel OfficeActivity table.**
+### **Este plugin KQL permite que analistas e gerentes do SOC obtenham informações sobre possíveis malwares nos ambientes de aplicativos de nuvem com base nas tabelas CloudAppEvents do Defender for Cloud Apps e OfficeActivity do Sentinel.**
 
-### Prerequisites
+### Pré-requisitos
 
--   [Copilot for Security enabled](https://learn.microsoft.com/en-us/security-copilot/get-started-security-copilot#onboarding-to-microsoft-security-copilot)
--   [Access to upload custom plugins](https://learn.microsoft.com/en-us/security-copilot/manage-plugins?tabs=securitycopilotplugin#managing-custom-plugins)
+-   [Copilot for Security habilitado](https://learn.microsoft.com/en-us/security-copilot/get-started-security-copilot#onboarding-to-microsoft-security-copilot)
+-   [Acesso para carregar plugins personalizados](https://learn.microsoft.com/en-us/security-copilot/manage-plugins?tabs=securitycopilotplugin#managing-custom-plugins)
 
-### Instructions
+### Instruções
 
-#### Upload the Custom Plugin
+#### Carregar o plugin personalizado
 
-1.  Obtain the file MDA_Advanced_Threat_Protection_Detection.yaml from this directory.
-2.  Upload the custom plugin
+1.  Obtenha o arquivo MDA_Advanced_Threat_Protection_Detection.yaml deste diretório.
+2.  Carregue o plugin personalizado.
 
-### Plugin Utilisation
+### Uso do plugin
 
-#### Skills
+#### Habilidades
 
-- **GetCloudAppATPEvents**: Fetches a list of Advanced Threat Protection events within a specified timeframe
-- **GetOfficeActivityATPEvents**: Fetches a list of Advanced Threat Protection events within a specified timeframe
+- **GetCloudAppATPEvents**: obtém uma lista de eventos do Advanced Threat Protection em um período especificado.
+- **GetOfficeActivityATPEvents**: obtém uma lista de eventos do Advanced Threat Protection em um período especificado.
 
-#### Example Prompts
+#### Prompts de exemplo
 
-- Get a list of Advanced Threat Protection malware events from Cloud Apps for the past 24 hours
-- Fetch a list of Advanced Threat Protection malware events from Office Activity for the past 30 days
-- List the ATP malware events from Cloud Apps for the past 24 hours
-- Get a list of ATP malware events from Office Activity for the past 30 days
+- Obtenha uma lista de eventos de malware do Advanced Threat Protection nos aplicativos de nuvem nas últimas 24 horas.
+- Obtenha uma lista de eventos de malware do Advanced Threat Protection na atividade do Office nos últimos 30 dias.
+- Liste os eventos de malware do ATP nos aplicativos de nuvem nas últimas 24 horas.
+- Obtenha uma lista de eventos de malware do ATP na atividade do Office nos últimos 30 dias.
 
-#### Example Usage
+#### Exemplo de uso
 
-1. A SOC manager is drafting a report for senior leadership about the impact of malware in the organisation. 
-2. The GetCloudAppATPEvents skill summarises all the quarantined files from the 30 days.
-3. The Microsoft Defender Threat Intelligence (MDTI) plugin is used to get context about the malware signatures and families that were detected. 
-4. The Generic plugin is used to summarise the previous prompts and provide recommendations about additional controls that could be used to protect against the malware families seen. 
+1. Um gerente do SOC está preparando um relatório para a alta liderança sobre o impacto de malwares na organização.
+2. A habilidade GetCloudAppATPEvents resume todos os arquivos colocados em quarentena nos últimos 30 dias.
+3. O plugin Microsoft Defender Threat Intelligence (MDTI) é usado para obter o contexto das assinaturas e famílias de malware detectadas.
+4. O plugin Generic é usado para resumir os prompts anteriores e recomendar controles adicionais que possam proteger contra as famílias de malware observadas.

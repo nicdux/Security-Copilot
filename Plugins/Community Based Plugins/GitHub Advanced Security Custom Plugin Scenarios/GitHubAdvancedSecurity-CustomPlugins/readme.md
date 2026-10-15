@@ -1,22 +1,22 @@
-**GitHub Advanced Security (GhAS) Custom Plugins**
+**Plugins personalizados do GitHub Advanced Security (GhAS)**
 
-GitHub Advanced Security (GhAS) executes code scanning (Static Application Security Testing, SAST, via CodeQL), dependabot analysis (Software Composition Analysis, SCA) and secret scanning on the files in the repos of GitHub users and organizations.
-This folder contains 2 plugins for Security Copilot:
-- The "GitHub Advanced Security for GitHub Organizations" plugin has the skills to list all the alerts resulting from GhAS analysis on all the repos of an organization. It calls the https://api.github.com/orgs/Org-Name API in GitHub.
-- The "GitHub Advanced Security for GitHub Repositories" plugin has the skills to list all the alerts resulting from GhAS analysis on a specific repo of an organization. It has also the skills to get the details of each alert. It allows also to read the CodeQL configuration on a specific repo.  It calls the https://api.github.com/repos/Org-Name API in GitHub.
+O GitHub Advanced Security (GhAS) executa verificação de código (teste estático de segurança de aplicações, ou SAST, por meio do CodeQL), análise do Dependabot (análise de composição de software, ou SCA) e verificação de segredos nos arquivos dos repositórios de usuários e organizações do GitHub.
+Esta pasta contém dois plugins para o Security Copilot:
+- O plugin "GitHub Advanced Security for GitHub Organizations" possui habilidades para listar todos os alertas resultantes da análise do GhAS em todos os repositórios de uma organização. Ele chama a API https://api.github.com/orgs/Org-Name no GitHub.
+- O plugin "GitHub Advanced Security for GitHub Repositories" possui habilidades para listar todos os alertas resultantes da análise do GhAS em um repositório específico de uma organização. Ele também pode obter os detalhes de cada alerta e ler a configuração do CodeQL em um repositório específico. Ele chama a API https://api.github.com/repos/Org-Name no GitHub.
 
-Instructions
-- In GitHub, create a Personal access token of type "classic". Assign to it at least the scope of "repo" / "security_events"
-- Download the 2 files *Manifest.yaml from this folder
-- Create the 2 custom plugins in Security Copilot, one after the other, by uploading these 2 manifest files 
-- After each upload, configure each of the 2 custom plugins by setting, on each of them, the 2 requested parameters: the name of your organization in GitHub (write it at the end of the proposed URL) and the personal access token (key) created in GitHub
-- You can now use the skills available in these 2 plugins. 
+Instruções
+- No GitHub, crie um Personal access token do tipo "classic". Atribua a ele pelo menos o escopo "repo" / "security_events".
+- Baixe os dois arquivos *Manifest.yaml desta pasta.
+- Crie os dois plugins personalizados no Security Copilot, um após o outro, carregando os dois arquivos de manifesto.
+- Após cada carregamento, configure cada plugin personalizado definindo os dois parâmetros solicitados: o nome da organização no GitHub (escreva-o no final da URL proposta) e o Personal access token (chave) criado no GitHub.
+- Agora você pode usar as habilidades disponíveis nesses dois plugins.
 
-For detailed step-by-step guidance and demos, please refer to https://www.linkedin.com/pulse/copilot-security-custom-plugin-github-advanced-stefano-pescosolido-vrcpf/?trackingId=asq05nvu75FGTlUOJYBw6w%3D%3D
+Para obter orientações detalhadas, passo a passo, e demonstrações, consulte https://www.linkedin.com/pulse/copilot-security-custom-plugin-github-advanced-stefano-pescosolido-vrcpf/?trackingId=asq05nvu75FGTlUOJYBw6w%3D%3D
 
-Note:
-- In this initial first preview release, all skills require to specify in input a "User-Agent" parameter. This is a temporary workaround for ensuring that Security Copilot writes this parameter in the header of its calls to the GitHub APIs (without that header, the APIs return access denied). **In that parameter you can set any value** (the value of that parameter is not relevant). Typically you have to write set its value only once in a session: in the following prompts Copilot assumes that its value remains the same.  
+Observação:
+- Nesta versão prévia inicial, todas as habilidades exigem que um parâmetro "User-Agent" seja especificado na entrada. Essa é uma solução temporária para garantir que o Security Copilot grave esse parâmetro no cabeçalho das chamadas às APIs do GitHub (sem esse cabeçalho, as APIs retornam acesso negado). **Você pode definir qualquer valor nesse parâmetro** (o valor não é relevante). Em geral, basta defini-lo uma vez por sessão; nos prompts seguintes, o Copilot pressupõe que o valor permanece o mesmo.
 
-Initial release author:
+Autor da versão inicial:
 Stefano Pescosolido
 https://linkedin.com/in/stefanopescosolido

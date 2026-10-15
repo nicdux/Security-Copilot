@@ -1,8 +1,8 @@
-# Sentinel Watchlist integration in Security Copilot
+# Integração de listas de observação do Sentinel ao Security Copilot
 
-## DESCRIPTION
-This plugin demonstrates the possibility of integrating data from a Microsoft Sentinel Watchlist with Security Copilot. <br>
-The manifest refers to a watchlist containing trusted users (**TrustedUsers**), but it can easily be adapted to different watchlists.
+## DESCRIÇÃO
+Este plugin demonstra a possibilidade de integrar dados de uma lista de observação do Microsoft Sentinel ao Security Copilot. <br>
+O manifesto se refere a uma lista de observação que contém usuários confiáveis (**TrustedUsers**), mas pode ser facilmente adaptado a outras listas.
 
 ``` kql
 Template: |-
@@ -10,25 +10,25 @@ Template: |-
 ```
 ---
 
-## TYPE AND REQUIREMENTS
-**TYPE**: KQL (Sentinel) <br>
-**SOURCE**: any watchlist in Sentinel <br>
-**REQUIREMENTS**: Log Analytics Workspace with Sentinel enabled 
+## TIPO E REQUISITOS
+**TIPO**: KQL (Sentinel) <br>
+**FONTE**: qualquer lista de observação do Sentinel <br>
+**REQUISITOS**: workspace do Log Analytics com o Sentinel habilitado
 
 ---
 
-## SKILLS
+## HABILIDADES
 
 <table>
   <tbody>
     <tr>
       <th>SkillName</th>
-      <th align="center">Description</th>
-      <th align="center">Parameters</th>
+      <th align="center">Descrição</th>
+      <th align="center">Parâmetros</th>
     </tr>
     <tr>
       <td><b>GetTrustedUsers</b></td>
-      <td align="center">Fetches the list of trusted users that is being maintained as a Microsoft Sentinel watchlist</td>
+      <td align="center">Obtém a lista de usuários confiáveis mantida como uma lista de observação do Microsoft Sentinel</td>
       <td>
         <ul>
         </ul>
@@ -40,14 +40,14 @@ Template: |-
 
 ---
 
-## SAMPLE PROMPTS
+## PROMPTS DE EXEMPLO
 
-- `« Fetch the trusted users in Sentinel »`
+- `« Obtenha os usuários confiáveis no Sentinel »`
 ---
 
-## SCREENSHOTS
+## CAPTURAS DE TELA
 <div align="center">
   <img src="https://github.com/mariocuomo/Security-Copilot/blob/main/Images/Community%20Plugins/WatchlistKQL/TrustedUserWatchlist.png" width="700"> </img>
 </div>
 
-For more information, see: [Creating a Security Copilot KQL Plugin to Query Sentinel Watchlists](https://rodtrent.substack.com/p/creating-a-copilot-for-security-kql)
+Para obter mais informações, consulte: [Criação de um plugin KQL do Security Copilot para consultar listas de observação do Sentinel](https://rodtrent.substack.com/p/creating-a-copilot-for-security-kql)

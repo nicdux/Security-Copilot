@@ -1,40 +1,40 @@
 # Security Copilot-isUserTravel
-Author: Yaniv Shasha
+Autor: Yaniv Shasha
 
 
 
 
 
-Activating the 'Deploy' button initiates the deployment of an Azure Logic App integrated with Security Copilot Actions, utilizing a Microsoft Sentinel incident trigger.
-The Logic App is configured to run when a new incident is created in Sentinel. This Logic App works best on the following incident types:<br>
+Ativar o botão 'Deploy' inicia a implantação de um Azure Logic App integrado às ações do Security Copilot, usando um gatilho de incidente do Microsoft Sentinel.
+O Logic App é configurado para ser executado quando um novo incidente é criado no Sentinel. Este Logic App funciona melhor com os seguintes tipos de incidente:<br>
 
-- **Suspicious behavior: Activity from infrequent country or region** </br>
-- **Suspicious behavior: Impossible travel activity** </br>
+- **Comportamento suspeito: atividade de país ou região incomum** </br>
+- **Comportamento suspeito: atividade de viagem impossível** </br>
 
-After Copilot conducts an investigation, it identifies the user's manager (from the Sentinel UEBA table) and sends them an email with a question about the user's travel status. If the manager responds with a "yes," we are likely dealing with a false positive. Therefore, Copilot adds the manager's answer to its context and writes a report that includes it.</br>
-If the manager responds that the user is not traveling, the investigation continues, focusing on identity prompts.</br>
-
-
-
-### Prerequisites
-
-Prior to beginning the installation process, it's crucial to confirm that you have met the following prerequisites: <br>
-• The user that will deploy this Logic app need to have a Contributor Role.<br>
-• You enabled the Security Copilot license on your tenant <br>
-• The user authenticated within the CoPilot logic app action and has permission to send emails..<br>
+Depois que o Copilot realiza uma investigação, ele identifica o gestor do usuário (na tabela UEBA do Sentinel) e envia um email perguntando sobre a situação de viagem do usuário. Se o gestor responder "sim", é provável que se trate de um falso positivo. Nesse caso, o Copilot adiciona a resposta do gestor ao contexto e redige um relatório que a inclui.</br>
+Se o gestor responder que o usuário não está viajando, a investigação prossegue com foco nos prompts de identidade.</br>
 
 
-<br>
 
-• This logic app can be run in a manual way, or in automatic way, if you select the automated way, you will need to create a new automation rule in Sentinel and configure this logic app as an action.<br>
+### Pré-requisitos
+
+Antes de iniciar o processo de instalação, confirme que você atende aos seguintes pré-requisitos: <br>
+• O usuário que implantará este Logic App precisa ter a função Contributor.<br>
+• A licença do Security Copilot está habilitada em seu locatário. <br>
+• O usuário autenticado na ação do Logic App do Copilot tem permissão para enviar emails.<br>
 
 
 <br>
 
-### Deployment 
+• Este Logic App pode ser executado manual ou automaticamente. Se você escolher a execução automática, precisará criar uma nova regra de automação no Sentinel e configurar este Logic App como uma ação.<br>
 
-To deploy the above logic app, you need to<br>
-•   Press on the Deploy option, select your subscription and the resource group (select the same tenant that Security Copilot is enabled)<br>
+
+<br>
+
+### Implantação
+
+Para implantar o Logic App acima:<br>
+•   Selecione a opção Deploy, sua assinatura e o grupo de recursos (escolha o mesmo locatário em que o Security Copilot está habilitado).<br>
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FSecurity-Copilot%2Fmain%2FLogic%2520Apps%2FCopilot-isUserTravel%2Fazuredeploy.json" target="_blank">
     <img src="https://aka.ms/deploytoazurebutton"/>
@@ -44,21 +44,19 @@ To deploy the above logic app, you need to<br>
 
 <br>
 
-### Post Deployment
+### Pós-implantação
 
-•   Authenticate with the users mention above (you can use different user for the Copilot actions and to the sentinel actions)<br>
-•   To run the logic app in a manual way, open Microsoft Sentinel incident page, right click on specific incident and press run playbook, select logic app you just deploy and press run.<br>
-•   To run the logic in automatic way, create an automation rule in sentinel and connect this playbook as the action for this rule.<br>
+•   Autentique-se com os usuários mencionados acima (você pode usar usuários diferentes para as ações do Copilot e do Sentinel).<br>
+•   Para executar o Logic App manualmente, abra a página de incidentes do Microsoft Sentinel, clique com o botão direito em um incidente específico e selecione Run playbook; depois, selecione o Logic App recém-implantado e escolha Run.<br>
+•   Para executar o Logic App automaticamente, crie uma regra de automação no Sentinel e conecte este playbook como ação da regra.<br>
 
 
 
 <img src="./images/designer.png"/>
 
-#### The Email Question example
+#### Exemplo de pergunta por email
 
 </br>
 <img src="./images/email.png"/>
 
 </br>
-
-

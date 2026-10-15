@@ -1,29 +1,29 @@
-# Security Copilot Custom Plugin - API - Get User Account Breach Information from Have I Been Pwned
+# Plugin personalizado do Security Copilot — API — Obter informações de violações de uma conta de usuário no Have I Been Pwned
 
-#### Security Copilot Plugin to gather list of breaches for a user account using Have I Been Pwned
+#### Plugin do Security Copilot para coletar a lista de violações de uma conta de usuário usando o Have I Been Pwned
 
-### Pre-requisites
+### Pré-requisitos
 
-* [Security Copilot Enabled](https://learn.microsoft.com/en-us/security-copilot/get-started-security-copilot#onboarding-to-microsoft-security-copilot)
-* [Access to upload custom plugins](https://learn.microsoft.com/en-us/security-copilot/manage-plugins?tabs=securitycopilotplugin#managing-custom-plugins)
-* [API Key](https://haveibeenpwned.com/API/Key) from Have I Been Pwned
+* [Security Copilot habilitado](https://learn.microsoft.com/en-us/security-copilot/get-started-security-copilot#onboarding-to-microsoft-security-copilot)
+* [Acesso para carregar plugins personalizados](https://learn.microsoft.com/en-us/security-copilot/manage-plugins?tabs=securitycopilotplugin#managing-custom-plugins)
+* [Chave de API](https://haveibeenpwned.com/API/Key) do Have I Been Pwned
 
-### Instructions
-#### Upload the Custom Plugin
+### Instruções
+#### Carregar o plugin personalizado
 
-1. Obtain the file [hibp-manifest.yaml](https://github.com/Azure/Copilot-For-Security/blob/main/Plugins/Community%20Based%20Plugins/HaveIBeenPwned/hibp-manifest.yaml) from this directory.
-2. [Upload the custom plugin](https://learn.microsoft.com/en-us/security-copilot/manage-plugins?tabs=securitycopilotplugin#add-custom-plugins) and verify it's activated.
-3. After plugin upload put in your [Have I Been Pwned API Key](https://learn.microsoft.com/en-us/security-copilot/plugin_api#configure-authentication-1).
+1. Obtenha o arquivo [hibp-manifest.yaml](https://github.com/Azure/Copilot-For-Security/blob/main/Plugins/Community%20Based%20Plugins/HaveIBeenPwned/hibp-manifest.yaml) deste diretório.
+2. [Carregue o plugin personalizado](https://learn.microsoft.com/en-us/security-copilot/manage-plugins?tabs=securitycopilotplugin#add-custom-plugins) e verifique se ele está ativado.
+3. Após carregar o plugin, insira sua [chave de API do Have I Been Pwned](https://learn.microsoft.com/en-us/security-copilot/plugin_api#configure-authentication-1).
 
-![CopilotForSecurity](https://learn.microsoft.com/en-us/security-copilot/media/add-plugin-button.png)
+![Copilot for Security](https://learn.microsoft.com/en-us/security-copilot/media/add-plugin-button.png)
 
-### Plugin Utilization
+### Uso do plugin
 
-Here's some sample queries you can utilize to trigger this plugin
-Note: you can use the keyword 'Have I Been Pwned' or 'HIBP' in your queries
+A seguir estão algumas consultas de exemplo que você pode usar para acionar este plugin.
+Observação: você pode usar a palavra-chave 'Have I Been Pwned' ou 'HIBP' em suas consultas.
 
-* Check if the user test@email.com is part of any data breaches from Have I Been Pwned
-* Give me the list of breaches for the user test@email.com from Have I Been Pwned as bullet points
-* Summarize the list of data breaches for the user test@email.com from Have I Been Pwned
+* Verifique se o usuário test@email.com faz parte de alguma violação de dados no Have I Been Pwned.
+* Forneça a lista de violações do usuário test@email.com no Have I Been Pwned em tópicos.
+* Resuma a lista de violações de dados do usuário test@email.com no Have I Been Pwned.
 <br>
 <img src="https://github.com/Azure/Copilot-For-Security/blob/main/Plugins/Community%20Based%20Plugins/Images/hibp-example-screenshot.png"/>

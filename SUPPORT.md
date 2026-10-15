@@ -1,25 +1,30 @@
-# TODO: The maintainer of this repo has not yet edited this file
+# Suporte
 
-**REPO OWNER**: Do you want Customer Service & Support (CSS) support for this product/project?
+## Escopo
 
-- **No CSS support:** Fill out this template with information about how to file issues and get help.
-- **Yes CSS support:** Fill out an intake form at [aka.ms/onboardsupport](https://aka.ms/onboardsupport). CSS will work with/help you to determine next steps.
-- **Not sure?** Fill out an intake as though the answer were "Yes". CSS will help you decide.
+Este fork é mantido pela comunidade e não oferece suporte oficial do Serviço de Atendimento e Suporte ao Cliente da Microsoft (CSS). O conteúdo original e os produtos Microsoft mencionados continuam sujeitos aos respectivos canais e políticas oficiais.
 
-*Then remove this first heading from this SUPPORT.MD file before publishing your repo.*
+## Solicitar ajuda
 
-# Support
+Antes de abrir uma solicitação:
 
-## How to file issues and get help  
+1. Consulte o `README.md` da pasta relacionada ao plugin, automação, promptbook ou workshop.
+2. Pesquise as [issues existentes](https://github.com/nicdux/Security-Copilot/issues) para evitar duplicações.
+3. Remova credenciais, tokens, segredos, dados pessoais e informações confidenciais de capturas de tela, logs e exemplos.
 
-This project uses GitHub Issues to track bugs and feature requests. Please search the existing 
-issues before filing new issues to avoid duplicates.  For new issues, file your bug or 
-feature request as a new Issue.
+Se a dúvida ou o problema estiver relacionado especificamente a este fork, [abra uma nova issue](https://github.com/nicdux/Security-Copilot/issues/new) e informe:
 
-For help and questions about using this project, please **REPO MAINTAINER: INSERT INSTRUCTIONS HERE 
-FOR HOW TO ENGAGE REPO OWNERS OR COMMUNITY FOR HELP. COULD BE A STACK OVERFLOW TAG OR OTHER
-CHANNEL. WHERE WILL YOU HELP PEOPLE?**.
+- o arquivo ou cenário utilizado;
+- o comportamento esperado;
+- o comportamento observado;
+- as etapas necessárias para reproduzir o problema;
+- mensagens de erro sanitizadas;
+- ambiente, região e versão dos componentes relevantes, quando aplicável.
 
-## Microsoft Support Policy  
+## Vulnerabilidades de segurança
 
-Support for this **PROJECT or PRODUCT** is limited to the resources listed above.
+Não publique vulnerabilidades em issues. Siga as orientações de divulgação responsável descritas em `SECURITY.md`.
+
+## Produtos Microsoft
+
+Para problemas no Microsoft Security Copilot ou em outros serviços Microsoft que não sejam causados pelo conteúdo deste fork, use os canais oficiais de suporte associados à sua assinatura ou ao produto.

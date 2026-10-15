@@ -1,71 +1,71 @@
-## Leveraging the Microsoft Security Copilot Logic App Connector
+## Aproveitando o conector do aplicativo lógico do Microsoft Security Copilot
 
-![Security CoPilot Logo](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
+![Logotipo do Security CoPilot](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
 
-#### ⌛ Estimated time to complete this lab: 15 minutes
-#### 🎓 Level: 100 (Beginner)
+#### ⌛ Tempo estimado para concluir este laboratório: 15 minutos
+#### 🎓 Nível: 100 (iniciante)
 
-Logic app connector documentation: [Link](https://learn.microsoft.com/en-us/security-copilot/connector_logicapp)
+Documentação do conector do aplicativo lógico: [Link](https://learn.microsoft.com/en-us/security-copilot/connector_logicapp)
 
-#### Objectives
-Upon completing this technical guide, you will gain the following abilities:<br>
+#### Objetivos
+Ao concluir este guia técnico, você terá as seguintes habilidades:<br>
 
-* Deploy an Azure Logic App capable of handling Microsoft Security Copilot prompts using the Logic app connector.<br>
+* Implantar um Azure Logic App capaz de processar prompts do Microsoft Security Copilot usando o conector do aplicativo lógico.<br>
 
-#### Prerequisites
-To successfully complete this task, you must meet the following prerequisites:<br>
+#### Pré-requisitos
+Para concluir esta tarefa com êxito, você precisa atender aos seguintes pré-requisitos:<br>
 
-1. You need your own tenant and Microsoft Security Copilot instance.<br>
-2. **Azure Subscription**: You need an active [Azure subscription](https://azure.microsoft.com/en-us/free/) to create and deploy a Logic App.
-3. **Azure Resource Group**: Logic Apps are deployed within [Azure resource groups](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups). Ensure that you have an appropriate resource group created or create one during the deployment process.
-4. **Access Permissions**: Ensure that you have the necessary [permissions](https://docs.microsoft.com/en-us/azure/role-based-access-control/overview) to create resources in the Azure subscription and resource group where you plan to deploy the Logic App.
+1. Você precisa ter seu próprio locatário e uma instância do Microsoft Security Copilot.<br>
+2. **Assinatura do Azure**: você precisa de uma [assinatura do Azure](https://azure.microsoft.com/en-us/free/) ativa para criar e implantar um Logic App.
+3. **Grupo de recursos do Azure**: os Logic Apps são implantados em [grupos de recursos do Azure](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups). Verifique se você já criou um grupo de recursos adequado ou crie um durante o processo de implantação.
+4. **Permissões de acesso**: verifique se você tem as [permissões](https://docs.microsoft.com/en-us/azure/role-based-access-control/overview) necessárias para criar recursos na assinatura e no grupo de recursos do Azure em que pretende implantar o Logic App.
 
-#### Steps to Follow
+#### Etapas a seguir
 
-### 1. Create a consumption logic app resource that's hosted in multi-tenant Azure logic apps 
+### 1. Criar um recurso de aplicativo lógico de Consumo hospedado nos Azure Logic Apps multilocatário
 
-- In the Azure portal search box, enter logic apps, and select Logic apps.
-![Logic App Image](https://github.com/Azure/Copilot-For-Security/raw/main/Images/Logicapp%20images/logicapp1.png)
-- On the Logic apps page toolbar, select Add.
-- On the Create Logic App page, first select the Plan type for your logic app resource. That way, only the options for that plan type appear.
-- When you're done, your settings look similar to the following example:
-![Logic App Image](https://github.com/Azure/Copilot-For-Security/raw/main/Images/Logicapp%20images/logicapp2.png)
-- When you're ready, select Review + Create.
-- On the validation page that appears, confirm all the provided information, and select Create.
+- Na caixa de pesquisa do portal do Azure, insira Logic Apps e selecione Logic Apps.
+![Imagem do Logic App](https://github.com/Azure/Copilot-For-Security/raw/main/Images/Logicapp%20images/logicapp1.png)
+- Na barra de ferramentas da página Logic Apps, selecione Adicionar.
+- Na página Criar Aplicativo Lógico, primeiro selecione o tipo de Plano para o recurso de aplicativo lógico. Assim, somente as opções desse tipo de plano serão exibidas.
+- Quando terminar, suas configurações serão semelhantes ao exemplo a seguir:
+![Imagem do Logic App](https://github.com/Azure/Copilot-For-Security/raw/main/Images/Logicapp%20images/logicapp2.png)
+- Quando estiver tudo pronto, selecione Examinar + criar.
+- Na página de validação exibida, confirme todas as informações fornecidas e selecione Criar.
 
-### 2. Select the blank logic app workflow template.
-- After Azure successfully deploys your logic app resource, select Go to resource. Or, find and select your logic app resource by typing the name in the Azure search box
-![Logic App Image](https://github.com/Azure/Copilot-For-Security/raw/main/Images/Logicapp%20images/logicapp3.png)
-- Scroll down past the video and the section named Start with a common trigger.
-- Under Templates, select Blank Logic App.
-![Logic App Image](https://github.com/Azure/Copilot-For-Security/raw/main/Images/Logicapp%20images/logicapp4.png)
+### 2. Selecionar o modelo de fluxo de trabalho de aplicativo lógico em branco
+- Depois que o Azure implantar com êxito o recurso de aplicativo lógico, selecione Ir para o recurso. Como alternativa, localize e selecione o recurso digitando seu nome na caixa de pesquisa do Azure.
+![Imagem do Logic App](https://github.com/Azure/Copilot-For-Security/raw/main/Images/Logicapp%20images/logicapp3.png)
+- Role para baixo, passe pelo vídeo e pela seção chamada Começar com um gatilho comum.
+- Em Modelos, selecione Aplicativo Lógico em Branco.
+![Imagem do Logic App](https://github.com/Azure/Copilot-For-Security/raw/main/Images/Logicapp%20images/logicapp4.png)
 
-### 3. Add a trigger that specifies when to run the workflow.
-- on the workflow designer, select a trigger 
-![Logic App Image](https://github.com/Azure/Copilot-For-Security/raw/main/Images/Logicapp%20images/logicapp5.png)
-- Choose the Recurrence Trigger and Select the Logic app should be initiated once a day 
-![Logic App Image](https://github.com/Azure/Copilot-For-Security/raw/main/Images/Logicapp%20images/logicapp6.png)
+### 3. Adicionar um gatilho que especifique quando executar o fluxo de trabalho
+- No designer de fluxo de trabalho, selecione um gatilho.
+![Imagem do Logic App](https://github.com/Azure/Copilot-For-Security/raw/main/Images/Logicapp%20images/logicapp5.png)
+- Escolha o gatilho Recorrência e defina que o aplicativo lógico deve ser iniciado uma vez por dia.
+![Imagem do Logic App](https://github.com/Azure/Copilot-For-Security/raw/main/Images/Logicapp%20images/logicapp6.png)
 
-### 4. Add the Security Copilot Logic App connector within the workflow 
-- Select the Logic App Security Copilot Connector 
-![Logic App Image](https://github.com/Azure/Copilot-For-Security/raw/main/Images/Logicapp%20images/logicapp7.png)
-- Authenticate the Logic App Security Copilot Connector 
-- Add context on the prompt 
+### 4. Adicionar o conector do aplicativo lógico do Security Copilot ao fluxo de trabalho
+- Selecione o conector do aplicativo lógico do Security Copilot.
+![Imagem do Logic App](https://github.com/Azure/Copilot-For-Security/raw/main/Images/Logicapp%20images/logicapp7.png)
+- Autentique o conector do aplicativo lógico do Security Copilot.
+- Adicione contexto ao prompt.
 
-![Logic App Image](https://github.com/Azure/Copilot-For-Security/raw/main/Images/Logicapp%20images/logicapp9.png)
-- Review the parameters in the Logic App Security Copilot connector
-![Logic App Image](https://github.com/Azure/Copilot-For-Security/raw/main/Images/Logicapp%20images/logicapp8.png)
+![Imagem do Logic App](https://github.com/Azure/Copilot-For-Security/raw/main/Images/Logicapp%20images/logicapp9.png)
+- Examine os parâmetros no conector do aplicativo lógico do Security Copilot.
+![Imagem do Logic App](https://github.com/Azure/Copilot-For-Security/raw/main/Images/Logicapp%20images/logicapp8.png)
 
-Optional Parameters and Inputs:
+Parâmetros e entradas opcionais:
 
-Prompt Content: Prompt to be evaluated 
-- Session Id: Session context
-- Skill Inputs: Optional JSON body specifying values for required plugin (skill) parameters
-- Skill Name: Call directly to a skill (bypass planner)
-- Skillsets: Call directly to a skillset (bypass planner)
-- Save the workflow 
+Prompt Content: prompt a ser avaliado
+- Session Id: contexto da sessão
+- Skill Inputs: corpo JSON opcional que especifica valores para os parâmetros obrigatórios do plugin (habilidade)
+- Skill Name: chama diretamente uma habilidade (ignora o planejador)
+- Skillsets: chama diretamente um conjunto de habilidades (ignora o planejador)
+- Salve o fluxo de trabalho.
 
-### 5. Run your workflow.
-- Run the workflow (success)
+### 5. Executar o fluxo de trabalho
+- Execute o fluxo de trabalho (êxito).
 
-### 6. View the Outcome of the Workflow on the Logic app connector and the Standalone Portal  
+### 6. Exibir o resultado do fluxo de trabalho no conector do aplicativo lógico e no portal autônomo

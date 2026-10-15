@@ -1,185 +1,185 @@
-# Phishing Analysis with Security Copilot
-**Author:** Craig Freyman
+# Análise de phishing com o Security Copilot
+**Autor:** Craig Freyman
 
-An automated phishing email analysis solution leveraging Azure Logic Apps, Function Apps, and Security Copilot. With the right permissions, it can be deployed in five minutes. The Logic App monitors a shared Office 365 mailbox and triggers analysis when an email arrives. Security Copilot assesses the message for malicious intent, generating detailed HTML reports sent via email. Optional integration with Microsoft Sentinel enables incident tracking and management. This project demonstrates what’s possible with Security Copilot and Azure. It may work out of the box or require tuning — the good news: only a single Security Copilot prompt is used, making it easy to customize for your organization.
+Uma solução automatizada de análise de emails de phishing que usa Azure Logic Apps, Function Apps e Security Copilot. Com as permissões adequadas, ela pode ser implantada em cinco minutos. O Logic App monitora uma caixa de correio compartilhada do Office 365 e aciona a análise quando um email chega. O Security Copilot avalia se a mensagem tem intenção maliciosa e gera relatórios HTML detalhados, enviados por email. A integração opcional com o Microsoft Sentinel permite acompanhar e gerenciar incidentes. Este projeto demonstra as possibilidades do Security Copilot e do Azure. Ele pode funcionar imediatamente ou exigir ajustes; a boa notícia é que usa apenas um prompt do Security Copilot, o que facilita a personalização para sua organização.
 
-## Overview
+## Visão geral
 
-This solution provides an end-to-end workflow for analyzing suspected phishing emails. The core functionality is handled by a series of Azure Functions that parse emails, extract important data, clean JSON input, and generate HTML reports. When combined with Security Copilot and Logic Apps, it creates a powerful system to distinguish between legitimate, spam, suspicious, and phishing emails.
+Esta solução oferece um fluxo de trabalho completo para analisar emails suspeitos de phishing. A funcionalidade principal é executada por uma série de Azure Functions que analisam emails, extraem dados importantes, limpam a entrada JSON e geram relatórios HTML. Combinada ao Security Copilot e aos Logic Apps, ela cria um sistema eficiente para distinguir emails legítimos, spam, suspeitos e de phishing.
 
-### Key Components
+### Componentes principais
 
-1. **Email Parser Function** - Extracts and processes email content, including:
-   - Recursive unwrapping to find original emails (Handles forwarded, embedded, and TNEF-encapsulated messages)
-   - **Enhanced Proofpoint compatibility** for analyzing emails forwarded from Proofpoint
-   - Smart handling of Proofpoint and Microsoft SafeLinks URL protection
-   - Support for EML and MSG attachments
-   - Complete header, body, and attachment analysis
+1. **Função de análise de email** — extrai e processa o conteúdo do email, incluindo:
+   - Desempacotamento recursivo para localizar os emails originais (trata mensagens encaminhadas, inseridas e encapsuladas em TNEF)
+   - **Compatibilidade aprimorada com o Proofpoint** para analisar emails encaminhados pelo Proofpoint
+   - Tratamento inteligente da proteção de URL do Proofpoint e do Microsoft SafeLinks
+   - Compatibilidade com anexos EML e MSG
+   - Análise completa de cabeçalhos, corpo e anexos
 
-2. **HTML Report Generator** - Creates formatted HTML reports from phishing analysis results:
-   - Color-coded categorization (Phishing, Spam, Legitimate, Suspicious)
-   - Detailed breakdown of analysis findings
-   - Organized by assessment categories
+2. **Gerador de relatórios HTML** — cria relatórios HTML formatados com base nos resultados da análise de phishing:
+   - Categorização por cores (phishing, spam, legítimo, suspeito)
+   - Detalhamento das descobertas da análise
+   - Organização por categorias de avaliação
 
-### Purpose and Scope
+### Finalidade e escopo
 
-This solution is not designed to replace traditional spam filtering or email security gateways. Rather, it demonstrates the art of the possible when combining Security Copilot with Azure Functions and Logic Apps to enhance your existing email security infrastructure. This solution assumes you already have standard email gateway filtering in place.
+Esta solução não foi projetada para substituir os filtros tradicionais de spam ou os gateways de segurança de email. Em vez disso, demonstra as possibilidades da combinação do Security Copilot com Azure Functions e Logic Apps para aprimorar sua infraestrutura de segurança de email existente. A solução pressupõe que você já tenha um filtro padrão no gateway de email.
 
-The primary focus is on providing deeper analysis of suspicious emails that have been forwarded for investigation, especially those coming from Proofpoint-protected environments.
+O foco principal é oferecer uma análise mais detalhada dos emails suspeitos encaminhados para investigação, especialmente aqueles provenientes de ambientes protegidos pelo Proofpoint.
 
-## Prerequisites
+## Pré-requisitos
 
-1. **Azure Resources:**
-   - Azure subscription
-   - Contributor rights to the deployment target resource group
+1. **Recursos do Azure:**
+   - Assinatura do Azure
+   - Direitos de Contributor no grupo de recursos de destino da implantação
    - [Security Copilot Security Compute Units](https://learn.microsoft.com/en-us/copilot/security/get-started-security-copilot)
-   - Microsoft Sentinel workspace (optional)
+   - Workspace do Microsoft Sentinel (opcional)
 
-2. **Email Configuration:**
-   - [Office 365 shared mailbox for monitoring](https://learn.microsoft.com/en-us/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide)
-   - Permissions to manage email configurations
+2. **Configuração de email:**
+   - [Caixa de correio compartilhada do Office 365 para monitoramento](https://learn.microsoft.com/en-us/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide)
+   - Permissões para gerenciar configurações de email
 
-## Deployment Steps
+## Etapas de implantação
 
-### 1. Deploy Function App
+### 1. Implantar o Function App
 
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FCopilot-For-Security%2Fmain%2FLogic%20Apps%2FSecCopilot-UserReportedPhishing-FuncApp_parsingV2%2Ffunctionapp_azuredeploy.json)
+[![Implantar no Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FCopilot-For-Security%2Fmain%2FLogic%20Apps%2FSecCopilot-UserReportedPhishing-FuncApp_parsingV2%2Ffunctionapp_azuredeploy.json)
 
-Required Parameters:
-- FunctionAppName (name is prepended with "phish" and random characters are appended)
+Parâmetros obrigatórios:
+- FunctionAppName (o prefixo "phish" e caracteres aleatórios são adicionados ao nome)
 - FunctionAppResourceGroup
 
-Wait for the Function App to fully deploy before moving on to step 2.
+Aguarde a implantação completa do Function App antes de prosseguir para a etapa 2.
 
-### 2. Deploy Logic App
+### 2. Implantar o Logic App
 
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FCopilot-For-Security%2Fmain%2FLogic%20Apps%2FSecCopilot-UserReportedPhishing-FuncApp_parsingV2%2Flogicapp_azuredeploy.json)
+[![Implantar no Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FCopilot-For-Security%2Fmain%2FLogic%20Apps%2FSecCopilot-UserReportedPhishing-FuncApp_parsingV2%2Flogicapp_azuredeploy.json)
 
-Required Parameters:
+Parâmetros obrigatórios:
 - SubscriptionId
 - LogicAppName
-- FunctionAppName (step 1)
-- FunctionAppResourceGroup (step 1)
+- FunctionAppName (etapa 1)
+- FunctionAppResourceGroup (etapa 1)
 - SharedMailboxAddress
 - HTMLReportRecipient
 
-Optional Sentinel Parameters (use "none" if not using Sentinel):
+Parâmetros opcionais do Sentinel (use "none" se não estiver usando o Sentinel):
 - LogAnalyticsWorkspaceName
 - LogAnalyticsWorkspaceId
 - LogAnalyticsResourceGroup
 
-### 3. Configure API Connections
+### 3. Configurar conexões de API
 
-1. Open the Logic App in Azure Portal
-2. Authorize these connections:
-   - Office 365 (shared mailbox access)
+1. Abra o Logic App no portal do Azure.
+2. Autorize estas conexões:
+   - Office 365 (acesso à caixa de correio compartilhada)
    - Security Copilot
-   - Azure Monitor Logs (if using Sentinel)
-   - Sentinel (if using Sentinel)
+   - Azure Monitor Logs (se estiver usando o Sentinel)
+   - Sentinel (se estiver usando o Sentinel)
 
-### 3. Configure Logic App Permissions
+### 3. Configurar permissões do Logic App
 
-If using Sentinel integration, assign these roles to the Logic App's managed identity:
+Se usar a integração com o Sentinel, atribua estas funções à identidade gerenciada do Logic App:
 
-1. "Log Analytics Reader" role (provides Microsoft.OperationalInsights/workspaces/read)
-2. "Microsoft Sentinel Responder" role (provides Microsoft.SecurityInsights/incidents/comments/write)
+1. Função "Log Analytics Reader" (fornece Microsoft.OperationalInsights/workspaces/read)
+2. Função "Microsoft Sentinel Responder" (fornece Microsoft.SecurityInsights/incidents/comments/write)
 
-Assign Permissions Step by Step:
+Atribua as permissões passo a passo:
 
-1. Open the Log Analytics workspace and go to "Access control (IAM)"
-![alt text](image.png)
-2. Select "Log Analytics Reader"
-![alt text](image-1.png)
-3. Select "Managed Identity" and select the name of your Logic App
-![alt text](image-2.png)
-4. Click next and assign permissions
-5. Repeat steps 1-4 for the "Microsoft Sentinel Responder" role
+1. Abra o workspace do Log Analytics e acesse "Access control (IAM)".
+![Controle de acesso do Log Analytics](image.png)
+2. Selecione "Log Analytics Reader".
+![Seleção da função Log Analytics Reader](image-1.png)
+3. Selecione "Managed Identity" e escolha o nome do Logic App.
+![Seleção da identidade gerenciada](image-2.png)
+4. Clique em Next e atribua as permissões.
+5. Repita as etapas 1 a 4 para a função "Microsoft Sentinel Responder".
 
-### 5. Enable the Logic App
+### 5. Habilitar o Logic App
 
-The Logic App deploys in a disabled state. Enable it in the Logic App Overview to begin operation.
+O Logic App é implantado em estado desabilitado. Habilite-o na visão geral do Logic App para iniciar a operação.
 
-## Functions and Endpoints
+## Funções e pontos de extremidade
 
-The Function App exposes the following HTTP endpoints:
+O Function App expõe os seguintes pontos de extremidade HTTP:
 
-1. **Email Parser** (`/parse_email_functionapp`)
-   - Method: POST
-   - Body: Raw email content or JSON with Base64-encoded email
-   - Optional Parameters: `max_depth` (default=10)
-   - Returns: Parsed email data in JSON format
+1. **Analisador de email** (`/parse_email_functionapp`)
+   - Método: POST
+   - Corpo: conteúdo bruto do email ou JSON com email codificado em Base64
+   - Parâmetros opcionais: `max_depth` (default=10)
+   - Retorno: dados analisados do email em formato JSON
 
-2. **JSON Cleaner** (`/clean_json_functionapp`)
-   - Method: POST
-   - Body: JSON content (can include markdown notation)
-   - Returns: Cleaned JSON with markdown removed and nulls replaced
+2. **Limpador de JSON** (`/clean_json_functionapp`)
+   - Método: POST
+   - Corpo: conteúdo JSON (pode incluir notação Markdown)
+   - Retorno: JSON limpo, com a notação Markdown removida e os valores nulos substituídos
 
-3. **HTML Report Generator** (`/generate_html_report_functionapp`)
-   - Method: POST
-   - Body: Phishing analysis JSON
-   - Returns: Formatted HTML report
+3. **Gerador de relatórios HTML** (`/generate_html_report_functionapp`)
+   - Método: POST
+   - Corpo: JSON da análise de phishing
+   - Retorno: relatório HTML formatado
 
-4. **Regex Extractor** (`/extract_regex_functionapp`)
-   - Method: POST
-   - Body: JSON with `pattern` and `subject` fields
-   - Returns: Match results in JSON format
+4. **Extrator de expressão regular** (`/extract_regex_functionapp`)
+   - Método: POST
+   - Corpo: JSON com os campos `pattern` e `subject`
+   - Retorno: resultados correspondentes em formato JSON
 
-## Email Parsing Capabilities
+## Recursos de análise de email
 
-### Email Format Support
-- Regular MIME emails (text/plain, text/html)
-- Embedded emails (message/rfc822)
-- TNEF attachments (winmail.dat)
-- EML and MSG file attachments
-- Forwarded emails from various email clients (Gmail, Outlook, Apple Mail)
-- Proofpoint-reported phishing emails
+### Compatibilidade com formatos de email
+- Emails MIME comuns (text/plain, text/html)
+- Emails inseridos (message/rfc822)
+- Anexos TNEF (winmail.dat)
+- Anexos de arquivo EML e MSG
+- Emails encaminhados por vários clientes de email (Gmail, Outlook, Apple Mail)
+- Emails de phishing relatados pelo Proofpoint
 
-### Content Extraction
-- Complete header analysis
-- Body content from both plain text and HTML
-- URL extraction and normalization
-- Domain extraction
-- IP address extraction
-- Attachment processing
+### Extração de conteúdo
+- Análise completa de cabeçalhos
+- Conteúdo do corpo em texto sem formatação e HTML
+- Extração e normalização de URLs
+- Extração de domínios
+- Extração de endereços IP
+- Processamento de anexos
 
-### Attachment Handling
-- PDF text extraction
-- Excel content extraction (with multiple fallback methods)
-- Email attachments (recursive parsing)
-- SHA256 hashing for attachment verification
+### Tratamento de anexos
+- Extração de texto de PDF
+- Extração de conteúdo do Excel (com vários métodos alternativos)
+- Anexos de email (análise recursiva)
+- Hash SHA256 para verificação de anexos
 
-### URL Processing
-- Microsoft SafeLinks URL decoding
-- Proofpoint URLDefense URL decoding
-- URL shortener expansion
-- Base URL deduplication for high-volume cases
+### Processamento de URLs
+- Decodificação de URLs do Microsoft SafeLinks
+- Decodificação de URLs do Proofpoint URLDefense
+- Expansão de encurtadores de URL
+- Remoção de URLs base duplicadas em casos de grande volume
 
-## Features
+## Recursos
 
-- Automated email monitoring and analysis
-- Detailed security assessment using Security Copilot
-- Classification of emails (Phishing, Spam, Legitimate, Suspicious)
-- HTML report generation
-- Optional Sentinel incident integration
-- Support for embedded emails and complex forwarding chains
-- Comprehensive URL and domain extraction and analysis
+- Monitoramento e análise automatizados de emails
+- Avaliação detalhada de segurança usando o Security Copilot
+- Classificação de emails (phishing, spam, legítimo, suspeito)
+- Geração de relatórios HTML
+- Integração opcional com incidentes do Sentinel
+- Compatibilidade com emails inseridos e cadeias complexas de encaminhamento
+- Extração e análise abrangentes de URLs e domínios
 
-## Security Notes
+## Observações de segurança
 
-- The solution uses system-managed identities for secure access
-- Review and configure storage account security settings per your company policy
-- Ensure minimum required permissions for all connections
-- Regularly update Function App dependencies
-- The email parser uses the `CustomEmailPolicy` to handle common email parsing issues like malformed Message-ID headers
+- A solução usa identidades gerenciadas pelo sistema para acesso seguro
+- Revise e configure as opções de segurança da conta de armazenamento de acordo com a política da sua empresa
+- Garanta as permissões mínimas necessárias para todas as conexões
+- Atualize regularmente as dependências do Function App
+- O analisador de email usa `CustomEmailPolicy` para tratar problemas comuns de análise, como cabeçalhos Message-ID malformados
 
-## Debugging and Logging
+## Depuração e registro em log
 
-The application uses Python's `logging` module with DEBUG level enabled, providing comprehensive logs for troubleshooting. Each major function includes detailed logging to help diagnose issues during deployment and operation.
+O aplicativo usa o módulo `logging` do Python com o nível DEBUG habilitado e fornece logs abrangentes para solução de problemas. Cada função principal inclui registros detalhados para ajudar a diagnosticar problemas durante a implantação e a operação.
 
-## Limitations
+## Limitações
 
-- PDF extraction requires the pdfminer.six library
-- Excel processing may require multiple libraries (pandas, openpyxl, xlrd)
-- URL expansion has rate limits to avoid being blocked
-- High-volume URL cases automatically deduplicate to base URLs
-- Private/local IP addresses are filtered out from IP extraction
+- A extração de PDF requer a biblioteca pdfminer.six
+- O processamento do Excel pode exigir várias bibliotecas (pandas, openpyxl, xlrd)
+- A expansão de URLs tem limites de taxa para evitar bloqueios
+- Casos com grande volume de URLs removem automaticamente as duplicatas, mantendo as URLs base
+- Endereços IP privados/locais são excluídos da extração de IPs

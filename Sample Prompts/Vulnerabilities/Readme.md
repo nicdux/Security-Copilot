@@ -1,4 +1,4 @@
-# Vulnerabilities
+# Vulnerabilidades
 <a name="Vulnerabilities"></a>
 - Summarize the latest Vulnerabilities from the last week.
 - Summarize <**_`<CVE-XXXX>`_** vulnerability.
@@ -9,5 +9,5 @@
 - Is my environment vulnerable to CVE <**_`<CVE-ID>`_** ? 
 
 
-Disclaimer: Please know these are sample prompts and are subject to Change
+Aviso de isenção de responsabilidade: estes prompts são apenas exemplos e estão sujeitos a alterações.
 ***

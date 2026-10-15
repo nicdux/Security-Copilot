@@ -1,32 +1,32 @@
-![Security Copilot Overview](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
+![Visão geral do Security Copilot](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
 # Microsoft Security Copilot Logic Apps
-Documentation : https://learn.microsoft.com/en-us/copilot/security/connector-logicapp
+Documentação: https://learn.microsoft.com/en-us/copilot/security/connector-logicapp
 
-The Microsoft Security Copilot Logic Apps connector allows you to call into Microsoft Security Copilot from a Logic Apps workflow. This document provides an introduction to the new connector actions you can leverage as well as sample use cases you can deploy to automate investigations such as on Sentinel incidents, email phishing, and others.
+O conector dos Logic Apps para o Microsoft Security Copilot permite chamar o Microsoft Security Copilot a partir de um fluxo de trabalho dos Logic Apps. Este documento apresenta as novas ações do conector que você pode usar, além de exemplos de casos de uso que podem ser implantados para automatizar investigações, como incidentes do Sentinel, phishing por email e outros.
 
-The first iteration of the Logic Apps connector exposes two actions:
+A primeira versão do conector dos Logic Apps oferece duas ações:
 
-- Evaluate Prompt - Given a natural language prompt, this action will invoke a new evaluation within Microsoft Security Copilot and return the output to your logic app workflow. The user can provide an optional sessionId, which will include relevant session context for the evaluation performed. If the sessionId is omitted, the action will create a new session.
+- Evaluate Prompt — dado um prompt em linguagem natural, esta ação inicia uma nova avaliação no Microsoft Security Copilot e retorna a saída ao fluxo de trabalho do Logic App. O usuário pode fornecer um sessionId opcional, que incluirá o contexto relevante da sessão na avaliação realizada. Se sessionId for omitido, a ação criará uma nova sessão.
 
-- Evaluate Direct Skill - Given a natural language prompt, a skill name, and the skill required inputs, invoke a new evaluation and return its output. Use this action when you know the exact Microsoft Security Copilot skill that is required for the task. This action also allows the option to provide a sessionId.
+- Evaluate Direct Skill — dado um prompt em linguagem natural, o nome de uma habilidade e as entradas obrigatórias da habilidade, inicia uma nova avaliação e retorna sua saída. Use esta ação quando souber exatamente qual habilidade do Microsoft Security Copilot é necessária para a tarefa. Esta ação também permite fornecer um sessionId.
 
-Both the "Evaluate Prompt" and "Evaluate Direct Skill" actions allow the user to set an optional sessionId to execute the evaluation within the context of an existing session. If omitted, a new session will be created for the investigation.
+As ações "Evaluate Prompt" e "Evaluate Direct Skill" permitem que o usuário defina um sessionId opcional para executar a avaliação no contexto de uma sessão existente. Se ele for omitido, uma nova sessão será criada para a investigação.
 
-# What you will achieve here :
-Here you will find an array of differnt playbooks aligned with CyberSec scenarios that aim to acheive the following :
-- Enhanced threat detection: Automation can swiftly analyze vast amounts of security data to detect threats that might otherwise go unnoticed.
-- Proactive response: Automated playbooks enable instant responses to security incidents, reducing the window of opportunity for attackers.
-- Continuous monitoring: Automation allows for real-time monitoring of security events, enabling rapid identification and mitigation of potential risks.
-- Reduced human error: By automating repetitive tasks, the risk of human error in cybersecurity operations is significantly minimized.
-- Improved incident response: Automated playbooks facilitate coordinated and consistent responses to security incidents, ensuring efficient resolution.
-- Scalability: Automation enables cybersecurity operations to scale efficiently, keeping pace with growing volumes of threats and data.
-- Compliance automation: Automated processes help ensure adherence to cybersecurity regulations and standards, reducing compliance risks.
-- Resource optimization: By automating routine tasks, cybersecurity professionals can focus on strategic initiatives and proactive threat hunting.
+# O que você encontrará aqui:
+Aqui há diversos playbooks alinhados a cenários de segurança cibernética com os seguintes objetivos:
+- Detecção aprimorada de ameaças: a automação pode analisar rapidamente grandes volumes de dados de segurança para detectar ameaças que poderiam passar despercebidas.
+- Resposta proativa: playbooks automatizados permitem respostas imediatas a incidentes de segurança, reduzindo a janela de oportunidade dos invasores.
+- Monitoramento contínuo: a automação permite monitorar eventos de segurança em tempo real, facilitando a rápida identificação e redução de possíveis riscos.
+- Redução de erros humanos: a automação de tarefas repetitivas reduz significativamente o risco de erro humano nas operações de segurança cibernética.
+- Resposta aprimorada a incidentes: playbooks automatizados facilitam respostas coordenadas e consistentes a incidentes de segurança, garantindo uma resolução eficiente.
+- Escalabilidade: a automação permite ampliar as operações de segurança cibernética com eficiência, acompanhando o crescimento do volume de ameaças e dados.
+- Automação da conformidade: processos automatizados ajudam a garantir o cumprimento de normas e padrões de segurança cibernética, reduzindo os riscos de conformidade.
+- Otimização de recursos: ao automatizar tarefas rotineiras, os profissionais de segurança cibernética podem se concentrar em iniciativas estratégicas e na busca proativa de ameaças.
 
-**Disclaimer**: Please be aware that the logic apps provided are examples intended for use with Security Copilot. Users are encouraged to customize these samples to meet their specific requirements. These should serve as guidelines and inspiration for creating tailored logic apps for ones own use
+**Aviso de isenção de responsabilidade**: os Logic Apps fornecidos são exemplos destinados ao uso com o Security Copilot. Recomendamos que os usuários personalizem essas amostras para atender a seus requisitos específicos. Elas devem servir como orientação e inspiração para criar Logic Apps personalizados para uso próprio.
 
-**Technical Disclaimer: Logic Apps, SCU Usage, and Best Practices**
+**Aviso técnico: Logic Apps, uso de SCUs e práticas recomendadas**
 
-**Attention Customers!**
+**Atenção, clientes!**
 
-When utilizing Logic Apps on Copilot, please be aware that it may result in increased consumption of Secure Compute Units (SCUs). We recommend closely monitoring SCU usage to optimize resource management. 
+Ao usar Logic Apps no Copilot, esteja ciente de que isso pode aumentar o consumo de Secure Compute Units (SCUs). Recomendamos monitorar atentamente o uso de SCUs para otimizar o gerenciamento de recursos.

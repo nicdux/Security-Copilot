@@ -1,37 +1,37 @@
-# Introduction 
-![Security CoPilot Logo](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
-#### 🎓 Level: 100 (Beginner)
-#### ⌛ Estimated time to complete this lab: 10 minutes
+# Introdução
+![Logotipo do Security CoPilot](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
+#### 🎓 Nível: 100 (iniciante)
+#### ⌛ Tempo estimado para concluir este laboratório: 10 minutos
 
-### Objectives
+### Objetivos
 
-Upon completing this technical guide, you will gain the following abilities:<br>
+Ao concluir este guia técnico, você terá as seguintes habilidades:<br>
 
-* Upload a custom plug from GPT type.<br>
-* Learn how to use the fetchUrl skill.<br>
-* Learn how to use the DefangUrl skill.<br>
-* Generete report that will levrage MDTIO data and the custom plugin source.<br>
-
-
-
-### Scenario
-In this technical workshop, participants will learn how to upload a Microsoft Security Copilot custom plugin of the GPT type.<br> 
-To successfully complete this task, you must meet the following prerequisites:<br>
-
-* You need your own tenant and Microsoft Security Copilot instance.<br>
-* You should have permission to upload a custom plugin.<br>
+* Carregar um plugin personalizado do tipo GPT.<br>
+* Aprender a usar a habilidade fetchUrl.<br>
+* Aprender a usar a habilidade DefangUrl.<br>
+* Gerar um relatório que aproveite os dados do MDTI e a fonte do plugin personalizado.<br>
 
 
 
-###  Instruction
-    
+### Cenário
+Neste workshop técnico, os participantes aprenderão a carregar um plugin personalizado do Microsoft Security Copilot do tipo GPT.<br>
+Para concluir esta tarefa com êxito, você precisa atender aos seguintes pré-requisitos:<br>
 
-#### Upload the Custom Plugin 
+* Você precisa ter seu próprio locatário e uma instância do Microsoft Security Copilot.<br>
+* Você precisa ter permissão para carregar um plugin personalizado.<br>
 
 
-1. Obtain the file named **"DefangsURLs.yaml"** from this directory.<br>
-2. Inspect it to appreciate the simplicity of creating a GPT-type plugin.<br>
-3. Upload the custom plugin and verify if it's activated.<br>
+
+### Instruções
+<br>
+
+#### Carregar o plugin personalizado
+
+
+1. Obtenha o arquivo chamado **"DefangsURLs.yaml"** neste diretório.<br>
+2. Examine-o para entender a simplicidade da criação de um plugin do tipo GPT.<br>
+3. Carregue o plugin personalizado e verifique se ele está ativado.<br>
 
 <img src="https://github.com/Yaniv-Shasha/SecurityCopilot/blob/cfcd1baf606277478b7512be8bf3e43c7074f870/Workshop/Custom_Plugin/Task01_Send_jokeByemail/Images/upload_plugin.jpg"/>
 
@@ -39,52 +39,47 @@ To successfully complete this task, you must meet the following prerequisites:<b
 <img src="https://github.com/Yaniv-Shasha/SecurityCopilot/blob/f15ba2df94fbba97cb9adf70426cdf4d471b28fb/Workshop/Custom_Plugin/Task02_Defang_URL/images/plugin-turnON.jpg"/>
 
 
-####  Use case
+#### Caso de uso
 
-You are an incident response analyst currently investigating a prolonged incident.<br> 
-Your colleague has provided you with a Json file containing DNS lookup activity from the DNS server<br>
+Você é analista de resposta a incidentes e está investigando um incidente prolongado.<br>
+Seu colega forneceu um arquivo JSON que contém atividades de pesquisa de DNS do servidor DNS.<br>
 
 
-**Your task is:**<br>
+**Sua tarefa é:**<br>
 
-1. Fetch DNS information into Copilot Pilot Context session.
+1. Buscar as informações de DNS para o contexto da sessão do Copilot.
 
-> ⭐ Notice: <br>
+> ⭐ Observação: <br>
 
-To use the FetchURL option, the Public **Web plugin** must be enabled
+Para usar a opção FetchURL, o **plugin Web** público precisa estar habilitado.
 
 <img src="./images/public_web.jpg"/><br>
 
-2. Extract only the URLs from this file.
-3. Use the MDTI reputation score Skill to assess these URLs.
-4. Identify URLs with scores exceeding 75.
-5. In order to compile a report with your findings, utilize the custom plugin you recently uploaded to neutralize **(Defang)** the suspicious URLs.
+2. Extrair somente as URLs desse arquivo.
+3. Usar a habilidade de pontuação de reputação do MDTI para avaliar essas URLs.
+4. Identificar URLs com pontuação acima de 75.
+5. Para compilar um relatório com suas conclusões, usar o plugin personalizado que você acabou de carregar para neutralizar (**Defang**) as URLs suspeitas.
 
 
-####  How to accomplish this
+#### Como realizar esta tarefa
 
-* Use the "fetchurl" skill to access the file located in the same directory. It's important to ensure you retrieve the raw representation of the file.<br> 
-* Use the MDTI skill and the DefangUrl to create report.
+* Use a habilidade "fetchurl" para acessar o arquivo localizado no mesmo diretório. É importante obter a representação bruta do arquivo.<br>
+* Use a habilidade do MDTI e o DefangUrl para criar o relatório.
 
 
-####   Example prompt:
+#### Exemplo de prompt:
 
-1. Fetchurl https://raw.githubusercontent.com/Yaniv-Shasha/SecurityCopilot/main/Workshop/Custom_Plugin/Task02_Defang_URL/UrlstoFetch_Task02.json.<br> 
+1. Fetchurl https://raw.githubusercontent.com/Yaniv-Shasha/SecurityCopilot/main/Workshop/Custom_Plugin/Task02_Defang_URL/UrlstoFetch_Task02.json.<br>
 
-2. Distinct all the DNS query from this file.<br> 
+2. Liste separadamente todas as consultas DNS desse arquivo.<br>
 
-3. Check reputation score for the above domains.<br> 
+3. Verifique a pontuação de reputação dos domínios acima.<br>
 
-4. Defang URL for all the domains with reputation score higher than 75
+4. Neutralize as URLs de todos os domínios com pontuação de reputação acima de 75.
 
-5. Create report that include only the defanged url and the reputation score.<br> 
+5. Crie um relatório que inclua somente a URL neutralizada e a pontuação de reputação.<br>
 
-####  ✅  Final Results:
+#### ✅ Resultados finais:
 
 
 <img src="./images/final_result.jpg"/>
-
-
-
-
-

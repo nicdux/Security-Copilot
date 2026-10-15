@@ -1,18 +1,17 @@
-# Security Copilot Plugin: Sentinel Table Ingestion Issues
+# Plugin do Security Copilot: problemas de ingestão de tabelas do Sentinel
 
-### **This query looks for rarely seen processes which are launched as a service on an endpoint protected by MDE. Modify the query to allow-list processes that are expected in your environment.**
+### **Esta consulta procura processos raramente observados que são iniciados como serviço em um ponto de extremidade protegido pelo MDE. Modifique a consulta para adicionar à lista de permissões os processos esperados em seu ambiente.**
 
-### Pre-requisites
+### Pré-requisitos
 
--   [Security Copilot Enabled](https://learn.microsoft.com/en-us/security-copilot/get-started-security-copilot#onboarding-to-microsoft-security-copilot)
--   [Access to upload custom plugins](https://learn.microsoft.com/en-us/security-copilot/manage-plugins?tabs=securitycopilotplugin#managing-custom-plugins)
--   [Microsoft Defencer XDR](https://learn.microsoft.com/en-us/defender-xdr/microsoft-365-defender) 
+-   [Security Copilot habilitado](https://learn.microsoft.com/en-us/security-copilot/get-started-security-copilot#onboarding-to-microsoft-security-copilot)
+-   [Acesso para carregar plugins personalizados](https://learn.microsoft.com/en-us/security-copilot/manage-plugins?tabs=securitycopilotplugin#managing-custom-plugins)
+-   [Microsoft Defender XDR](https://learn.microsoft.com/en-us/defender-xdr/microsoft-365-defender)
 
--   Plugin uses permissions of the user setting it up 
+-   O plugin usa as permissões do usuário que o configura.
 
-### Instructions
+### Instruções
 
-#### Upload the Custom Plugin
+#### Carregar o plugin personalizado
 
-1.  Obtain the file RareProcessAsAService.yaml from this directory.
-
+1.  Obtenha o arquivo RareProcessAsAService.yaml deste diretório.

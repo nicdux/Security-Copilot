@@ -1,43 +1,42 @@
-# Welcome to Microsoft Security Copilot Labs!
-# Introduction
-![Security CoPilot Logo](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
-##  Prompting for an uploaded file in Security Copilot 
-#### ⌛ Estimated time to complete this lab: 20 minutes
-#### 🎓 Level: 200 (Proficient)
+# Boas-vindas aos laboratórios do Microsoft Security Copilot!
+# Introdução
+![Logotipo do Security CoPilot](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
+## Criar prompts para um arquivo carregado no Security Copilot
+#### ⌛ Tempo estimado para concluir este laboratório: 20 minutos
+#### 🎓 Nível: 200 (proficiente)
 
-#### Objectives
+#### Objetivos
 
-Upon completing this technical guide, you will gain the following abilities:<br>
+Ao concluir este guia técnico, você terá as seguintes habilidades:<br>
 
-* Leverage the File upload capability  plugin with prompts direclty from Security Copilot.<br>
-
-
-#### Scenario
-"In this technical workshop, participants will learn how to search for documents and leverage the infromation in practical Scurity Operation scenarios .To successfully complete this task, you must meet the following prerequisites:<br>
-
-* You need your own tenant and Microsoft Security Copilot instance.<br>
-* uplaoded files from the Previous Module .<br>
+* Aproveitar o plugin de carregamento de arquivo com prompts enviados diretamente pelo Security Copilot.<br>
 
 
-# Workshop Agenda: Prompting for an uploaded file in Security Copilot 
+#### Cenário
+"Neste workshop técnico, os participantes aprenderão a pesquisar documentos e aproveitar as informações em cenários práticos de operações de segurança. Para concluir esta tarefa com êxito, você precisa atender aos seguintes pré-requisitos:<br>
 
-## 1. Access the SANS (" Hunt Evil Poster Document")
-- Access the Document from the samples folder in the GitHub Here [Hunt Evil Poster PDF](https://github.com/Azure/Copilot-For-Security/blob/main/Technical%20Workshops/Knowledge%20base%20Workshop/Sample%20Files/Hunt%20Evil%20Poster.pdf) or access it from the Link here : https://www.sans.org/posters/hunt-evil/
+* Você precisa ter seu próprio locatário e uma instância do Microsoft Security Copilot.<br>
+* Arquivos carregados no módulo anterior.<br>
+
+
+# Agenda do workshop: criar prompts para um arquivo carregado no Security Copilot
+
+## 1. Acessar o documento da SANS ("Hunt Evil Poster")
+- Acesse o documento na pasta de exemplos do GitHub: [PDF Hunt Evil Poster](https://github.com/Azure/Copilot-For-Security/blob/main/Technical%20Workshops/Knowledge%20base%20Workshop/Sample%20Files/Hunt%20Evil%20Poster.pdf), ou pelo link: https://www.sans.org/posters/hunt-evil/
 
 ![Hunt Evil 3](https://github.com/Azure/Copilot-For-Security/blob/main/Images/KB%20Images/huntevil3.png?raw=true)
 
-- Ensure the document is added on your file upload capability in Security Copilot 
+- Verifique se o documento foi adicionado ao recurso de carregamento de arquivos do Security Copilot.
 
-## 2. Prompting Uploade files using Security Copilot 
+## 2. Criar prompts para arquivos carregados usando o Security Copilot
 
-- send out the first Prompt Querying the data in the document , we will focus on a couple of senarios , in the hunt evil document we will focus on pulling infromation associated with Lateral Movement ( key focus on how its achieed with Remote Access or Remote Execution)
+- Envie o primeiro prompt consultando os dados do documento. Vamos nos concentrar em alguns cenários; no documento Hunt Evil, buscaremos informações relacionadas à movimentação lateral, com foco em como ela é realizada por acesso remoto ou execução remota.
 
-**Prompt 1: Could you show me the event IDs associated with Remote execution from the SANS_DFPS_FOR508_v4.10_02-23 (1).pdf document from the uploaded files in a table format**
+**Prompt 1: Você poderia mostrar, em formato de tabela, as IDs de evento associadas à execução remota no documento SANS_DFPS_FOR508_v4.10_02-23 (1).pdf dos arquivos carregados?**
 
-![hunt evil poster 1](https://github.com/Azure/Copilot-For-Security/blob/main/Images/KB%20Images/huntevilfileupload1.png)
+![Cartaz Hunt Evil 1](https://github.com/Azure/Copilot-For-Security/blob/main/Images/KB%20Images/huntevilfileupload1.png)
 
 
-**Prompt 2: Leveraging the above Event IDs , hunt my defender environment for any events associated with them.**
+**Prompt 2: Usando as IDs de evento acima, procure em meu ambiente do Defender qualquer evento associado a elas.**
 
-![Hunt Evil Poster 2](https://github.com/Azure/Copilot-For-Security/blob/main/Images/KB%20Images/huntevilfileupload2.png)
-
+![Cartaz Hunt Evil 2](https://github.com/Azure/Copilot-For-Security/blob/main/Images/KB%20Images/huntevilfileupload2.png)

@@ -1,29 +1,29 @@
-# Fetch Sentinel incident comments
+# Obter comentários de incidentes do Sentinel
 
-## DESCRIPTION
-This plugin shows how to retrieve comments associated with a Sentinel Incident to add context to an investigation performed with Security Copilot.
-
----
-
-## TYPE AND REQUIREMENTS
-**TYPE**: KQL (Sentinel) <br>
-**SOURCE**: _SecurityIncident_ table <br>
-**REQUIREMENTS**: Log Analytics Workspace with Sentinel enabled 
+## DESCRIÇÃO
+Este plugin mostra como obter comentários associados a um incidente do Sentinel para adicionar contexto a uma investigação realizada com o Security Copilot.
 
 ---
 
-## SKILLS
+## TIPO E REQUISITOS
+**TIPO**: KQL (Sentinel) <br>
+**FONTE**: tabela _SecurityIncident_ <br>
+**REQUISITOS**: workspace do Log Analytics com o Sentinel habilitado
+
+---
+
+## HABILIDADES
 
 <table>
   <tbody>
     <tr>
       <th>SkillName</th>
-      <th align="center">Description</th>
-      <th align="center">Parameters</th>
+      <th align="center">Descrição</th>
+      <th align="center">Parâmetros</th>
     </tr>
     <tr>
       <td><b>SentinelIncidentComments</b></td>
-      <td align="center">Fetch Sentinel incident comments</td>
+      <td align="center">Obtém comentários de incidentes do Sentinel</td>
       <td>
         <ul>
           <li>
@@ -38,13 +38,13 @@ This plugin shows how to retrieve comments associated with a Sentinel Incident t
 
 ---
 
-## SAMPLE PROMPTS
+## PROMPTS DE EXEMPLO
 
-- `« Fetch Sentinel comments for incident <INCIDENT-NUMBER> and infer what was performed to investigate it »`
+- `« Obtenha os comentários do Sentinel sobre o incidente <INCIDENT-NUMBER> e deduza o que foi feito para investigá-lo »`
 
 ---
 
-## SCREENSHOTS
+## CAPTURAS DE TELA
 <div align="center">
   <img src="https://github.com/mariocuomo/Security-Copilot/blob/main/Images/Community%20Plugins/SentinelIncidentComments/SentinelIncidentComments.png" width="700"> </img>
 </div>

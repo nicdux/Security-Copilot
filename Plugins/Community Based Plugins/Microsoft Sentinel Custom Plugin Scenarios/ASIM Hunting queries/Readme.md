@@ -1,58 +1,58 @@
-# DNS,Network, Threat Protectionand Web Sessions Essentials ASIM Schemas Hunting Queries
+# Consultas de busca dos schemas ASIM essenciais de DNS, rede, proteção contra ameaças e sessões da Web
 
-This repository contains a collection of Advanced Security Information Model (ASIM) schema hunting queries that are designed to help detect various network anomalies and potential security threats.
+Este repositório contém uma coleção de consultas de busca de schemas do Advanced Security Information Model (ASIM), desenvolvidas para ajudar a detectar diversas anomalias de rede e possíveis ameaças de segurança.
 
-## DNS Essentials ASIM Schema Queries
+## Consultas do schema ASIM essencial de DNS
 
-- **Top 25 DNS queries with most failures in last 24 hours**
-- **Potential beaconing activity**
-- **Possible DNS Tunneling or Data Exfiltration Activity**
-- **Increase in DNS Requests by client than the daily average count**
-- **Connection to Unpopular Website Detected**
-- **Anomalous Increase in DNS activity by clients**
-- **CVE-2020-1350 (SIGRED) exploitation pattern**
+- **As 25 consultas DNS com mais falhas nas últimas 24 horas**
+- **Possível atividade de beaconing**
+- **Possível atividade de tunelamento DNS ou exfiltração de dados**
+- **Solicitações DNS de um cliente acima da média diária**
+- **Conexão detectada com site pouco popular**
+- **Aumento anômalo da atividade DNS dos clientes**
+- **Padrão de exploração da CVE-2020-1350 (SIGRED)**
 
-## Network Essentials Schema Queries
+## Consultas do schema essencial de rede
 
-- **Detect Outbound LDAP Traffic (ASIM Network Session schema)**
-- **Detect port misuse by anomaly (ASIM Network Session schema)**
-- **Detect port misuse by static threshold (ASIM Network Session schema)**
-- **Detects several users with the same MAC address (ASIM Network Session schema)**
-- **Mismatch between Destination App name and Destination Port (ASIM Network Session schema)**
-- **Protocols passing authentication in cleartext (ASIM Network Session schema)**
-- **Remote Desktop Network Traffic (ASIM Network Session schema)**
+- **Detectar tráfego LDAP de saída (schema ASIM Network Session)**
+- **Detectar uso indevido de porta por anomalia (schema ASIM Network Session)**
+- **Detectar uso indevido de porta por limite estático (schema ASIM Network Session)**
+- **Detectar vários usuários com o mesmo endereço MAC (schema ASIM Network Session)**
+- **Incompatibilidade entre o nome do aplicativo de destino e a porta de destino (schema ASIM Network Session)**
+- **Protocolos que transmitem autenticação em texto não criptografado (schema ASIM Network Session)**
+- **Tráfego de rede da Área de Trabalho Remota (schema ASIM Network Session)**
 
-## Network Threat Protection Schema/Essentials
+## Schema essencial de proteção contra ameaças de rede
 
-- **Remote Desktop Network Traffic (ASIM Network Session schema)**
-- **Risky base64 encoded command in URL**
-- **Exploit and Pentest Framework User Agent**
+- **Tráfego de rede da Área de Trabalho Remota (schema ASIM Network Session)**
+- **Comando arriscado codificado em Base64 na URL**
+- **User Agent de frameworks de exploração e teste de invasão**
 
-## Web Session Essentials
+## Elementos essenciais de sessões da Web
 
-- **Empty User Agent Detected (ASIM Web Session)**
-- **Excessive number of forbidden requests detected (ASIM Web Session)**
-- **Detect IP Address in the requested URL (ASIM Web Session)**
-- **Detect Kali Linux UserAgent (ASIM Web Session)**
-- **Beaconing traffic based on common user agents visiting limited number of domains (ASIM Web Session)**
-- **Potential beaconing detected - Similar sent bytes (ASIM Web Session)**
-- **Potential beaconing detected (ASIM Web Session)**
-- **Request from bots and crawlers (ASIM Web Session)**
-- **Detect threat information in web requests (ASIM Web Session)**
+- **User Agent vazio detectado (ASIM Web Session)**
+- **Número excessivo de solicitações proibidas detectado (ASIM Web Session)**
+- **Detectar endereço IP na URL solicitada (ASIM Web Session)**
+- **Detectar UserAgent do Kali Linux (ASIM Web Session)**
+- **Tráfego de beaconing baseado em User Agents comuns que visitam um número limitado de domínios (ASIM Web Session)**
+- **Possível beaconing detectado — quantidade semelhante de bytes enviados (ASIM Web Session)**
+- **Possível beaconing detectado (ASIM Web Session)**
+- **Solicitação de bots e rastreadores (ASIM Web Session)**
+- **Detectar informações de ameaças em solicitações da Web (ASIM Web Session)**
 
-## Usage in Security Copilot Plugin
+## Uso no plugin do Security Copilot
 
-### Instructions
+### Instruções
 
-### Pre-requisites
+### Pré-requisitos
 
--   [Security Copilot Enabled](https://learn.microsoft.com/en-us/security-copilot/get-started-security-copilot#onboarding-to-microsoft-security-copilot)
--   [Access to upload custom plugins](https://learn.microsoft.com/en-us/security-copilot/manage-plugins?tabs=securitycopilotplugin#managing-custom-plugins)
--   [Microsoft Sentinel Workspace](https://learn.microsoft.com/en-us/azure/sentinel/quickstart-onboard) created.
--   Parameters for KQL Plugin - Microsoft Sentinel Workspace Name, Subscription ID, Resource Group Name and Entra Tenant ID
-#### Upload the Custom Plugin
+-   [Security Copilot habilitado](https://learn.microsoft.com/en-us/security-copilot/get-started-security-copilot#onboarding-to-microsoft-security-copilot)
+-   [Acesso para carregar plugins personalizados](https://learn.microsoft.com/en-us/security-copilot/manage-plugins?tabs=securitycopilotplugin#managing-custom-plugins)
+-   [Workspace do Microsoft Sentinel](https://learn.microsoft.com/en-us/azure/sentinel/quickstart-onboard) criado.
+-   Parâmetros do plugin KQL: nome do workspace do Microsoft Sentinel, ID da assinatura, nome do grupo de recursos e ID do locatário do Entra.
+#### Carregar o plugin personalizado
 
-1. Obtain the desired YAML file from this directory: - [DNSEssentials_HuntingQueries.yaml](https://github.com/Azure/Copilot-For-Security/blob/main/Plugins/Community%20Based%20Plugins/Microsoft%20Sentinel%20Custom%20Plugin%20Scenarios/ASIM%Hunting%quries/DNSEssentials_HuntingQueries.yaml).
+1. Obtenha o arquivo YAML desejado neste diretório: - [DNSEssentials_HuntingQueries.yaml](https://github.com/Azure/Copilot-For-Security/blob/main/Plugins/Community%20Based%20Plugins/Microsoft%20Sentinel%20Custom%20Plugin%20Scenarios/ASIM%Hunting%quries/DNSEssentials_HuntingQueries.yaml).
 
    [NetworkSessionsEssentials_HuntingQueries.yaml](https://github.com/Azure/Copilot-For-Security/blob/main/Plugins/Community%20Based%20Plugins/Microsoft%20Sentinel%20Custom%20Plugin%20Scenarios/ASIM%Hunting%quries/NetworkSessionsEssentials_HuntingQueries.yaml).
 
@@ -60,11 +60,10 @@ This repository contains a collection of Advanced Security Information Model (AS
 
      [WebSessionEssentials_HuntingQueries.yaml](https://github.com/Azure/Copilot-For-Security/blob/main/Plugins/Community%20Based%20Plugins/Microsoft%20Sentinel%20Custom%20Plugin%20Scenarios/ASIM%Hunting%quries/NetworkThreatProtectionEssentials_HuntingQaueries.yaml).
 
-2. Modify the KQL query as needed to suit your specific requirements. 
+2. Modifique a consulta KQL conforme necessário para atender aos seus requisitos.
 
 
-3. [Upload the custom plugin](https://learn.microsoft.com/en-us/security-copilot/manage-plugins?tabs=securitycopilotplugin#add-custom-plugins) and enter your Tenant ID, Subscription ID, Workspace name, Resource group that hosts your Sentinel worksapce in the resulting dialog box.  Verify that the plugin is activated.
+3. [Carregue o plugin personalizado](https://learn.microsoft.com/en-us/security-copilot/manage-plugins?tabs=securitycopilotplugin#add-custom-plugins) e, na caixa de diálogo exibida, insira o ID do locatário, o ID da assinatura, o nome do workspace e o grupo de recursos que hospeda o workspace do Sentinel. Verifique se o plugin está ativado.
 
 ![CopilotForSecurity](https://learn.microsoft.com/en-us/security-copilot/media/add-plugin-button.png)
-
 

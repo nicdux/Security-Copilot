@@ -1,43 +1,43 @@
-# Introduction 
-![Security CoPilot Logo](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
-#### 🎓 Level: 100 (Beginner)
-#### ⌛ Estimated time to complete this lab: 10 minutes
+# Introdução
+![Logotipo do Security CoPilot](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
+#### 🎓 Nível: 100 (iniciante)
+#### ⌛ Tempo estimado para concluir este laboratório: 10 minutos
 
-### Objectives
+### Objetivos
 
-Upon completing this technical guide, you will gain the following abilities:<br>
+Ao concluir este guia técnico, você terá as seguintes habilidades:<br>
 
-* Upload a Custom plug from API type.<br>
-* Learn how to use script analysis promptbook.<br>
-* Learn how to analze and encode Script.<br>
-* Generete report that will levrage the custom plugin source.<br>
+* Carregar um plugin personalizado do tipo API.<br>
+* Aprender a usar o promptbook de análise de scripts.<br>
+* Aprender a analisar e codificar scripts.<br>
+* Gerar um relatório que aproveite a fonte do plugin personalizado.<br>
 
-### Scenario
-In this technical workshop, participants will learn how to upload a Microsoft Security Copilot custom plugin of the API type.<br> 
+### Cenário
+Neste workshop técnico, os participantes aprenderão a carregar um plugin personalizado do Microsoft Security Copilot do tipo API.<br>
 
-> ⭐ Notice: <br>
-**When utilizing a custom plugin from an API type, be aware that data is transferred out of your tenant and sent to a remote endpoint. In this lab, we are working with sample data. Please keep this in consideration when handling internal data.**
+> ⭐ Observação: <br>
+**Ao usar um plugin personalizado do tipo API, lembre-se de que os dados são transferidos para fora do seu locatário e enviados a um ponto de extremidade remoto. Neste laboratório, trabalhamos com dados de exemplo. Leve isso em consideração ao manipular dados internos.**
 <br>
 
-To successfully complete this task, you must meet the following prerequisites:<br>
+Para concluir esta tarefa com êxito, você precisa atender aos seguintes pré-requisitos:<br>
 
-* You need your own tenant and Microsoft Security Copilot instance.<br>
-* You should have permission to upload a custom plugin.<br>
-
-
-
-###  Instruction
-    
-
-#### Upload the Custom Plugin 
-
-> ⭐ Notice: <br>
-If you have already completed Module 4, there is no need to upload the plugin again.<br>
+* Você precisa ter seu próprio locatário e uma instância do Microsoft Security Copilot.<br>
+* Você precisa ter permissão para carregar um plugin personalizado.<br>
 
 
-1. Obtain the file named **"Geo.yaml"** from this directory.<br>
-2. Inspect it to appreciate the simplicity of creating a API-type plugin.<br>
-3. Upload the custom plugin and verify if it's activated.<br>
+
+### Instruções
+<br>
+
+#### Carregar o plugin personalizado
+
+> ⭐ Observação: <br>
+Se você já concluiu o Módulo 4, não é necessário carregar o plugin novamente.<br>
+
+
+1. Obtenha o arquivo chamado **"Geo.yaml"** neste diretório.<br>
+2. Examine-o para entender a simplicidade da criação de um plugin do tipo API.<br>
+3. Carregue o plugin personalizado e verifique se ele está ativado.<br>
 
 <img src="./images/upload_plugin.jpg"/>
 
@@ -45,52 +45,51 @@ If you have already completed Module 4, there is no need to upload the plugin ag
 <img src="./images/plugin_turn_on.jpg"/>
 
 
-####  Use case
+#### Caso de uso
 
 
-You are Soc Analyst in woodgrove Domain, During an endpoint Incident investigation, you found suspicious script that run on your DMZ server, your job is to analyze this script, and share your final to your team member.<br> 
-
-
-
-**Your task is:**<br>
-
-1. Input this information about the script from the script_decode.txt and ask Copilot to decode it
-2. Extract only the IPs from this script.
-3. Employ the MDTI reputation score to assess these Ip.
-4. Identify IPs with scores
-5. In order to compile a report with your findings, utilize the custom plugin you recently uploaded to GeoIP the suspicious Ips.
-6. Share report that include the reputation score and the Geo IP data.
+Você é analista de SOC no domínio Woodgrove. Durante a investigação de um incidente de ponto de extremidade, encontrou um script suspeito em execução no servidor da DMZ. Sua tarefa é analisar esse script e compartilhar as conclusões com a equipe.<br>
 
 
 
-####   Example prompts:
+**Sua tarefa é:**<br>
 
-1. Decode the above script "Replace this with the script you copied".<br> 
+1. Inserir as informações do script contidas em script_decode.txt e pedir ao Copilot que as decodifique.
+2. Extrair somente os IPs desse script.
+3. Usar a pontuação de reputação do MDTI para avaliar esses IPs.
+4. Identificar os IPs e suas pontuações.
+5. Para compilar um relatório com suas conclusões, usar o plugin personalizado que você acabou de carregar para obter a geolocalização dos IPs suspeitos.
+6. Compartilhar um relatório que inclua a pontuação de reputação e os dados de GeoIP.
+
+
+
+#### Exemplos de prompts:
+
+1. Decodifique o script acima "Substitua isto pelo script que você copiou".<br>
 
 <img src="./images/decode.png"/>
 
-2. check reputation score for the above ip.<br> 
+2. Verifique a pontuação de reputação do IP acima.<br>
 
-3. Use Geo location for the above IP.<br> 
+3. Obtenha a geolocalização do IP acima.<br>
 
-4. create report that include the reputation score and the Geo Ip address.<br> 
+4. Crie um relatório que inclua a pontuação de reputação e o endereço GeoIP.<br>
 
 
-####  ✅  Final Results:
+#### ✅ Resultados finais:
 
 
 <img src="./images/final_free%20text.png"/>
 
 
 
- ⭐**Bouns task:** <br>
+ ⭐**Tarefa bônus:** <br>
 
-1. Copy the script from script_decode.txt .<br> 
+1. Copie o script de script_decode.txt.<br>
 
-<img src="./images/prompbooks.jpg"/> <br> 
+<img src="./images/prompbooks.jpg"/> <br>
 
 
-2. Launch the 'Suspicious Script Analysis' tool Promptbooks.
-3. Paste the script you copied in Step One into the designated field and click 'Run'. 
-4. Distribute the generated report and assess whether the script is malicious
-
+2. Inicie o promptbook da ferramenta "Suspicious Script Analysis".
+3. Cole o script copiado na etapa um no campo indicado e clique em "Executar".
+4. Distribua o relatório gerado e avalie se o script é mal-intencionado.

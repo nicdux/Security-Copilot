@@ -1,33 +1,32 @@
 # Security Copilot-ThreatActor
-Author: Sean Wasonga
-## Overview
-This playbook emphasizes the capability to conduct thorough threat actor profiling, search for associated threat articles, CVEs, and perform comprehensive hunting across your environment. By leveraging Security Copilot's integration with Microsoft Defender Threat Intelligence (MDTI), users can efficiently gather intelligence on threat actors, associated articles, and CVEs, enhancing their understanding of potential threats. Additionally, the playbook facilitates proactive investigation by summarizing the findings from hunting activities, empowering users to strengthen their security posture. As this foundational playbook evolves, it aims to further enhance threat intelligence gathering and investigation capabilities.
+Autor: Sean Wasonga
+## Visão geral
+Este playbook enfatiza a capacidade de criar perfis detalhados de agentes de ameaça, pesquisar artigos e CVEs relacionados a ameaças e realizar uma busca abrangente em todo o ambiente. Aproveitando a integração do Security Copilot com o Microsoft Defender Threat Intelligence (MDTI), os usuários podem coletar com eficiência inteligência sobre agentes de ameaça, artigos relacionados e CVEs, ampliando a compreensão de possíveis ameaças. Além disso, o playbook facilita a investigação proativa ao resumir as descobertas das atividades de busca, permitindo que os usuários fortaleçam sua postura de segurança. À medida que este playbook básico evoluir, ele deverá aprimorar ainda mais os recursos de coleta e investigação de inteligência contra ameaças.
 
-## Pre-deployment Instructions
+## Instruções de pré-implantação
 
-Prior to beginning the installation process, it's crucial to confirm that you have met the following prerequisites:
-- The user that will deploy this Logic app need to have a Contributor Role.
-- You enabled the Security Copilot license on your tenant
-- The user authenticated within the CoPilot logic app action and has permission toaccess M365 Defender environment 
-- The user authenticated within the CoPilot logic app action and has permission to send emails.
+Antes de iniciar o processo de instalação, confirme que você atende aos seguintes pré-requisitos:
+- O usuário que implantará este Logic App precisa ter a função Contributor.
+- A licença do Security Copilot está habilitada em seu locatário.
+- O usuário autenticado na ação do Logic App do Copilot tem permissão para acessar o ambiente do M365 Defender.
+- O usuário autenticado na ação do Logic App do Copilot tem permissão para enviar emails.
 
-Define the email you want the daily logic app to be sent too
+Defina o endereço de email para o qual o Logic App diário deverá enviar as mensagens.
 
-## Deployment
+## Implantação
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FSecurity-Copilot%2Fmain%2FLogic%2520Apps%2FThreatactorCopilot%2Fazuredeploy.json" target="_blank">
   <img src="https://aka.ms/deploytoazurebutton"/>
 </a>
 
 
-### Post-Deployment Instructions
+### Instruções pós-implantação
 
-1. Select the freaquency on how many times you want the Logic App to run 
-2. Authenticate the Copilot Prompts with a User that has Access to Security Copilot 
-3. Make sure you define the Threat actor you want to leverage in the playbook . For example this one comes preset with APT 28
-3. Proceed to run the Logic app and Prepare for the results 
+1. Selecione a frequência com que o Logic App deverá ser executado.
+2. Autentique os prompts do Copilot com um usuário que tenha acesso ao Security Copilot.
+3. Defina o agente de ameaça que deseja usar no playbook. Por exemplo, este playbook vem predefinido com APT 28.
+3. Execute o Logic App e aguarde os resultados.
 
 
-Results of the Logic APP
-![Threat Actor](https://github.com/KwachSean/SecurityCopilot/raw/main/playbooks/ThreatactorCopilot/threatactor.png)
-
+Resultados do Logic App
+![Agente de ameaça](https://github.com/KwachSean/SecurityCopilot/raw/main/playbooks/ThreatactorCopilot/threatactor.png)

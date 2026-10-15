@@ -1,5 +1,5 @@
 # Copilot-SendSummaryToJira
-Author: Yaniv Shasha
+Autor: Yaniv Shasha
 
 
 
@@ -10,5 +10,4 @@ Author: Yaniv Shasha
 
 
 <br>
-
 

@@ -1,6 +1,6 @@
 
 # Microsoft Purview
-Documentation for Microsoft Purview and Copilot for Secuity can be found here : [Microsoft Purview](https://learn.microsoft.com/en-us/purview/copilot-in-purview-overview?bc=%2Fsecurity-copilot%2Fbreadcrumb%2Ftoc.json&toc=%2Fsecurity-copilot%2Ftoc.json)
+A documentação do Microsoft Purview e do Security Copilot está disponível em: [Microsoft Purview](https://learn.microsoft.com/en-us/purview/copilot-in-purview-overview?bc=%2Fsecurity-copilot%2Fbreadcrumb%2Ftoc.json&toc=%2Fsecurity-copilot%2Ftoc.json)
 
 
 - Show me the top 5 DLP alerts that I should prioritize today?
@@ -15,7 +15,7 @@ Documentation for Microsoft Purview and Copilot for Secuity can be found here : 
 - For the files related to the alert, show me all activities done in the last 7 days?
 - Can you get me the status of labeling on these files
 
-## Data Security hunting (MIP, DLP, IRM)
+## Busca de segurança de dados (MIP, DLP, IRM)
 - Which Purview Data Loss Prevention alerts should I prioritize today?
 - Retrieve all DLP alerts for this user in the last 7-days?
 - Can you summarize the first purview alert?
@@ -36,4 +36,4 @@ Documentation for Microsoft Purview and Copilot for Secuity can be found here : 
 - What Suspicious Actions Have Been Performed On This Files?
 - Tell me more about Sensitivity label X
 
-Disclaimer: Please know these are sample prompts and are subject to Change
+Aviso de isenção de responsabilidade: estes prompts são apenas exemplos e estão sujeitos a alterações.

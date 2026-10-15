@@ -1,20 +1,20 @@
-# Enrichment Plugin Suite
-**Author: Craig Freyman**
+# Conjunto de plugins de enriquecimento
+**Autor: Craig Freyman**
 
-## URLEnrichment Plugin
-This suite of URL enrichment skills is designed to enhance security investigations by providing detailed insights into user interactions with URLs. It allows analysts to track URL clicks, analyze click patterns, and correlate URL activity with other security events for comprehensive risk assessments.
+## Plugin URLEnrichment
+Este conjunto de habilidades de enriquecimento de URL foi desenvolvido para aprimorar investigações de segurança, fornecendo informações detalhadas sobre as interações dos usuários com URLs. Ele permite acompanhar cliques em URLs, analisar padrões de cliques e correlacionar atividades de URL com outros eventos de segurança para realizar avaliações abrangentes de risco.
 
 ### WhoClickedUrl
-Identify users who clicked on a specific URL from an email on a given date. Provides details such as the time of the click, action type, user information, and any related network or threat data to assist in investigating potential security breaches.
+Identifica os usuários que clicaram em uma URL específica de um email em determinada data. Fornece detalhes como horário do clique, tipo de ação, informações do usuário e dados relacionados de rede ou ameaça para auxiliar na investigação de possíveis violações de segurança.
 
-Example Prompt: Identify users who clicked on https://example.com in the past 30 days.
+Prompt de exemplo: identifique os usuários que clicaram em https://example.com nos últimos 30 dias.
 
 ### UrlClickCount
-Analyze the frequency and recency of clicks for a specific URL over the past 30 days. Provides the total number of clicks, along with the timestamps of the first and last clicks, to support threat assessment and investigation.
+Analisa a frequência e a atualidade dos cliques em uma URL específica nos últimos 30 dias. Fornece o número total de cliques e os carimbos de data/hora do primeiro e do último clique para apoiar a avaliação e a investigação de ameaças.
 
-Example Prompt: Analyze click frequency for https://example.com over the past 30 days.
+Prompt de exemplo: analise a frequência de cliques em https://example.com nos últimos 30 dias.
 
 ### UrlCorrelation
-Correlate clicks on a specific URL with security alerts, email events, and network events over the past 30 days. Provides a comprehensive risk overview, including event times, users, related alerts, and associated incident IDs.
+Correlaciona os cliques em uma URL específica com alertas de segurança, eventos de email e eventos de rede nos últimos 30 dias. Fornece uma visão geral abrangente do risco, incluindo horários dos eventos, usuários, alertas relacionados e IDs de incidentes associados.
 
-Example Prompt: Correlate URL activity for https://example.com with related security events in the last 30 days.
+Prompt de exemplo: correlacione a atividade da URL https://example.com com eventos de segurança relacionados nos últimos 30 dias.

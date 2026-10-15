@@ -1,56 +1,56 @@
 # GreyNoise Enterprise
-**Author: Shiv Patel + Brad Chiappetta**
+**Autores: Shiv Patel + Brad Chiappetta**
 
-**Publisher: Microsoft + GreyNoise**
+**Publicadores: Microsoft + GreyNoise**
 
-This plugin enables users to enrich investigations using threat intelligence from GreyNoise:   
-1. Query information on an IP
-2. Execute a GreyNoise Query
+Este plugin permite enriquecer investigações usando a inteligência contra ameaças da GreyNoise:
+1. Consultar informações sobre um IP
+2. Executar uma consulta da GreyNoise
 
-Product Information:
+Informações sobre o produto:
 https://www.greynoise.io/greynoise-product
 
-**Note**  
-Ensure you have a GreyNoise subscription with sufficient Search capacity for your usage
+**Observação**
+Verifique se você tem uma assinatura da GreyNoise com capacidade de Search suficiente para seu uso.
 
-## **Pre-requisites**
-1. Login to your [GreyNoise Account](https://viz.greynoise.io/account/plan)
-2. Access your GreyNoise API key on the [My API Key Tab](https://viz.greynoise.io/account/api-key)
-3. Copy the API key to enter into Co-Pilot. 
-
-
-## Select or upload the attached manifest file into your Copilot for Security console
-1. From the Plugin manager, locate the GreyNoise Enterprise Plugin and enable it
-![Enable Plugin](images/GreyNoiseEnterprise_plugin.png)
-
-    ## Invoking the Plugin and Skills
-2. **Important**  
-   After selecting or uploading, click the "Set Up" button and enter the copied API key from the Pre-requisites above and press "Save."
-![Enter Key](images/GreyNoiseEnterprise_settings.png)
-
-3. Use a Natural Language prompt from below examples or use Direct Skill Invocation ("/")
+## **Pré-requisitos**
+1. Entre em sua [conta GreyNoise](https://viz.greynoise.io/account/plan).
+2. Acesse sua chave de API da GreyNoise na [guia My API Key](https://viz.greynoise.io/account/api-key).
+3. Copie a chave de API para inseri-la no Co-Pilot.
 
 
-## Skills & Prompts
-1. Look up IP context: Ask GreyNoise if this IP is an Internet Scanner
-   - Example Prompt(s): Tell me about Ip address [IP] using GreyNoise database, Find the GreyNoise IP Context for IP [IP]
-   - Inputs: [IP] 
-2. Look up IP quick: Ask GreyNoise for a quick check of this IP
-   - Example Prompt(s): Find the GreyNoise for IP [IP] using a quick lookup, Use GreyNoise to do a quick check of [IP]
-   - Inputs: [IP] 
-3. Look up multiple IPs: Ask GreyNoise for a quick check of multiple IPs
-   - Example Prompt(s): Find the GreyNoise for IPs [IP, IP, IP] using a quick lookup, Use GreyNoise to do a quick check of [IP, IP, IP]
-   - Inputs: [List of IPs] 
-4. Look up IP riot: Ask GreyNoise if this IP is associated with a Common Business Service
-   - Example Prompt(s): Use GreyNoise to check the Riot information on IP [IP], I want to know the GreyNoise riot information on IP [IP]
+## Selecione ou carregue o arquivo de manifesto anexado no console do Copilot for Security
+1. No gerenciador de plugins, localize o plugin GreyNoise Enterprise e habilite-o.
+![Habilitar plugin](images/GreyNoiseEnterprise_plugin.png)
+
+    ## Como invocar o plugin e as habilidades
+2. **Importante**
+   Depois de selecionar ou carregar o arquivo, clique no botão "Set Up", insira a chave de API copiada conforme os pré-requisitos acima e pressione "Save".
+![Inserir chave](images/GreyNoiseEnterprise_settings.png)
+
+3. Use um prompt em linguagem natural dos exemplos abaixo ou use a invocação direta de habilidade ("/").
+
+
+## Habilidades e prompts
+1. Consultar o contexto do IP: pergunte à GreyNoise se este IP é um scanner da Internet.
+   - Exemplos de prompt: Informe sobre o endereço IP [IP] usando o banco de dados da GreyNoise; Localize o GreyNoise IP Context do IP [IP]
+   - Entradas: [IP]
+2. Fazer uma consulta rápida de IP: solicite à GreyNoise uma verificação rápida deste IP.
+   - Exemplos de prompt: Consulte o IP [IP] na GreyNoise usando uma busca rápida; Use a GreyNoise para fazer uma verificação rápida de [IP]
+   - Entradas: [IP]
+3. Consultar vários IPs: solicite à GreyNoise uma verificação rápida de vários IPs.
+   - Exemplos de prompt: Consulte os IPs [IP, IP, IP] na GreyNoise usando uma busca rápida; Use a GreyNoise para fazer uma verificação rápida de [IP, IP, IP]
+   - Entradas: [List of IPs]
+4. Consultar IP no RIOT: pergunte à GreyNoise se este IP está associado a um serviço comercial comum.
+   - Exemplos de prompt: Use a GreyNoise para verificar as informações do RIOT sobre o IP [IP]; Quero conhecer as informações do RIOT da GreyNoise sobre o IP [IP]
    c
-5. Look up GNQL: Query GreyNoise using the GreyNoise Query Language (GNQL)
-   - Example Prompt(s): Use GreyNoise to check the GNQL information on [QUERY], Query GNQL for [QUERY], Search for all IPs scanning sensors located in Germany with GNQL GreyNoise Enterprise [QUERY]
-   - Inputs: [QUERY]
-6. Look up CVE: Use the GreyNoise Query Language (GNQL) stats to query against the GreyNoise dataset for CVE information.
-   - Example Prompt(s): Use GreyNoise to check stats on [CVE], What does GreyNoise know about [CVE]
-   - Inputs: [CVE]
+5. Consultar GNQL: consulte a GreyNoise usando a GreyNoise Query Language (GNQL).
+   - Exemplos de prompt: Use a GreyNoise para verificar as informações da GNQL sobre [QUERY]; Consulte a GNQL para [QUERY]; Pesquise todos os IPs que verificam sensores localizados na Alemanha com a GNQL do GreyNoise Enterprise [QUERY]
+   - Entradas: [QUERY]
+6. Consultar CVE: use as estatísticas da GreyNoise Query Language (GNQL) para consultar informações de CVE no conjunto de dados da GreyNoise.
+   - Exemplos de prompt: Use a GreyNoise para verificar as estatísticas sobre [CVE]; O que a GreyNoise sabe sobre [CVE]
+   - Entradas: [CVE]
 
-## Frequently Asked Questions (FAQ)
-1. **Important**  
-   If prompts fail to invoke, please ensure you're using a supported Prompt above. Otherwise, invoke it using Direct Skill Invocation "/"      
+## Perguntas frequentes (FAQ)
+1. **Importante**
+   Se os prompts não funcionarem, verifique se você está usando um dos prompts compatíveis acima. Caso contrário, use a invocação direta de habilidade "/".

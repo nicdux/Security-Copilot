@@ -1,44 +1,44 @@
-# Copilot for Security Plugin: MDA Cloud App Events
+# Plugin do Copilot for Security: MDA Cloud App Events
 
-### This KQL plugin enables SOC analysts to investigate events related to accounts and objects in Office 365 and other cloud applications and services, using the Defender for Cloud Apps data from the CloudAppEvents table. 
+### Este plugin KQL permite que analistas do SOC investiguem eventos relacionados a contas e objetos no Office 365 e em outros aplicativos e serviços de nuvem usando dados do Defender for Cloud Apps provenientes da tabela CloudAppEvents.
 
-The CloudAppEvents table contains enriched logs from all SaaS applications connected to MDA, including Office 365 Applications such as:
+A tabela CloudAppEvents contém logs enriquecidos de todos os aplicativos SaaS conectados ao MDA, incluindo aplicativos do Office 365, como:
 - OneDrive
 - SharePoint
 - Exchange Online
 - Teams
 
-### Prerequisites
+### Pré-requisitos
 
--   [Copilot for Security enabled](https://learn.microsoft.com/en-us/security-copilot/get-started-security-copilot#onboarding-to-microsoft-security-copilot)
--   [Access to upload custom plugins](https://learn.microsoft.com/en-us/security-copilot/manage-plugins?tabs=securitycopilotplugin#managing-custom-plugins)
+-   [Copilot for Security habilitado](https://learn.microsoft.com/en-us/security-copilot/get-started-security-copilot#onboarding-to-microsoft-security-copilot)
+-   [Acesso para carregar plugins personalizados](https://learn.microsoft.com/en-us/security-copilot/manage-plugins?tabs=securitycopilotplugin#managing-custom-plugins)
 
-### Instructions
+### Instruções
 
-#### Upload the Custom Plugin
+#### Carregar o plugin personalizado
 
-1.  Obtain the file MDA_Cloud_App_Events.yaml from this directory.
-2.  Upload the custom plugin
+1.  Obtenha o arquivo MDA_Cloud_App_Events.yaml deste diretório.
+2.  Carregue o plugin personalizado.
 
-### Plugin Utilisation
+### Uso do plugin
 
-#### Skills
+#### Habilidades
 
-- **GetOneDriveActivtyForUser**: Feteches a list of a user's OneDrive activity within a specified timeframe
-- **GetSharePointActivityForUser**: Fetches a list of a user's SharePoint activity within a specified timeframe
-- **GetExchangeOnlineActivityForUser**: Fetches a list of a user's Exchange Online activity within a specified timeframe
-- **GetTeamsActivityForUser**: Fetches a list of a user's Teams activity within a specified timeframe
+- **GetOneDriveActivtyForUser**: obtém uma lista da atividade de um usuário no OneDrive em um período especificado.
+- **GetSharePointActivityForUser**: obtém uma lista da atividade de um usuário no SharePoint em um período especificado.
+- **GetExchangeOnlineActivityForUser**: obtém uma lista da atividade de um usuário no Exchange Online em um período especificado.
+- **GetTeamsActivityForUser**: obtém uma lista da atividade de um usuário no Teams em um período especificado.
 
-#### Example Prompts
+#### Prompts de exemplo
 
-- Get a list of OneDrive activity for someone@example.com from the past 2 hours
-- Fetch a list of SharePoint activity for someone@example.com from the past 1 day
-- List all the Exchange Online activity for someone@example.com from the past 2 hours
-- Get a list of Teams activity for someone@example.com from the past 1 day
+- Obtenha uma lista da atividade de someone@example.com no OneDrive nas últimas duas horas.
+- Obtenha uma lista da atividade de someone@example.com no SharePoint no último dia.
+- Liste toda a atividade de someone@example.com no Exchange Online nas últimas duas horas.
+- Obtenha uma lista da atividade de someone@example.com no Teams no último dia.
 
-#### Example Usage
+#### Exemplo de uso
 
-1. A SOC analyst is investigating an alert from Purview Insider Risk Management.
-2. The GetOneDriveActivtyForUser skill is used to get a summary of the users' activity 1 hour before the alert.
-3. The GetTeamsActivityForUser skill is used to identify if the user has shared any content via Teams.
-4. The Entra ID plugin is used to summarise the users' risk level. 
+1. Um analista do SOC está investigando um alerta do Purview Insider Risk Management.
+2. A habilidade GetOneDriveActivtyForUser é usada para obter um resumo da atividade do usuário uma hora antes do alerta.
+3. A habilidade GetTeamsActivityForUser é usada para identificar se o usuário compartilhou algum conteúdo pelo Teams.
+4. O plugin Entra ID é usado para resumir o nível de risco do usuário.

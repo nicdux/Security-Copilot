@@ -1,25 +1,24 @@
-# Welcome to Microsoft Security Copilot Labs!
+# Boas-vindas aos laboratórios do Microsoft Security Copilot!
 
-![Security CoPilot Logo](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
+![Logotipo do Security CoPilot](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
 
-## Introduction
+## Introdução
 
-Our lab initiatives are tailored to expedite your acclimatization to Microsoft Security Copilot. They provide immersive, hands-on experiences, empowering you to seamlessly connect with your knowledge base.
+Nossas iniciativas de laboratório foram desenvolvidas para acelerar sua familiarização com o Microsoft Security Copilot. Elas oferecem experiências práticas e imersivas, permitindo que você se conecte perfeitamente à sua base de conhecimento.
 
-## Connect your Org Knowledge Base to Microsoft Security Copilot 
+## Conecte a base de conhecimento da sua organização ao Microsoft Security Copilot
 
-**Microsoft Security Copilot** allows you to integrate your organization’s knowledge base as an additional source of information. The inclusion of knowledge bases gives **Copilot** more context, resulting in responses that are more relevant, specific, and customized to the user.
+O **Microsoft Security Copilot** permite integrar a base de conhecimento da sua organização como fonte adicional de informações. A inclusão de bases de conhecimento fornece mais contexto ao **Copilot**, gerando respostas mais relevantes, específicas e personalizadas para o usuário.
 
-## Options To integrate your Knowledge Base into Microsoft Security Copilot
+## Opções para integrar sua base de conhecimento ao Microsoft Security Copilot
 
-| Options to Integrate KBs into Security Copilot | Ways to integrate KBs into Microsoft Security Copilot                                                                                                     |
+| Opções para integrar bases de conhecimento ao Security Copilot | Formas de integrar bases de conhecimento ao Microsoft Security Copilot                                                                                                     |
 |----------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| Azure AI Search plugin                 | Follow the steps in [Prompting for a KB connected using Azure AI Search](https://learn.microsoft.com/en-us/security-copilot/connect-org-kb#prompting-for-a-knowledge-base-connected-using-azure-ai-search).    |
-| File upload                                        | Follow the steps in [Prompting for an uploaded file](https://learn.microsoft.com/en-us/security-copilot/upload-file).    |
+| Plugin do Azure AI Search                 | Siga as etapas em [Criar prompts para uma base de conhecimento conectada com o Azure AI Search](https://learn.microsoft.com/en-us/security-copilot/connect-org-kb#prompting-for-a-knowledge-base-connected-using-azure-ai-search).    |
+| Carregamento de arquivo                                        | Siga as etapas em [Criar prompts para um arquivo carregado](https://learn.microsoft.com/en-us/security-copilot/upload-file).    |
 
-## Modules
+## Módulos
 
-- [**Module 1 - Upload a file to Security Copilot**](https://github.com/Azure/Copilot-For-Security/tree/main/Technical%20Workshops/Knowledge%20base%20Workshop/Module%201-%20Upload%20a%20file%20to%20Copilot%20for%20Security%20KB%20workshop)
+- [**Módulo 1 - Carregar um arquivo no Security Copilot**](https://github.com/Azure/Copilot-For-Security/tree/main/Technical%20Workshops/Knowledge%20base%20Workshop/Module%201-%20Upload%20a%20file%20to%20Copilot%20for%20Security%20KB%20workshop)
 
-- [**Module 2 - Prompting an uploaded file content Using Security Copilot**](https://github.com/Azure/Copilot-For-Security/tree/main/Technical%20Workshops/Knowledge%20base%20Workshop/Module%202-%20Prompting%20an%20uploaded%20file%20content%20Using%20Copilot%20For%20Security)
-
+- [**Módulo 2 - Criar prompts para o conteúdo de um arquivo carregado usando o Security Copilot**](https://github.com/Azure/Copilot-For-Security/tree/main/Technical%20Workshops/Knowledge%20base%20Workshop/Module%202-%20Prompting%20an%20uploaded%20file%20content%20Using%20Copilot%20For%20Security)

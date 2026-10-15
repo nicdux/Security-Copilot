@@ -1,47 +1,47 @@
 # CrowdSec Threat Intelligence
 
-This plugin allows users to enhance their IP investigations with threat intelligence sourced from **CrowdSec** and get insights such as:
-   - Curated IP and IP range reputations
-   - Background noise level assessment
-   - Detailed records of malicious behaviors
-   - MITRE techniques associated with the IP
-   - Countries targeted by the attacker
-   - Classification of the attacker
-   - Historical activity and aggressiveness metrics (covering the past 24h, 7 days, 30 days, and overall)
+Este plugin permite aprimorar investigações de IP com inteligência contra ameaças fornecida pela **CrowdSec** e obter informações como:
+   - Reputações selecionadas de IPs e intervalos de IP
+   - Avaliação do nível de ruído de fundo
+   - Registros detalhados de comportamentos maliciosos
+   - Técnicas MITRE associadas ao IP
+   - Países visados pelo invasor
+   - Classificação do invasor
+   - Métricas históricas de atividade e agressividade (abrangendo as últimas 24 horas, 7 dias, 30 dias e todo o período)
 
-[You can find detailed product information here](https://www.crowdsec.net/cyber-threat-intelligence)
+[Encontre aqui informações detalhadas sobre o produto](https://www.crowdsec.net/cyber-threat-intelligence)
 
-## **Pre-requisites**
+## **Pré-requisitos**
 
-1. The plugin requires the use of an API key that can be obtained by creating a free account [here](https://app.crowdsec.net/signup).
+1. O plugin exige uma chave de API, que pode ser obtida ao criar uma conta gratuita [aqui](https://app.crowdsec.net/signup).
 
-Once logged in, you can create and manage your API Keys in the **Settings > API Keys** section:
+Depois de entrar, você pode criar e gerenciar suas chaves de API na seção **Settings > API Keys**:
 
-![Create API Key](Images/create-api-key.png)
+![Criar chave de API](Images/create-api-key.png)
 
-2. From the Plugin manager, locate the CrowdSec Plugin and enable it
+2. No gerenciador de plugins, localize o plugin CrowdSec e habilite-o.
 
-![Enable Plugin](Images/enable-crowdsec-plugin.png)
+![Habilitar plugin](Images/enable-crowdsec-plugin.png)
 
-3. Click the "Set Up" button, enter the CrowdSec API key and press "Save."
+3. Clique no botão "Set Up", insira a chave de API da CrowdSec e pressione "Save".
 
-![Configure API Key](Images/configure-api-key.png)
-
-
-## Invoking the Plugin and Skills
-
-1. Use a Natural Language prompt from the examples below or use Direct Skill Invocation ("/")
+![Configurar chave de API](Images/configure-api-key.png)
 
 
-## Skills & Prompts
+## Como invocar o plugin e as habilidades
 
-1. Look up IP address: Ask CrowdSec about an IP 
-   - Example Prompt(s): 
-     - What can CrowdSec tell me about this IP: [IP]
-     - According to CrowdSec what are the top targeted countries by this IP: [IP]
-   - Inputs: [IP]
+1. Use um prompt em linguagem natural dos exemplos abaixo ou use a invocação direta de habilidade ("/").
 
-## Frequently Asked Questions (FAQ)
 
-1. **Important**: invocation issues
-   If prompts fail to invoke, please ensure you're using a supported Prompt above. Otherwise, invoke it using Direct Skill Invocation "/"
+## Habilidades e prompts
+
+1. Consultar endereço IP: pergunte à CrowdSec sobre um IP.
+   - Exemplos de prompt:
+     - O que a CrowdSec pode informar sobre este IP: [IP]
+     - De acordo com a CrowdSec, quais são os principais países visados por este IP: [IP]
+   - Entradas: [IP]
+
+## Perguntas frequentes (FAQ)
+
+1. **Importante**: problemas de invocação
+   Se os prompts não funcionarem, verifique se você está usando um dos prompts compatíveis acima. Caso contrário, use a invocação direta de habilidade "/".

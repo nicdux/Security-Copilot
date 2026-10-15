@@ -2,14 +2,14 @@
 # Microsoft Entra
 
 - [Entra](#entra)
-  - [User Details](#user-details)
-  - [Audit Logs](#audit-logs)
-  - [Terms of Use Agreements](terms-of-use-agreements)
-  - [Sign in Logs](#sign-in-logs)
+  - [Detalhes do usuário](#user-details)
+  - [Logs de auditoria](#audit-logs)
+  - [Contratos de termos de uso](terms-of-use-agreements)
+  - [Logs de entrada](#sign-in-logs)
   
 ***
 &nbsp;
-## User Details
+## Detalhes do usuário
 <a name="User Details"></a>
 - Who am i
 -  What login attempts exist for the user on December 31st? (Created KQL)
@@ -33,9 +33,10 @@ reasons.
 -  Why was Lee Majors prompted for MFA?
 
 &nbsp;
-[![alt text](../../Images/backtotop.svg)](#entra)
+[![Voltar ao início](../../Images/backtotop.svg)](#entra)
 
-## Audit Logs
+<a name="audit-logs"></a>
+## Logs de auditoria
  - Show me the audit logs for **_`<UPN>`_**? 
  - Show me audit logs for the last 24 hours
 - Show me the audit logs for provisioningManagement category
@@ -48,9 +49,10 @@ reasons.
 - Show me recently changed conditional access policies from audit logs.
 
 &nbsp;
-[![alt text](../../Images/backtotop.svg)](#entra)
+[![Voltar ao início](../../Images/backtotop.svg)](#entra)
 
-## Sign in Logs
+<a name="sign-in-logs"></a>
+## Logs de entrada
 
  
  - Show me sign-in logs for the last 24 hours
@@ -70,9 +72,10 @@ reasons.
     - Show me the sign-in logs from unmanaged devices in the past 14 days and list the entities involved
 
 &nbsp;
-[![alt text](../../Images/backtotop.svg)](#entra)
+[![Voltar ao início](../../Images/backtotop.svg)](#entra)
 
-## Terms of Use Agreements
+<a name="terms-of-use-agreements"></a>
+## Contratos de termos de uso
 
   - List user terms of use agreements
   - What are the terms of use agreements for this user
@@ -85,11 +88,11 @@ reasons.
   - Show my terms of use agreements
 
 &nbsp;
-[![alt text](../../Images/backtotop.svg)](#entra)
+[![Voltar ao início](../../Images/backtotop.svg)](#entra)
 
 &nbsp;
 
-**Disclaimer**: Please know these are sample prompts and are subject to Change
+**Aviso de isenção de responsabilidade**: estes prompts são apenas exemplos e estão sujeitos a alterações.
 
 
 ***

@@ -1,15 +1,15 @@
-# Enrichment Plugin Suite
-**Author: Craig Freyman**
+# Conjunto de plugins de enriquecimento
+**Autor: Craig Freyman**
 
-## IncidentEnrichment Plugin
-This suite of incident enrichment plugins is designed to enhance security investigations by providing insights into incident-related alerts. These tools enable security analysts to efficiently correlate, retrieve, and analyze alerts linked to specific incidents for targeted investigations.
+## Plugin IncidentEnrichment
+Este conjunto de plugins de enriquecimento de incidentes foi desenvolvido para aprimorar investigações de segurança, fornecendo informações sobre alertas relacionados a incidentes. Essas ferramentas permitem correlacionar, obter e analisar com eficiência os alertas vinculados a incidentes específicos para realizar investigações direcionadas.
 
 ### AlertTitleToIncidentCorrelation
-Retrieve alerts associated with a specified incident ID and provide an overview of alert titles. Suggest search refinement by alert name if more than 10 alerts are found, enabling efficient correlation and targeted investigation.
+Obtém os alertas associados a um ID de incidente especificado e fornece uma visão geral dos títulos. Se mais de dez alertas forem encontrados, sugere refinar a pesquisa pelo nome do alerta, permitindo correlação eficiente e investigação direcionada.
 
-Example Prompt: Correlate alert titles with incident ID "1337" to refine search results.
+Prompt de exemplo: correlacione os títulos dos alertas com o ID de incidente "1337" para refinar os resultados da pesquisa.
 
 ### IncidentAlertRetrieval
-Retrieve all alerts associated with a specific incident ID. Provides comprehensive details, including timestamp, unique alert ID, alert name, and severity level, to support in-depth incident investigations.
+Obtém todos os alertas associados a um ID de incidente específico. Fornece detalhes abrangentes, incluindo carimbo de data/hora, ID exclusivo do alerta, nome e nível de severidade, para apoiar investigações aprofundadas de incidentes.
 
-Example Prompt: Retrieve all alerts for incident ID "2807" to review related activity.
+Prompt de exemplo: obtenha todos os alertas do incidente com ID "2807" para revisar a atividade relacionada.

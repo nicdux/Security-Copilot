@@ -1,10 +1,10 @@
-# Enrichment Plugin Suite
-**Author: Craig Freyman**
+# Conjunto de plugins de enriquecimento
+**Autor: Craig Freyman**
 
-## FileEnrichment Plugin
-This suite of file enrichment skills is designed to enhance security investigations by providing detailed insights into file activity on devices. These tools allow analysts to identify potentially malicious files, assess security threats, and recommend remediation steps.
+## Plugin FileEnrichment
+Este conjunto de habilidades de enriquecimento de arquivos foi desenvolvido para aprimorar investigações de segurança, fornecendo informações detalhadas sobre a atividade de arquivos nos dispositivos. Essas ferramentas permitem identificar arquivos potencialmente mal-intencionados, avaliar ameaças de segurança e recomendar etapas de correção.
 
 ### SearchFilesWritten
-Search for files written on a specific device based on a partial file name string provided by the user. Analyze potential security threats by identifying suspicious files and providing guidance for further investigation or remediation.
+Pesquisa arquivos gravados em um dispositivo específico com base em uma parte do nome de arquivo fornecida pelo usuário. Analisa possíveis ameaças de segurança, identificando arquivos suspeitos e fornecendo orientações para investigação ou correção adicional.
 
-Example Prompt: Search for files containing "chrome" on the device computer.domain.local.
+Prompt de exemplo: pesquise arquivos que contenham "chrome" no dispositivo computer.domain.local.

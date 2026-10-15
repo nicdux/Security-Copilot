@@ -1,19 +1,19 @@
-![Security CoPilot Logo](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
-# Microsoft Security Copilot - Customer Guide
-Welcome to the Microsoft Security Copilot Customer Guide! This document serves as your comprehensive resource for leveraging specific skill sets, querying sample prompts, managing identities, and addressing various security scenarios within Microsoft Security Copilot. Whether you're new to the platform or looking to deepen your understanding, this guide will equip you with the knowledge and tools needed to maximize the effectiveness of Microsoft Security Copilot.
+![Logotipo do Security CoPilot](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
+# Microsoft Security Copilot - Guia do Cliente
+Boas-vindas ao Guia do Cliente do Microsoft Security Copilot! Este documento é um recurso abrangente para usar conjuntos de habilidades específicos, consultar prompts de exemplo, gerenciar identidades e abordar diversos cenários de segurança no Microsoft Security Copilot. Seja você iniciante na plataforma ou alguém que deseja aprofundar seus conhecimentos, este guia fornecerá o conhecimento e as ferramentas necessários para maximizar a eficácia do Microsoft Security Copilot.
 
-# Introduction
-Microsoft Security Copilot is a powerful platform designed to empower security professionals with advanced capabilities for threat detection, incident response, and security operations. By harnessing the latest advancements in artificial intelligence and machine learning, Microsoft Security Copilot enables organizations to proactively defend against cyber threats, streamline security workflows, and protect critical assets.
+# Introdução
+O Microsoft Security Copilot é uma plataforma avançada, projetada para oferecer aos profissionais de segurança recursos de detecção de ameaças, resposta a incidentes e operações de segurança. Aproveitando os avanços mais recentes em inteligência artificial e aprendizado de máquina, o Microsoft Security Copilot permite que as organizações se defendam proativamente contra ameaças cibernéticas, simplifiquem fluxos de trabalho de segurança e protejam ativos críticos.
 
-# Key Features
-# 1. Specific Skill Sets
-Microsoft Security Copilot offers a diverse range of skill sets tailored to address specific security challenges and scenarios. These skill sets are designed to provide actionable insights, automate repetitive tasks, and enhance overall security posture.
+# Principais recursos
+# 1. Conjuntos de habilidades específicos
+O Microsoft Security Copilot oferece diversos conjuntos de habilidades adaptados a desafios e cenários de segurança específicos. Esses conjuntos de habilidades foram projetados para fornecer insights acionáveis, automatizar tarefas repetitivas e melhorar a postura geral de segurança.
 
-# 2.  Sample Prompts
-To effectively utilize Microsoft Security Copilot's capabilities, it's essential to understand how to formulate queries and prompts that yield relevant insights. Sample prompts cover a variety of security topics.
+# 2. Prompts de exemplo
+Para usar os recursos do Microsoft Security Copilot com eficiência, é essencial entender como formular consultas e prompts que gerem insights relevantes. Os prompts de exemplo abrangem diversos tópicos de segurança.
 
-# 3. Identity Management
-Managing identities and access controls is critical for maintaining security and compliance within an organization. Microsoft Security Copilot provides robust identity management features, allowing you to authenticate users, authorize access, and monitor user activity.
+# 3. Gerenciamento de identidades
+Gerenciar identidades e controles de acesso é fundamental para manter a segurança e a conformidade em uma organização. O Microsoft Security Copilot oferece recursos robustos de gerenciamento de identidades, permitindo autenticar usuários, autorizar acessos e monitorar atividades dos usuários.
 
-# 4.  Scenarios
-Microsoft Security Copilot can be applied to a wide range of security scenarios, including but not limited to threat hunting, incident response, and compliance monitoring.
+# 4. Cenários
+O Microsoft Security Copilot pode ser aplicado a diversos cenários de segurança, incluindo, entre outros, busca de ameaças, resposta a incidentes e monitoramento de conformidade.

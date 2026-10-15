@@ -1,52 +1,52 @@
-![Security CoPilot Logo](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
-# User Sign in Analysis
+![Logotipo do Security Copilot](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
+# Análise de entrada do usuário
 
-**Required plugins** : Microsoft Entra, Microsoft Intune
+**Plugins necessários**: Microsoft Entra, Microsoft Intune
 
-**Required Inputs**: UPN 
+**Entradas necessárias**: UPN
 
-**Description**: Investigate the User sign ins , access the Risk profile of the user , identify the device compliance and conclude with the summary of the analysis
+**Descrição**: investigue as entradas do usuário, acesse seu perfil de risco, identifique a conformidade do dispositivo e conclua com um resumo da análise.
 
-1. Retreive the history of the User you are investigating 
+1. Recupere o histórico do usuário que está sendo investigado
  ```
 What is <UPN> sign-in history?
  ```
-2. retrieve infromation on any failed sign ins
+2. Recupere informações sobre entradas que falharam
  ```
 Are there any failed sign-in attempts? If so, what are the details?
  ```
-3. retrieve infromation on applications accessed during the sign in vevents
+3. Recupere informações sobre os aplicativos acessados durante os eventos de entrada
  ```
 What applications has the user accessed during these sign-in events?
  ```
-4. Check device compliance of device used by the user
+4. Verifique a conformidade dos dispositivos usados pelo usuário
 ```
 What device(s) has the user used for these sign-ins? Are these devices compliant and managed?
 ```
-5. Retrieve location of the users sign ins 
+5. Recupere a localização das entradas do usuário
 ```
 What is the sign-in location and IP address used for sign-in?
 ```
-6. Access the risk level of the user
+6. Consulte o nível de risco do usuário
 ```
 What is the risk level during sign-in? Are there any detected risk events?
 ```
-7. Access Sign in status of the user
+7. Consulte o status das entradas do usuário
 ```
 What is the user's sign-in status? Are there any failures? If so, what are the reasons for these failures?
 ```
-8. Checking if the user has MFA in play
+8. Verifique se o usuário utiliza MFA
 ```
 Does the user's sign-in satisfy the Multi-Factor Authentication (MFA) requirement?
 ```
-9. Accessing conditional access policies aligned to the user
+9. Consulte as políticas de acesso condicional aplicadas ao usuário
 ```
 /What specific conditional access policies were applied during these sign-in events
 ```
-10. Checking the last passwprd change for the user
+10. Verifique a última alteração de senha do usuário
 ```
 When did the user last change their password?
 ```
-11. Summarizing the investigation
+11. Resuma a investigação
 ```
 Can you summarize the above investigation and provide a conclusion and recommendation

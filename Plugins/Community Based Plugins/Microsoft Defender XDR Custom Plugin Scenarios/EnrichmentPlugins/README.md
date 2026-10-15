@@ -1,49 +1,48 @@
-![Copilot for Security Overview](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
+![Visão geral do Copilot for Security](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
 
-# Copilot for Security Enrichment Plugin Suite
+# Conjunto de plugins de enriquecimento do Copilot for Security
 
-**Author: Craig Freyman**  
+**Autor: Craig Freyman**
 
-## Overview
-This plugin suite enables users to enrich various entities in security operations & investigations. Detailed README's are available for each enrichment type. 
+## Visão geral
+Este conjunto de plugins permite enriquecer várias entidades em operações e investigações de segurança. Há um README detalhado para cada tipo de enriquecimento.
 
-### Alert Enrichment
-Enhances security investigations by retrieving and correlating alert-related data. Allows analysts to search for alerts by title, retrieve associated evidence, and assess security incidents efficiently.
+### Enriquecimento de alertas
+Aprimora investigações de segurança obtendo e correlacionando dados relacionados a alertas. Permite pesquisar alertas por título, obter evidências associadas e avaliar incidentes de segurança com eficiência.
 
-### User Enrichment
-A collection of tools designed to enhance security investigations by analyzing user activities, detecting anomalies in sign-in behavior, tracking password changes, monitoring MFA modifications, and verifying user location information. Helps security teams identify threats and ensure compliance with security policies.
+### Enriquecimento de usuários
+Conjunto de ferramentas desenvolvido para aprimorar investigações de segurança por meio da análise das atividades dos usuários, da detecção de anomalias no comportamento de entrada, do acompanhamento de alterações de senha, do monitoramento de modificações de MFA e da verificação de informações de localização. Ajuda as equipes de segurança a identificar ameaças e garantir a conformidade com as políticas de segurança.
 
-### URL Enrichment
-Enhances security investigations by providing detailed insights into user interactions with URLs. Allows analysts to track URL clicks, analyze click patterns, and correlate URL activity with other security events for comprehensive risk assessments.
+### Enriquecimento de URLs
+Aprimora investigações de segurança fornecendo informações detalhadas sobre as interações dos usuários com URLs. Permite acompanhar cliques em URLs, analisar padrões de cliques e correlacionar atividades de URL com outros eventos de segurança para realizar avaliações abrangentes de risco.
 
-### Incident Enrichment
-Provides insights into incident-related alerts to improve security investigations. Enables security analysts to efficiently correlate, retrieve, and analyze alerts linked to specific incidents for targeted investigations.
+### Enriquecimento de incidentes
+Fornece informações sobre alertas relacionados a incidentes para melhorar as investigações de segurança. Permite correlacionar, obter e analisar com eficiência os alertas vinculados a incidentes específicos para realizar investigações direcionadas.
 
-### File Enrichment
-Enhances security investigations by providing detailed insights into file activity on devices. Helps analysts identify potentially malicious files, assess security threats, and recommend remediation steps.
+### Enriquecimento de arquivos
+Aprimora investigações de segurança fornecendo informações detalhadas sobre a atividade de arquivos nos dispositivos. Ajuda a identificar arquivos potencialmente mal-intencionados, avaliar ameaças de segurança e recomendar etapas de correção.
 
-### Email Enrichment
-Enhances security investigations by providing insights into email activity. Allows analysts to identify email interactions based on domains, recipients, senders, and quarantine requests, supporting a comprehensive threat analysis.
+### Enriquecimento de emails
+Aprimora investigações de segurança fornecendo informações sobre a atividade de email. Permite identificar interações de email com base em domínios, destinatários, remetentes e solicitações de quarentena, apoiando uma análise abrangente de ameaças.
 
-### Device Enrichment
-Provides insights into device behavior, vulnerabilities, and activity patterns. Helps security teams monitor device exposure, analyze logon events, and identify vulnerabilities for targeted remediation.
+### Enriquecimento de dispositivos
+Fornece informações sobre o comportamento dos dispositivos, vulnerabilidades e padrões de atividade. Ajuda as equipes de segurança a monitorar a exposição dos dispositivos, analisar eventos de entrada e identificar vulnerabilidades para correção direcionada.
 
-### IP Enrichment
-Enhances security investigations by analyzing IP-related activities such as failed login attempts, brute-force attacks, and login anomalies. Supports detection of suspicious login behavior and potential threats.
+### Enriquecimento de IP
+Aprimora investigações de segurança analisando atividades relacionadas a IP, como tentativas de entrada com falha, ataques de força bruta e anomalias de entrada. Apoia a detecção de comportamentos suspeitos de entrada e possíveis ameaças.
 
-### Purview Enrichment
-Designed to enhance security investigations by querying DLP events and file activities for users and devices. Helps security analysts correlate data loss prevention (DLP) alerts with other event types to aid in investigation and response efforts.
+### Enriquecimento do Purview
+Desenvolvido para aprimorar investigações de segurança por meio da consulta de eventos de DLP e atividades de arquivos de usuários e dispositivos. Ajuda os analistas de segurança a correlacionar alertas de prevenção contra perda de dados (DLP) com outros tipos de evento para auxiliar nos esforços de investigação e resposta.
 
-**Note**  
-Ensure you have sufficient permissions and access to required datasets within Microsoft Defender or Sentinel before invoking any skills.
+**Observação**
+Antes de invocar qualquer habilidade, verifique se você tem permissões suficientes e acesso aos conjuntos de dados necessários no Microsoft Defender ou no Sentinel.
 
-## **Pre-requisites**
-1. Access to Microsoft Defender and Sentinel environments.  
+## **Pré-requisitos**
+1. Acesso aos ambientes do Microsoft Defender e do Sentinel.
 
-2. Ensure proper permissions are assigned to query relevant tables (e.g., `SigninLogs`, `EmailEvents`, `DeviceFileEvents`).  
+2. Verifique se foram atribuídas as permissões adequadas para consultar as tabelas relevantes (por exemplo, `SigninLogs`, `EmailEvents` e `DeviceFileEvents`).
 
-## Select or upload the attached manifest file into your Copilot for Security console
-1. Click on the `Sources` button and go to `Custom Plugins`.
-2. Click `Security Copilot plugin Custom .yaml or .json`
-3. Some plugins leverage Sentinel, if so, enter your Azure information as requested.
-
+## Selecionar ou carregar o arquivo de manifesto anexado no console do Copilot for Security
+1. Clique no botão `Sources` e acesse `Custom Plugins`.
+2. Clique em `Security Copilot plugin Custom .yaml or .json`.
+3. Alguns plugins usam o Sentinel; nesse caso, insira as informações do Azure quando solicitado.

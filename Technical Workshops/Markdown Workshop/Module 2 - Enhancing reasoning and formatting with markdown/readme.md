@@ -1,109 +1,109 @@
-<!-- Author Rick Kotlarz -->
-<!-- Last updated 2025-March-17 -->
+<!-- Autor: Rick Kotlarz -->
+<!-- Última atualização: 17 de março de 2025 -->
 
-## Module 2 - Enhancing reasoning and formatting with Markdown
+## Módulo 2 - Aprimorando o raciocínio e a formatação com Markdown
 
-![Security Copilot Logo](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
+![Logotipo do Security Copilot](https://github.com/Azure/Copilot-For-Security/blob/main/Images/ic_fluent_copilot_64_64%402x.png)
 
-#### ⌛ Estimated time to complete this lab: 15 minutes
-#### 🎓 Level: 200 (Intermediate)
+#### ⌛ Tempo estimado para concluir este laboratório: 15 minutos
+#### 🎓 Nível: 200 (intermediário)
 
-The following example prompts demonstrate how users can enhance both the output and the reasoning behind that output by using Markdown. Large Language Models (LLMs) interpret context and follow instructions more effectively when prompts include delimiters and Markdown. While natural language can be used, it often requires more detailed explanations, which many users may not be willing to provide. By offering clear instructions and utilizing Markdown, as outlined in this module, users can reduce the likelihood of output inconsistencies.
+Os prompts de exemplo a seguir demonstram como os usuários podem aprimorar tanto a saída quanto o raciocínio por trás dela usando Markdown. Os LLMs interpretam o contexto e seguem instruções com mais eficiência quando os prompts incluem delimitadores e Markdown. Embora seja possível usar linguagem natural, ela costuma exigir explicações mais detalhadas, que muitos usuários talvez não estejam dispostos a fornecer. Ao oferecer instruções claras e usar Markdown, conforme descrito neste módulo, os usuários podem reduzir a probabilidade de inconsistências na saída.
 
-LLMs often aren't fine-tuned to fully understand the specific context of a user's query. While platforms like Security Copilot help improve prompting by including system prompts that emphasize Responsible AI (RAI) and the intended use of plugins or skills, these might not always meet the user's expectations. To bridge this gap, users should provide additional context and direction, aligning with both the [Security Copilot prompt engineering best practices](https://learn.microsoft.com/en-us/copilot/security/prompting-tips) and general LLM prompt engineering best practices.
+Muitas vezes, os LLMs não são ajustados para compreender totalmente o contexto específico da consulta de um usuário. Embora plataformas como o Security Copilot ajudem a melhorar os prompts incluindo prompts de sistema que enfatizam a IA Responsável (RAI) e o uso pretendido de plugins ou habilidades, eles nem sempre atendem às expectativas do usuário. Para preencher essa lacuna, os usuários devem fornecer contexto e orientação adicionais, de acordo com as [práticas recomendadas de engenharia de prompts do Security Copilot](https://learn.microsoft.com/en-us/copilot/security/prompting-tips) e as práticas recomendadas gerais de engenharia de prompts para LLMs.
 
-This module illustrates how users can combine the referenced Security Copilot prompt engineering best practices with general LLM prompt engineering best practices.
+Este módulo mostra como os usuários podem combinar as práticas recomendadas de engenharia de prompts do Security Copilot com as práticas recomendadas gerais de engenharia de prompts para LLMs.
 
-1. [Large Language Model prompt engineering best practices](#large-language-model-prompt-engineering-best-practices)
-2. [Initial prompt](#initial-prompt)
-3. [Summarizing, reasoning, and recommendations](#summarizing-reasoning-and-recommendations)
-4. [Creating links from alert IDs](#creating-links-from-alert-ids)
-5. [Ensuring consistent formatting](#ensuring-consistent-formatting)
-6. [Leveraging Promptbooks](#leveraging-promptbooks)
+1. [Práticas recomendadas de engenharia de prompts para LLMs](#large-language-model-prompt-engineering-best-practices)
+2. [Prompt inicial](#initial-prompt)
+3. [Resumos, raciocínio e recomendações](#summarizing-reasoning-and-recommendations)
+4. [Criação de links com IDs de alerta](#creating-links-from-alert-ids)
+5. [Garantia de formatação consistente](#ensuring-consistent-formatting)
+6. [Uso de promptbooks](#leveraging-promptbooks)
 
-### Large Language Model prompt engineering best practices
+### Práticas recomendadas de engenharia de prompts para LLMs
 
-Effective prompting is key to obtaining accurate, relevant, and useful responses from language models. By following this set of best practices for effective prompting, users can ensure that the model's outputs align more closely with the desired results. 
+Prompts eficazes são fundamentais para obter respostas precisas, relevantes e úteis dos modelos de linguagem. Ao seguir este conjunto de práticas recomendadas, os usuários podem garantir que as saídas do modelo fiquem mais alinhadas aos resultados desejados.
 
-1. **Assign a Persona** - Define a specific role to tailor responses appropriately. For example, instructing the model to act as a data analyst can lead to insights that focus on data interpretation.
-2. **Use Delimiters** - Employ delimiters, like triple quotes, to clearly indicate specific text segments for tasks such as translation or summarization. This ensures the model processes the correct portion of text. Markdown can simplify this process.
-3. **Provide Step-by-Step Instructions** - Break down complex tasks into sequential steps to guide the model through the reasoning process. This approach often results in more accurate outcomes.
-4. **Include Examples** - Provide one or more examples to show the desired pattern or style. This helps the model infer and replicate the expected response format.
-5. **Be Clear and Specific** - Craft precise, unambiguous prompts, supplying enough context to help the model understand and fulfill the request accurately.
-6. **Specify Tone** - If tone is important, specify it in the prompt. Review the model’s outputs iteratively and refine your prompts to improve the quality of responses.
-7. **Iterative Refinement** - Continuously review the model's outputs and adjust your prompts as needed to improve response quality.
+1. **Atribua uma persona** - Defina uma função específica para adaptar as respostas adequadamente. Por exemplo, instruir o modelo a agir como analista de dados pode gerar insights focados na interpretação dos dados.
+2. **Use delimitadores** - Empregue delimitadores, como aspas triplas, para indicar claramente segmentos de texto específicos em tarefas como tradução ou resumo. Isso garante que o modelo processe a parte correta do texto. O Markdown pode simplificar esse processo.
+3. **Forneça instruções passo a passo** - Divida tarefas complexas em etapas sequenciais para orientar o modelo durante o processo de raciocínio. Essa abordagem costuma gerar resultados mais precisos.
+4. **Inclua exemplos** - Forneça um ou mais exemplos para mostrar o padrão ou o estilo desejado. Isso ajuda o modelo a inferir e reproduzir o formato de resposta esperado.
+5. **Seja claro e específico** - Elabore prompts precisos e inequívocos, fornecendo contexto suficiente para que o modelo entenda e atenda à solicitação corretamente.
+6. **Especifique o tom** - Se o tom for importante, especifique-o no prompt. Examine as saídas do modelo de maneira iterativa e refine os prompts para melhorar a qualidade das respostas.
+7. **Refine iterativamente** - Examine continuamente as saídas do modelo e ajuste os prompts conforme necessário para melhorar a qualidade das respostas.
 
 
-### Initial prompt
+### Prompt inicial
 
-Running a prompt without specifying output expectations can lead to inconsistent formatting, such as alternating between tables and bullet points. When users don't provide detailed instructions on the desired output format, the skill will return all available data. 
+Executar um prompt sem especificar as expectativas de saída pode gerar formatação inconsistente, como alternância entre tabelas e listas com marcadores. Quando os usuários não fornecem instruções detalhadas sobre o formato desejado, a habilidade retorna todos os dados disponíveis.
 
-In this example, I prompt Security Copilot to use the Purview plugin and retrieve the 10 DLP alerts with a severity of high over the past 30 days:
+Neste exemplo, solicito que o Security Copilot use o plugin do Purview e recupere os dez alertas de DLP com gravidade alta nos últimos 30 dias:
 
 ```
 Using the Purview plugin, get the last 10 DLP alerts with a severity of high over the past 30 days. Format the output in a table.
 ```
-I can download the response output by selecting **"Export to Excel"** or simply view it from within the browser by selecting the icon to the right of the "Export to Excel" button.
+Posso baixar a saída da resposta selecionando **"Exportar para o Excel"** ou simplesmente exibi-la no navegador selecionando o ícone à direita do botão "Exportar para o Excel".
 
-![Image](./images/001_module2_prompt_no_Markdown.png)
+![Imagem](./images/001_module2_prompt_no_Markdown.png)
 
 
-### Summarizing, reasoning, and recommendations
+### Resumos, raciocínio e recomendações
 
-Looking over these alerts, I can see that it includes a few of the same users. Rather than viewing each alert line-by-line in a table and having to mentally group alerts, I'll use the **/AskGPT** skill, as illustrated in [Module 1 - Formatting with markdown](https://github.com/Azure/Security-Copilot/tree/main/Technical%20Workshops/Markdown%20Workshop/Module%201%20-%20Formatting%20with%20markdown), to instruct Security Copilot to:
+Ao examinar esses alertas, percebo que alguns envolvem os mesmos usuários. Em vez de exibir cada alerta linha por linha em uma tabela e agrupá-los mentalmente, usarei a habilidade **/AskGPT**, como demonstrado no [Módulo 1 - Formatação com Markdown](https://github.com/Azure/Security-Copilot/tree/main/Technical%20Workshops/Markdown%20Workshop/Module%201%20-%20Formatting%20with%20markdown), para instruir o Security Copilot a:
 
-- Summarize all data, grouped by users.
-- Highlight significant trends, behaviors, or issues observed.
-- Identify patterns, similarities, or contributing factors among the alerts.
-- Provide a summary with actionable recommendations to mitigate risk, prioritize incidents, and improve compliance.
+- Resumir todos os dados, agrupados por usuário.
+- Destacar tendências, comportamentos ou problemas significativos observados.
+- Identificar padrões, semelhanças ou fatores contribuintes entre os alertas.
+- Fornecer um resumo com recomendações acionáveis para mitigar riscos, priorizar incidentes e melhorar a conformidade.
 
 ```
 /AskGPT For each user, write a concise, actionable summary addressed to their manager. Begin the summary with the user's User Principal Name (UPN). Highlight significant trends, behaviors, or issues observed in their DLP alerts using chain-of-thought reasoning to identify patterns, similarities, or contributing factors across the alerts. Provide clear, actionable recommendations to mitigate risk, prioritize incidents, and improve compliance.
 ```
-![Image](./images/002_module2_summarize_reason_and_recommend.png)
-### Creating links from alert IDs
+![Imagem](./images/002_module2_summarize_reason_and_recommend.png)
+### Criação de links com IDs de alerta
 
-Being satisfied with the summarizing, reasoning, and recommendations output, I'd like to include clickable links that make it easier to view the actual alert. While the initial output does not include a clickable link, it does include the Alert ID.
+Satisfeito com a saída de resumo, raciocínio e recomendações, quero incluir links clicáveis para facilitar a exibição do alerta real. Embora a saída inicial não inclua um link clicável, ela contém a ID do alerta.
 
-Given that Defender XDR, Sentinel, and Purview use standardized URL formats, I can use the alert ID to create an alert link. Purview specifically uses the following URL format, where `{my-Tenant-ID}` would be replaced with my Tenant ID and `{Purview-alert-ID}` would be replaced by the Purview Alert ID:
+Como o Defender XDR, o Sentinel e o Purview usam formatos de URL padronizados, posso usar a ID do alerta para criar um link. O Purview usa especificamente o formato de URL a seguir, no qual `{my-Tenant-ID}` é substituído pela minha Tenant ID e `{Purview-alert-ID}` pela ID do alerta do Purview:
 `https://purview.microsoft.com/datalossprevention/alertspage/fullpage?tid={my-Tenant-ID}&alertsviewid=overview&id={Purview-alert-ID}`.
 
-The finished URL will look something like this:<br>
+A URL final será semelhante a esta:<br>
 `https://purview.microsoft.com/datalossprevention/alertspage/fullpage?tid=0527ecb7-06fb-4769-b324-fd4a3bb865eb&alertsviewid=overview&id=da7618d0-35a6-71b8-3400-08dd5766cd5a`
 
-To create a link, I simply need to ensure that the data required to support a given URL format is present in the output or provided some other way. In this case, the output contains a list of DLP alerts along with their associated alert ID. Since my Tenant ID is missing, I'll need to get it. There are multiple methods for getting this, but the easiest is to simply view the [Tenant Properties within the Azure Portal](https://portal.azure.com/#view/Microsoft_AAD_IAM/TenantProperties.ReactView).
+Para criar um link, basta garantir que os dados necessários ao formato de URL estejam presentes na saída ou sejam fornecidos de outra maneira. Neste caso, a saída contém uma lista de alertas de DLP com suas respectivas IDs. Como minha Tenant ID está ausente, precisarei obtê-la. Há várias maneiras de fazer isso, mas a mais fácil é exibir as [propriedades do locatário no portal do Azure](https://portal.azure.com/#view/Microsoft_AAD_IAM/TenantProperties.ReactView).
 
-Now that I have the Tenant ID, I can hardcode that part of the URL. From my experience working in Defender XDR and Purview, I know that alert IDs associated with Purview include a preceding 'dl' that I'll need to remove if I want to view these alerts from the Purview portal. 
+Agora que tenho a Tenant ID, posso inserir esse valor diretamente na URL. Com base na minha experiência com o Defender XDR e o Purview, sei que as IDs de alerta associadas ao Purview começam com "dl", que precisarei remover para exibir esses alertas no portal do Purview.
 
-To generate this URL, I will again use the **/AskGPT** skill and prompt Security Copilot to:
-- Create a link for the alerts.
-- Provide it with the root URL that contains my Tenant ID.
-- Ask it to remove the first two characters of the alert ID.
+Para gerar essa URL, usarei novamente a habilidade **/AskGPT** e solicitarei ao Security Copilot:
+- Criar um link para os alertas.
+- Usar a URL raiz que contém minha Tenant ID.
+- Remover os dois primeiros caracteres da ID do alerta.
 
-⚠️ Please read next prompt before executing and don't forget to insert your Tenant ID in the URL before pasting.
+⚠️ Leia o próximo prompt antes de executá-lo e não se esqueça de inserir sua Tenant ID na URL antes de colar.
 
 ```
 /AskGPT For each user include a direct link to the alert in Microsoft Purview portal using the following URL format:  
 Purview: [{Alert Title}](https://purview.microsoft.com/datalossprevention/alertspage/fullpage?tid={Replace-with-your-tenant-ID-and-remove-curly-brackets}&alertsviewid=overview&id={alertId with the first two 'dl' characters of the AlertID removed})
 ```
 
-⚠️ If I'd prefer working out of Defender XDR instead of Purview, I can leave the preceding 'dl' characters in the Alert ID and use the Defender XDR URL `https://security.microsoft.com/alerts/{alert ID}`, modifying the prompt accordingly. To avoid confusing the LLM, I'll choose either Purview or Defender XDR before pasting the prompt.
+⚠️ Se eu preferir trabalhar no Defender XDR em vez do Purview, posso manter os caracteres "dl" no início da ID do alerta e usar a URL do Defender XDR `https://security.microsoft.com/alerts/{alert ID}`, ajustando o prompt adequadamente. Para não confundir o LLM, escolherei o Purview ou o Defender XDR antes de colar o prompt.
 
 ```
 /AskGPT For each user include a direct link to the alert in Defender XDR portal using the following URL format:  
 [{Alert Title}](https://security.microsoft.com/alerts/{alert Id})
 ```
 
-If the above prompt failed, verify that you updated the Tenant ID.
+Se o prompt acima falhar, verifique se você atualizou a Tenant ID.
 
-![Image](./images/003_module2_creating_links_from_alert_IDs.png)
+![Imagem](./images/003_module2_creating_links_from_alert_IDs.png)
 
 
-### Ensuring consistent formatting
+### Garantia de formatação consistente
 
-While I value the friendly, conversational, and non-repetitive nature that Generative AI provides, I need the output to be consistently formatted each time. To achieve this, I'll provide clear instructions that integrate my previous prompts, URL modifications, and additional format guidelines.
+Embora eu valorize a natureza amigável, conversacional e não repetitiva da IA generativa, preciso que a saída tenha formatação consistente em todas as execuções. Para isso, fornecerei instruções claras que integrem meus prompts anteriores, as alterações de URL e diretrizes adicionais de formatação.
 
-Since large language models (LLMs) work best when using specific delimiters, and Markdown is a well-established language for such delimiters, I will combine both the [Security Copilot prompt engineering best practices](https://learn.microsoft.com/en-us/copilot/security/prompting-tips) and the [general best practices for effective prompting of LLMs](#general-best-practices-for-effective-prompting-llms) outlined at the top of this page. By leveraging both of these resources, I’ve not only harnessed the power of Security Copilot, but I will also ensure that the reasoning output is consistently formatted each time I run this prompt.
+Como os LLMs funcionam melhor com delimitadores específicos e o Markdown é uma linguagem consolidada para esse fim, combinarei as [práticas recomendadas de engenharia de prompts do Security Copilot](https://learn.microsoft.com/en-us/copilot/security/prompting-tips) com as [práticas recomendadas gerais para prompts eficazes de LLMs](#general-best-practices-for-effective-prompting-llms) descritas no início desta página. Ao aproveitar esses dois recursos, além de usar o poder do Security Copilot, garantirei que a saída do raciocínio seja formatada de modo consistente sempre que executar este prompt.
 
 ```
 Using the Purview plugin, get the last 10 DLP alerts with a severity of high. Assume the role of an expert **Data Loss Prevention (DLP) engineer** tasked with generating a **professional, manager-focused summary** of a DLP triage workflow for DLP alerts. 
@@ -136,37 +136,37 @@ https://purview.microsoft.com/datalossprevention/alertspage/fullpage?tid=0527ecb
 ---
 ```
 
-![Image](./images/004_module2_final_prompt_with_Markdown.png)
+![Imagem](./images/004_module2_final_prompt_with_Markdown.png)
 
 ---
 
-### Leveraging Promptbooks
+### Uso de promptbooks
 
-To make repeating the execution of this prompt easier, I'll create a promptbook. Promptbooks can store multiple prompts and support workflows that allow users to easily rerun one or more prompts at a later time. For advanced prompts like this that include multiple lines of instructions and formatting requirements, using a promptbook reduces the likelihood that I'll incur errors from typing, saves me time from having to manually copy and paste prompts from an external library, and allows me to share it with others within my organization.
+Para facilitar a repetição da execução deste prompt, criarei um promptbook. Os promptbooks podem armazenar vários prompts e oferecer suporte a fluxos de trabalho que permitem executar novamente um ou mais prompts posteriormente. Em prompts avançados como este, que incluem várias linhas de instruções e requisitos de formatação, usar um promptbook reduz a probabilidade de erros de digitação, economiza o tempo de copiar e colar prompts manualmente de uma biblioteca externa e permite compartilhá-los com outras pessoas da organização.
 
-To create a promptbook from within a session, I simply need to click the checkbox on the top left corner of the prompt, and select the "Create promptbook" icon at the top. However, it's important to note that promptbooks use angle brackets`< >` to denote variables. As such, the existence of them must only be used for variables without spaces.
+Para criar um promptbook em uma sessão, basta marcar a caixa no canto superior esquerdo do prompt e selecionar o ícone "Criar promptbook" na parte superior. No entanto, é importante observar que os promptbooks usam sinais de menor e maior `< >` para indicar variáveis. Portanto, eles devem ser usados somente em variáveis sem espaços.
 
-![Image](./images/005_module2_promptbook_step_1.png)
+![Imagem](./images/005_module2_promptbook_step_1.png)
 
-Next, I'll provide a name, relevant tags (hit ENTER after each tag), and a description. After this, I'll hover my mouse over the prompt box and click the pencil icon to edit the prompt.
+Em seguida, fornecerei um nome, marcas relevantes (pressionando ENTER após cada marca) e uma descrição. Depois, passarei o mouse sobre a caixa de prompt e clicarei no ícone de lápis para editar o prompt.
 
-![Image](./images/005_module2_promptbook_step_2.png)
+![Imagem](./images/005_module2_promptbook_step_2.png)
 
-Since I don't always want "10" alerts exactly, I'll make this a variable by replacing the number "10" with `<Number_of_DLP_alerts>` and surrounding it with angle brackets (like this `<Number_of_DLP_alerts>`), followed by the checkbox icon located where the pencil icon was previously.
+Como nem sempre quero exatamente "10" alertas, transformarei esse número em uma variável, substituindo "10" por `<Number_of_DLP_alerts>` e colocando-o entre sinais de menor e maior (assim: `<Number_of_DLP_alerts>`). Depois, selecionarei o ícone de marca de seleção localizado onde estava o ícone de lápis.
 
-![Image](./images/005_module2_promptbook_step_3.png)
+![Imagem](./images/005_module2_promptbook_step_3.png)
 
-After scrolling down, I can see that the variable was accepted. Additionally, if I want to share this promptbook with others, I can do so here.
+Depois de rolar para baixo, posso ver que a variável foi aceita. Além disso, posso compartilhar o promptbook com outras pessoas nesta tela.
 
-![Image](./images/005_module2_promptbook_step_4.png)
+![Imagem](./images/005_module2_promptbook_step_4.png)
 
-Finally, I'll save it by selecting "Create" at the bottom left of the promptbook.
+Por fim, salvarei o promptbook selecionando "Criar" no canto inferior esquerdo.
 
-![Image](./images/005_module2_promptbook_step_5.png)
+![Imagem](./images/005_module2_promptbook_step_5.png)
 
-I can now view and execute the promptbook from the Home screen by filtering on "Promptbooks" or from the Promptbook Library.
+Agora posso exibir e executar o promptbook na tela inicial, filtrando por "Promptbooks", ou na biblioteca de promptbooks.
 
-![Image](./images/005_module2_promptbook_step_6.png)
+![Imagem](./images/005_module2_promptbook_step_6.png)
 ---
 
-For the official Markdown specification, visit [CommonMark](https://commonmark.org/help/)
+Para consultar a especificação oficial do Markdown, acesse o [CommonMark](https://commonmark.org/help/).

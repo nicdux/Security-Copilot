@@ -1,33 +1,33 @@
 # GreyNoise Community
-**Author: Shiv Patel + Brad Chiappetta**
-**Publisher: Microsoft + GreyNoise**
+**Autores: Shiv Patel + Brad Chiappetta**
+**Publicadores: Microsoft + GreyNoise**
 
-This plugin enables users to enrich investigations using threat intelligence from GreyNoise:   
-	1. Query information on an IP
+Este plugin permite enriquecer investigações usando a inteligência contra ameaças da GreyNoise:
+	1. Consultar informações sobre um IP
 
-Product Information:
+Informações sobre o produto:
 https://www.greynoise.io/greynoise-product
 
-**Note**  
-This plugin uses the GreyNoise Community (free) API, but still requires a GreyNoise Community (free) account to be [created here](https://viz.greynoise.io/signup).
+**Observação**
+Este plugin usa a API GreyNoise Community (gratuita), mas ainda exige uma conta GreyNoise Community (gratuita), que pode ser [criada aqui](https://viz.greynoise.io/signup).
 
-## **Pre-requisites**
-1. From the Plugin manager, locate the GreyNoise Enterprise Plugin and enable it
-![Enable Plugin](images/GreyNoiseCommunity_plugin.png)
+## **Pré-requisitos**
+1. No gerenciador de plugins, localize o plugin GreyNoise Enterprise e habilite-o.
+![Habilitar plugin](images/GreyNoiseCommunity_plugin.png)
 
-    ## Invoking the Plugin and Skills
-2. **Important**  
-   After selecting or uploading, click the "Set Up" button and enter the copied API key from the Pre-requisites above and press "Save."
-![Enter Key](images/GreyNoiseCommunity_settings.png)
+    ## Como invocar o plugin e as habilidades
+2. **Importante**
+   Depois de selecionar ou carregar o arquivo, clique no botão "Set Up", insira a chave de API copiada conforme os pré-requisitos acima e pressione "Save".
+![Inserir chave](images/GreyNoiseCommunity_settings.png)
 
-3. Use a Natural Language prompt from below examples or use Direct Skill Invocation ("/")
+3. Use um prompt em linguagem natural dos exemplos abaixo ou use a invocação direta de habilidade ("/").
 
 
-## Skills & Prompts
-1. Look up IP address noise: Ask GreyNoise about an IP 
-   - Example Prompt(s): Tell me about Ip address [IP] using the GreyNoise database
-   - Inputs: [IP]
+## Habilidades e prompts
+1. Consultar ruído de um endereço IP: pergunte à GreyNoise sobre um IP.
+   - Exemplo de prompt: Informe sobre o endereço IP [IP] usando o banco de dados da GreyNoise
+   - Entradas: [IP]
 
-## Frequently Asked Questions (FAQ)
-1. **Important**  
-   If prompts fail to invoke, please ensure you're using a supported Prompt above. Otherwise, invoke it using Direct Skill Invocation "/"      
+## Perguntas frequentes (FAQ)
+1. **Importante**
+   Se os prompts não funcionarem, verifique se você está usando um dos prompts compatíveis acima. Caso contrário, use a invocação direta de habilidade "/".

@@ -1,24 +1,24 @@
 # Sec-Copilot-UserReportedPhishing
-Author: Yaniv Shasha
+Autor: Yaniv Shasha
 
 
 
 
-By initiating the deployment process, you will set up an Azure Logic App integrated with Security Copilot Actions.<br>
-This setup activates when a user reports a phishing attempt in Outlook.<br>
-As configured by Defender for Office, these reported emails are rerouted to a designated shared mailbox.<br>
-Each new email arriving in this shared mailbox triggers the Security Copilot automation, initiating an automated investigation process.<br> 
-During this phase, Security Copilot examines the email to determine the likelihood of it being a phishing attempt.<br>
-Depending on the assessed risk level, the system will send a notification email.<br>
-Additionally, if the phishing probability exceeds 75%, a Sentinel Incident will be automatically generated.<br>
+Ao iniciar o processo de implantação, você configurará um Azure Logic App integrado às ações do Security Copilot.<br>
+Essa configuração é ativada quando um usuário relata uma tentativa de phishing no Outlook.<br>
+Conforme configurado pelo Defender for Office, esses emails relatados são redirecionados para uma caixa de correio compartilhada designada.<br>
+Cada novo email que chega a essa caixa de correio compartilhada aciona a automação do Security Copilot e inicia um processo de investigação automatizado.<br>
+Durante essa fase, o Security Copilot examina o email para determinar a probabilidade de ser uma tentativa de phishing.<br>
+Dependendo do nível de risco avaliado, o sistema envia um email de notificação.<br>
+Além disso, se a probabilidade de phishing for superior a 75%, um incidente do Sentinel será gerado automaticamente.<br>
 
 
-### Before starting the installation, ensure you have fulfilled these prerequisites:
+### Antes de iniciar a instalação, verifique se você atende a estes pré-requisitos:
 
-• The user deploying this Logic app must possess a Contributor Role.<br>
-• Activation of the Security Copilot license on your tenant is required.<br>
-• The user authenticated in the Copilot logic app action should have Security Admin permissions and the role of a Microsoft Sentinel contributor, as this is necessary for creating incident comments.<br>
-• Upload and enable custom KQL plugin, this need to be on the same user profile that running automation. <br>
+• O usuário que implanta este Logic App deve ter a função Contributor.<br>
+• A licença do Security Copilot deve estar habilitada em seu locatário.<br>
+• O usuário autenticado na ação do Logic App do Copilot deve ter permissões de Security Admin e a função Microsoft Sentinel Contributor, necessárias para criar comentários em incidentes.<br>
+• Carregue e habilite o plugin KQL personalizado no mesmo perfil de usuário que executa a automação. <br>
 
 <img src="./images/upload01.png"/>
 
@@ -33,10 +33,10 @@ Additionally, if the phishing probability exceeds 75%, a Sentinel Incident will 
 
 
 
-### Deployment 
+### Implantação
 
-To deploy the above logic app, you need to<br>
-•   Press on the Deploy option, select your subscription and the resource group (select the same tenant that Security Copilot is enabled)<br>
+Para implantar o Logic App acima:<br>
+•   Selecione a opção Deploy, sua assinatura e o grupo de recursos (escolha o mesmo locatário em que o Security Copilot está habilitado).<br>
 
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FSecurity-Copilot%2Fmain%2FLogic%2520Apps%2FSecCopilot-UserReportedPhishing%2Fazuredeploy.json" target="_blank">
@@ -44,6 +44,6 @@ To deploy the above logic app, you need to<br>
 
 
 
-###  Full Logic App view
+### Exibição completa do Logic App
 
 <img src="./images/full_view.png"/>

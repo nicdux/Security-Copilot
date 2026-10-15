@@ -1,40 +1,40 @@
-# Get the latest CISA vulnerabilities and check devices within my organization
-Author: Jamil Mirza
-This solution checks the latest CISA feed every 24 hours and queries the CVE finding against devices within Microsoft Defender for Endpoint. Security Copilot will check for remediation actions and enrich the description. It will also tell you how many (if any) devices in your organization are vulnerable to the reported CVE. Finally, an email with the findings is submitted to a mailbox which can be edited after the install of the Logic App.
+# Obter as vulnerabilidades mais recentes da CISA e verificar os dispositivos da minha organização
+Autor: Jamil Mirza
+Esta solução verifica o feed mais recente da CISA a cada 24 horas e consulta a ocorrência da CVE nos dispositivos do Microsoft Defender for Endpoint. O Security Copilot verifica as ações de correção e enriquece a descrição. Ele também informa quantos dispositivos da sua organização, caso existam, estão vulneráveis à CVE relatada. Por fim, um email com as descobertas é enviado para uma caixa de correio que pode ser alterada após a instalação do Logic App.
 
-## Deploy the Solution
+## Implantar a solução
 
-### Step 1: Deploy the Logic App
+### Etapa 1: implantar o Logic App
 
-Click the button below to deploy the Logic App. Select the resource group and change the Playbook name (if needed). You will enter this information in the deployment screen. 
+Clique no botão abaixo para implantar o Logic App. Selecione o grupo de recursos e altere o nome do Playbook, se necessário. Essas informações serão inseridas na tela de implantação.
 
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FSecurity-Copilot%2Fmain%2FLogic%2520Apps%2FLatestCISAVulnerabilities%2FCISALogicApp.json)
+[![Implantar no Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FSecurity-Copilot%2Fmain%2FLogic%2520Apps%2FLatestCISAVulnerabilities%2FCISALogicApp.json)
 
-### Step 2: Initialize O365 and Security Copilot API connections
+### Etapa 2: inicializar as conexões de API do O365 e do Security Copilot
 
-Open your new Logic App.
+Abra o novo Logic App.
 
-Click "API Connections"
+Clique em "API Connections".
 
-![alt text](image-2.png)
+![Conexões de API](image-2.png)
 
-Authorize both of the API connections.
-![alt text](image-1.png)
+Autorize as duas conexões de API.
+![Autorização das conexões de API](image-1.png)
 
-### Step 3: Change the email address
+### Etapa 3: alterar o endereço de email
 
-Open your new Logic App.
+Abra o novo Logic App.
 
-1. Click "Logic App Designer" (located under "Development Tools")
+1. Clique em "Logic App Designer" (localizado em "Development Tools").
 
-2. Click "Parameters"
+2. Clique em "Parameters".
 
-3. Edit the default value to an email address of your choice.
+3. Altere o valor padrão para um endereço de email de sua escolha.
 
-![alt text](image-3.png)
+![Configuração do endereço de email](image-3.png)
 
-### Step 4: Email Notification
+### Etapa 4: notificação por email
 
-Below is an example of the email received for each finding.
+Abaixo está um exemplo do email recebido para cada descoberta.
 
-![alt text](image-5.png)
+![Exemplo de notificação por email](image-5.png)

@@ -1,29 +1,28 @@
-# Security Copilot Custom KQL Plugin - Detect Anomalous App and User Activty using Microsoft Sentinel UEBA Insights
+# Plugin KQL personalizado do Security Copilot — Detectar atividades anômalas de aplicativos e usuários usando insights da UEBA do Microsoft Sentinel
 
-#### Security Copilot Plugin to that brings in data from Microsoft Sentinel UEBA insights focussed on anomalies related to Applications and administrative user activity. For details refer to this blog: 
+#### Plugin do Security Copilot que usa dados dos insights da UEBA do Microsoft Sentinel, concentrando-se em anomalias relacionadas a aplicativos e à atividade de usuários administrativos. Para obter detalhes, consulte esta publicação:
  [link](https://techcommunity.microsoft.com/t5/microsoft-security-copilot-blog/harnessing-the-power-of-kql-plugins-for-enhanced-security/ba-p/4221891)
 
-### Pre-requisites
+### Pré-requisitos
 
-* [Security Copilot Enabled](https://learn.microsoft.com/en-us/security-copilot/get-started-security-copilot#onboarding-to-microsoft-security-copilot)
-* [Access to upload custom plugins](https://learn.microsoft.com/en-us/security-copilot/manage-plugins?tabs=securitycopilotplugin#managing-custom-plugins)
-* [Microsoft Sentinel Workspace](https://learn.microsoft.com/en-us/azure/sentinel/quickstart-onboard) created.
-* [Microsoft Sentinel UEBA enabled](https://learn.microsoft.com/en-us/azure/sentinel/identify-threats-with-entity-behavior-analytics)
-* Parameters for KQL Plugin - Microsoft Sentinel Workspace Name, Subscription ID, Resource Group Name and Entra Tenant ID
+* [Security Copilot habilitado](https://learn.microsoft.com/en-us/security-copilot/get-started-security-copilot#onboarding-to-microsoft-security-copilot)
+* [Acesso para carregar plugins personalizados](https://learn.microsoft.com/en-us/security-copilot/manage-plugins?tabs=securitycopilotplugin#managing-custom-plugins)
+* [Workspace do Microsoft Sentinel](https://learn.microsoft.com/en-us/azure/sentinel/quickstart-onboard) criado.
+* [UEBA do Microsoft Sentinel habilitada](https://learn.microsoft.com/en-us/azure/sentinel/identify-threats-with-entity-behavior-analytics)
+* Parâmetros do plugin KQL: nome do workspace do Microsoft Sentinel, ID da assinatura, nome do grupo de recursos e ID do locatário do Entra.
 
-### Instructions
-#### Upload the Custom Plugin
+### Instruções
+#### Carregar o plugin personalizado
 
-1. Obtain the file [AnomalousAppandUserActivity.yaml](https://github.com/Azure/Copilot-For-Security/blob/main/Plugins/Community%20Based%20Plugins/Microsoft%20Sentinel%20Custom%20Plugin%20Scenarios/Anomalous%20App%20and%20Admin%20Activity/AnomalousAppandAdminActivity.yaml) from this directory.
-2. Modify the KQL query as needed to suit your specific requirements. One such edit might be your Time Zone as converted in this line:  | where datetime_utc_to_local(TimeGenerated, "US/Eastern") between ( fromDateTime .. toDateTime ).
-
-
-3. [Upload the custom plugin](https://learn.microsoft.com/en-us/security-copilot/manage-plugins?tabs=securitycopilotplugin#add-custom-plugins) and enter your Tenant ID, Subscription ID, Workspace name, Resource group that hosts your Sentinel worksapce in the resulting dialog box.  Verify that the plugin is activated.
-
-![CopilotForSecurity](https://learn.microsoft.com/en-us/security-copilot/media/add-plugin-button.png)
+1. Obtenha o arquivo [AnomalousAppandUserActivity.yaml](https://github.com/Azure/Copilot-For-Security/blob/main/Plugins/Community%20Based%20Plugins/Microsoft%20Sentinel%20Custom%20Plugin%20Scenarios/Anomalous%20App%20and%20Admin%20Activity/AnomalousAppandAdminActivity.yaml) deste diretório.
+2. Modifique a consulta KQL conforme necessário para atender aos seus requisitos. Uma possível alteração é o fuso horário convertido nesta linha:  | where datetime_utc_to_local(TimeGenerated, "US/Eastern") between ( fromDateTime .. toDateTime ).
 
 
-4. [Enter your workspace details in the Security Copilot UI](https://github.com/Azure/Copilot-For-Security/blob/main/Images/KQL Plugin images/Workspacedetails.png)
+3. [Carregue o plugin personalizado](https://learn.microsoft.com/en-us/security-copilot/manage-plugins?tabs=securitycopilotplugin#add-custom-plugins) e, na caixa de diálogo exibida, insira o ID do locatário, o ID da assinatura, o nome do workspace e o grupo de recursos que hospeda o workspace do Sentinel. Verifique se o plugin está ativado.
 
+![Copilot for Security](https://learn.microsoft.com/en-us/security-copilot/media/add-plugin-button.png)
+
+
+4. [Insira os detalhes do workspace na interface do Security Copilot](https://github.com/Azure/Copilot-For-Security/blob/main/Images/KQL Plugin images/Workspacedetails.png)
 
 
