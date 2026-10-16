@@ -130,63 +130,15 @@
 
 ## Estrutura
 
-1. Threat Intelligence — 5 min.
-2. Pulso real do Defender — 7 min.
-3. Investigação transversal — 12 min.
-4. Hunting e KQL — 7 min.
-5. Decisão e revisão humana — 6 min.
+1. Pulso real do Defender — 7 min.
+2. Investigação transversal — 12 min.
+3. Hunting e KQL — 7 min.
+4. Decisão e revisão humana — 6 min.
+5. Da sessão ao fluxo reutilizável — 5 min.
 
 ---
 
-## ATO 1 — THREAT INTELLIGENCE — 00:28–00:33
-
-### CONFIGURAR FONTES
-
-- Criar sessão nova.
-- Habilitar Microsoft Threat Intelligence.
-- Desabilitar Public web.
-- Desabilitar plugin personalizado.
-
-### DIZER
-
-> “Começamos fora do ambiente. Queremos saber quais ameaças merecem atenção e
-> quais perguntas devemos levar para dentro.”
-
-### COPIAR E COLAR
-
-```text
-Usando somente o Microsoft Threat Intelligence e as fontes oficiais disponíveis no Microsoft Security Copilot, prepare um briefing curto sobre ameaças relevantes para organizações do setor financeiro e da administração pública.
-
-Priorize evidências relacionadas ao Brasil ou à América Latina quando estiverem disponíveis, mas não invente uma relação regional.
-
-Inclua:
-1. até três atores, campanhas ou tendências com evidências recentes disponíveis;
-2. data e fonte de cada evidência;
-3. principais táticas e técnicas MITRE ATT&CK;
-4. tecnologias, identidades ou processos potencialmente afetados;
-5. ações defensivas priorizadas;
-6. perguntas que a equipe deve investigar em seu próprio ambiente.
-
-Separe fatos confirmados de hipóteses. Cite as fontes e declare explicitamente quando não houver evidência suficiente. Não inclua dados do tenant e não execute ações. Responda em português do Brasil.
-```
-
-### VALIDAR
-
-- Fontes e datas.
-- Fatos separados de hipóteses.
-- MITRE ATT&CK.
-- Recomendações defensivas.
-- Ausência de invenção regional.
-
-### PLANO B
-
-> “Quando não existe evidência regional suficiente, o comportamento correto é
-> declarar a lacuna. Isso é mais valioso do que produzir uma resposta
-> aparentemente completa, mas não fundamentada.”
-
----
-
-## ATO 2 — PULSO REAL DO DEFENDER — 00:33–00:40
+## ATO 1 — PULSO REAL DO DEFENDER — 00:28–00:35
 
 ### CONFIGURAR FONTES
 
@@ -309,7 +261,7 @@ Não use placeholders. Não execute ações de escrita ou remediação. Responda
 
 ---
 
-## ATO 3 — INVESTIGAÇÃO TRANSVERSAL — 00:40–00:52
+## ATO 2 — INVESTIGAÇÃO TRANSVERSAL — 00:35–00:47
 
 ### CONFIGURAR FONTES
 
@@ -415,7 +367,7 @@ Dados sintéticos do incidente:
 
 ---
 
-## ATO 4 — HUNTING E KQL — 00:52–00:59
+## ATO 3 — HUNTING E KQL — 00:47–00:54
 
 ### PROMPT 1 — HIPÓTESES DE HUNTING
 
@@ -474,7 +426,7 @@ Requisitos:
 
 ---
 
-## ATO 5 — DECISÃO E REVISÃO HUMANA — 00:59–01:05
+## ATO 4 — DECISÃO E REVISÃO HUMANA — 00:54–01:00
 
 ### PROMPT 1 — RESUMO EXECUTIVO
 
@@ -522,6 +474,31 @@ Como o nível de confiança é apenas moderado e ainda não existe confirmação
 > “A primeira recomendação foi excessivamente disruptiva para confiança
 > moderada. Essa correção não diminui a demonstração; ela mostra o modelo
 > operacional correto.”
+
+---
+
+## ATO 5 — DA SESSÃO AO FLUXO REUTILIZÁVEL — 01:00–01:05
+
+### MOSTRAR
+
+- Abra **Criar** e mostre que o plugin importado aparece como uma ferramenta GPT.
+- Não altere nem publique o agente durante a apresentação.
+- Mostre **Sequências de solicitações** para explicar como os prompts podem ser encadeados.
+
+### DIZER
+
+> “Até aqui usamos uma sessão. O próximo nível de valor é empacotar o método:
+> entradas padronizadas, fontes definidas, gates de decisão e saídas
+> consistentes.”
+
+> “A mesma lógica pode começar como promptbook e evoluir para plugin ou agente,
+> sempre com RBAC, testes e auditoria.”
+
+### NÃO FAZER
+
+- Não criar ou publicar um agente ao vivo.
+- Não editar o plugin validado.
+- Não prometer autonomia sem aprovação.
 
 ---
 
@@ -690,3 +667,31 @@ Como o nível de confiança é apenas moderado e ainda não existe confirmação
 - [ ] Janela limpa e notificações desabilitadas.
 - [ ] Cronômetro pronto.
 - [ ] Plano de corte conhecido.
+
+---
+
+# 14. APÊNDICE OPCIONAL — THREAT INTELLIGENCE
+
+> Não iniciar a demonstração por este cenário. Use somente se houver cobertura
+> previamente validada para um ator ou campanha específica.
+
+## Abordagem recomendada
+
+Em vez de buscar genericamente por setor e região, use um ator conhecido e um
+promptbook de perfil de ator. Exemplo:
+
+```text
+Usando somente o Microsoft Threat Intelligence, produza um perfil executivo do ator Midnight Blizzard.
+
+Inclua:
+- objetivos e motivações conhecidas;
+- setores historicamente visados;
+- táticas e técnicas MITRE ATT&CK;
+- ferramentas e padrões de acesso conhecidos;
+- artigos e fontes disponíveis com suas datas;
+- perguntas defensivas que uma organização deve investigar em seu ambiente.
+
+Diferencie informações históricas de atividade recente. Não afirme que o ator está direcionando a organização ou o Brasil sem evidência explícita. Responda em português do Brasil.
+```
+
+Se não houver resultado, não depure ao vivo. Volte para o pulso real do Defender.
