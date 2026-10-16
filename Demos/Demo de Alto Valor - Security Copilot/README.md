@@ -20,6 +20,8 @@
 - Não mostre contagens reais do ambiente de demonstração sem aprovação.
 - Não apresente recurso Preview como disponibilidade geral.
 - Se uma resposta demorar mais de 45 segundos, use o resultado salvo e avance.
+- Se o Embedded Copilot mostrar erro de capacidade, use imediatamente o portal
+  standalone já validado. Não depure capacidade durante a apresentação.
 
 ## Frase de proteção
 
@@ -149,8 +151,41 @@
 
 ### DIZER
 
-> “Agora saímos da inteligência pública e comprovamos conexão com telemetria
-> real, de forma agregada e somente leitura.”
+> “Começamos com uma prova concreta: conexão com telemetria real do ambiente,
+> usando uma experiência incorporada e consultas agregadas somente leitura.”
+
+## OPÇÃO RECOMENDADA — COPILOT EMBEDDED NO DEFENDER
+
+Use somente um incidente previamente autorizado para demonstração.
+
+### MOSTRAR
+
+- O incidente no Microsoft Defender.
+- O painel **Incident assistant**.
+- O **Incident summary** gerado.
+- A seção de triagem e recomendações, sem executar ações.
+
+### DIZER
+
+> “Aqui o Copilot está incorporado ao fluxo de trabalho do analista. Ele recebe
+> o contexto do incidente sem exigir troca de portal e produz um resumo
+> fundamentado para acelerar a primeira avaliação.”
+
+> “Continuamos dentro das permissões do usuário e da capacidade associada ao
+> workspace. O resumo apoia a decisão; ele não executa remediação por conta
+> própria.”
+
+### NÃO CLICAR
+
+- **Remediate**.
+- **Contact user in Teams**.
+- **Resolve and export incident**.
+- Qualquer ação que altere status, atribuição ou classificação.
+
+### PLANO B
+
+Se o Embedded apresentar erro ou demorar mais de 45 segundos, feche o painel e
+continue com o teste agregado abaixo ou com o portal standalone.
 
 ## TESTE A — EVENTOS DE REDE — VALIDADO
 
@@ -663,6 +698,8 @@ Como o nível de confiança é apenas moderado e ainda não existe confirmação
 - [ ] Plugin personalizado habilitado.
 - [ ] Microsoft Threat Intelligence habilitado.
 - [ ] Microsoft Defender XDR habilitado.
+- [ ] Embedded Copilot testado duas vezes ou removido do fluxo principal.
+- [ ] Portal standalone preparado como fallback do Embedded.
 - [ ] Public web desabilitado durante os testes controlados.
 - [ ] Janela limpa e notificações desabilitadas.
 - [ ] Cronômetro pronto.
