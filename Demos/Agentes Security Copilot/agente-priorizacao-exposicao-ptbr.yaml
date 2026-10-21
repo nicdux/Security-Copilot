@@ -1,0 +1,177 @@
+Descriptor:
+  Name: AgentePriorizacaoExposicaoPTBR
+  DisplayName: Agente Priorizacao Exposicao PTBR
+  Description: >-
+    Analisa a postura agregada de vulnerabilidades do Microsoft Defender,
+    explica os principais sinais de exposição e orienta uma priorização
+    somente leitura com supervisão humana.
+  Icon: ''
+
+AgentDefinitions:
+  - Name: AgentePriorizacaoExposicaoPTBR
+    DisplayName: Agente Priorizacao Exposicao PTBR
+    Description: >-
+      Agente interativo para análise agregada de vulnerabilidades e apoio à
+      priorização de remediação, sem executar alterações em dispositivos.
+    Publisher: Custom
+    Product: SecurityCopilot
+    RequiredSkillsets:
+      - AgentePriorizacaoExposicaoPTBR
+    AgentSingleInstanceConstraint: None
+    Triggers:
+      - Name: Default
+        DefaultPollPeriodSeconds: 0
+        ProcessSkill: AgentePriorizacaoExposicaoPTBR.AgentePriorizacaoExposicaoPTBR
+    PromptSkill: AgentePriorizacaoExposicaoPTBR.AgentePriorizacaoExposicaoPTBR
+
+SkillGroups:
+  - Format: Agent
+    Skills:
+      - Name: AgentePriorizacaoExposicaoPTBR
+        DisplayName: Agente Priorizacao Exposicao PTBR
+        Description: >-
+          Responde perguntas sobre exposição a vulnerabilidades usando
+          consultas agregadas e somente leitura no Microsoft Defender.
+        Interfaces:
+          - InteractiveAgent
+        Inputs:
+          - Name: UserRequest
+            Description: Pergunta do usuário sobre exposição, vulnerabilidades ou prioridades.
+            DefaultValue: ''
+            Required: true
+        SuggestedPrompts:
+          - Prompt: Resuma nossa exposição atual por severidade e explique como priorizar.
+            Title: Resumo executivo de exposição
+            Personas:
+              - 0
+            IsStarterAgent: true
+          - Prompt: Quais softwares concentram mais dispositivos expostos a vulnerabilidades críticas ou altas?
+            Title: Softwares com maior exposição
+            Personas:
+              - 1
+            IsStarterAgent: true
+          - Prompt: Quais CVEs críticas ou altas afetam mais dispositivos e quais evidências ainda precisamos validar?
+            Title: CVEs com maior alcance
+            Personas:
+              - 1
+            IsStarterAgent: true
+          - Prompt: Explique por que exposição observada não significa exploração confirmada.
+          - Prompt: Transforme o resultado em um resumo executivo sem dados de dispositivos.
+          - Prompt: Quais critérios humanos devem ser aplicados antes de iniciar uma remediação?
+        Settings:
+          OrchestratorSkill: DefaultAgentOrchestrator
+          Instructions: |
+            # Missão
+            Você é um agente de apoio à priorização de exposição e vulnerabilidades.
+            Responda sempre em português do Brasil.
+
+            # Princípios obrigatórios
+            - Trabalhe somente em modo leitura.
+            - Nunca execute remediação, alteração de política, isolamento, atualização
+              de aplicativo, mudança de configuração ou qualquer ação em dispositivos.
+            - Use o menor número de ferramentas necessário para responder.
+            - Para afirmações sobre o ambiente atual, use obrigatoriamente uma das
+              ferramentas KQL disponíveis. Não invente dados ou resultados.
+            - Diferencie exposição observada, vulnerabilidade, exploitabilidade e
+              exploração confirmada.
+            - Não trate volume como prioridade sem considerar severidade, alcance,
+              criticidade do ativo e controles compensatórios.
+            - Não exiba DeviceId ou DeviceName. As ferramentas foram desenhadas para
+              retornar somente agregações.
+            - Explique que as ferramentas consultam o escopo disponível no Microsoft
+              Defender Vulnerability Management. Esse escopo pode incluir Windows
+              Server e Linux e não equivale ao recorte do agente nativo do Intune,
+              que cobre Windows cliente e apps gerenciados.
+            - Trate os resultados como um snapshot da postura observada no Defender.
+            - Declare limitações, dados ausentes e possíveis falsos positivos.
+            - Recomendações disruptivas exigem revisão e aprovação humana.
+
+            # Seleção de ferramentas
+            1. Use GetExposureSummary para perguntas executivas ou visão por severidade.
+            2. Use GetTopExposedSoftware para identificar softwares que concentram
+               dispositivos expostos a vulnerabilidades críticas ou altas.
+            3. Use GetTopCveReach para identificar CVEs críticas ou altas com maior
+               alcance em dispositivos.
+            4. Se a pergunta exigir dados não retornados pelas ferramentas, explique a
+               lacuna em vez de inferir.
+
+            # Formato da resposta
+            1. Resumo objetivo.
+            2. Evidências agregadas retornadas pelas ferramentas.
+            3. Interpretação e prioridade sugerida.
+            4. Limitações e dados a validar.
+            5. Próximas ações recomendadas, separando análise de execução.
+            6. Identifique explicitamente ações que exigem aprovação humana.
+        ChildSkills:
+          - GetExposureSummary
+          - GetTopExposedSoftware
+          - GetTopCveReach
+
+  - Format: KQL
+    Skills:
+      - Name: GetExposureSummary
+        DisplayName: Resumir exposição por severidade
+        Description: >-
+          Retorna contagens agregadas de dispositivos e CVEs por nível de
+          severidade, sem identificar dispositivos.
+        Settings:
+          Target: Defender
+          Template: |-
+            DeviceTvmSoftwareVulnerabilities
+            | where isnotempty(VulnerabilitySeverityLevel)
+            | summarize
+                DispositivosExpostos = dcount(DeviceId),
+                VulnerabilidadesDistintas = dcount(CveId)
+              by VulnerabilitySeverityLevel
+            | extend OrdemSeveridade = case(
+                VulnerabilitySeverityLevel == "Critical", 4,
+                VulnerabilitySeverityLevel == "High", 3,
+                VulnerabilitySeverityLevel == "Medium", 2,
+                VulnerabilitySeverityLevel == "Low", 1,
+                0)
+            | order by OrdemSeveridade desc
+            | project Severidade = VulnerabilitySeverityLevel,
+                      DispositivosExpostos,
+                      VulnerabilidadesDistintas
+
+      - Name: GetTopExposedSoftware
+        DisplayName: Identificar softwares com maior exposição
+        Description: >-
+          Retorna os softwares com mais dispositivos expostos a vulnerabilidades
+          críticas ou altas, sem identificar dispositivos.
+        Settings:
+          Target: Defender
+          Template: |-
+            DeviceTvmSoftwareVulnerabilities
+            | where VulnerabilitySeverityLevel in ("Critical", "High")
+            | summarize
+                DispositivosExpostos = dcount(DeviceId),
+                VulnerabilidadesDistintas = dcount(CveId)
+              by SoftwareVendor, SoftwareName
+            | top 10 by DispositivosExpostos desc
+            | order by DispositivosExpostos desc
+            | project Fabricante = SoftwareVendor,
+                      Software = SoftwareName,
+                      DispositivosExpostos,
+                      VulnerabilidadesDistintas
+
+      - Name: GetTopCveReach
+        DisplayName: Identificar CVEs com maior alcance
+        Description: >-
+          Retorna CVEs críticas ou altas que afetam mais dispositivos, sem
+          identificar os dispositivos.
+        Settings:
+          Target: Defender
+          Template: |-
+            DeviceTvmSoftwareVulnerabilities
+            | where VulnerabilitySeverityLevel in ("Critical", "High")
+            | summarize
+                DispositivosExpostos = dcount(DeviceId),
+                ProdutosAfetados = dcount(strcat(SoftwareVendor, "/", SoftwareName))
+              by CveId, VulnerabilitySeverityLevel
+            | top 10 by DispositivosExpostos desc
+            | order by DispositivosExpostos desc
+            | project CVE = CveId,
+                      Severidade = VulnerabilitySeverityLevel,
+                      DispositivosExpostos,
+                      ProdutosAfetados

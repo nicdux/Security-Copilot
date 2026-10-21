@@ -1,0 +1,94 @@
+Descriptor:
+  Name: SecurityCopilotDocsAgent
+  DisplayName: Security Copilot Docs Agent
+  Description: >-
+    Answers user questions about Microsoft Security Copilot by searching
+    Microsoft Docs and returning relevant guidance.
+  Icon: ''
+
+AgentDefinitions:
+  - Name: SecurityCopilotDocsAgent
+    DisplayName: Security Copilot Docs Agent
+    Description: >-
+      Answers user questions about Microsoft Security Copilot by searching
+      Microsoft Docs and returning relevant guidance.
+    Publisher: Custom
+    Product: SecurityCopilot
+    RequiredSkillsets:
+      - MCP.MSDocs
+      - SecurityCopilotDocsAgent
+    AgentSingleInstanceConstraint: None
+    Triggers:
+      - Name: Default
+        DefaultPollPeriodSeconds: 0
+        ProcessSkill: SecurityCopilotDocsAgent.SecurityCopilotDocsAgent
+    PromptSkill: SecurityCopilotDocsAgent.SecurityCopilotDocsAgent
+
+SkillGroups:
+  - Format: Agent
+    Skills:
+      - Name: SecurityCopilotDocsAgent
+        DisplayName: Security Copilot Docs Agent
+        Description: Uses Microsoft Docs to answer questions about Security Copilot usage.
+        Interfaces:
+          - InteractiveAgent
+        Inputs:
+          - Name: UserRequest
+            Description: The user's question about how to use Microsoft Security Copilot.
+            DefaultValue: ''
+            Required: true
+        SuggestedPrompts:
+          - Prompt: Show me areas in which Security Copilot can help me?
+            Title: Security Copilot Overview
+            Personas:
+              - 3
+            IsStarterAgent: true
+          - Prompt: How do I build agents in Security Copilot?
+            Title: Building Agents
+            Personas:
+              - 3
+            IsStarterAgent: true
+          - Prompt: How do I get details on a specific Defender incident?
+            Title: Incident Knowledge
+            Personas:
+              - 3
+            IsStarterAgent: true
+          - Prompt: How do I execute a KQL query via Security Copilot?
+            Title: KQL Query
+            Personas:
+              - 3
+            IsStarterAgent: true
+          - Prompt: Give me more details on the above
+          - Prompt: Where do I get troubleshooting information
+          - Prompt: My prompt is not giving the response I am seeking, how can I improve on it.
+          - Prompt: What is a ProcessSkill in an Agent and how is it different from PromptSkill?
+          - Prompt: How do I import a custom plugin?
+          - Prompt: Does Security Copilot support MCP?
+          - Prompt: How do I build an API plugin?
+          - Prompt: How do I build a promptbook?
+          - Prompt: Can I run a Security Copilot prompt from Logic App?
+          - Prompt: Can I execute a Security Copilot agent from Logic App?
+          - Prompt: What is the purpose of a trigger in Agents?
+        Settings:
+          OrchestratorSkill: DefaultAgentOrchestrator
+          Instructions: >
+            # Mission You are an expert assistant for Microsoft Security
+            Copilot. When a user asks a question about how to use Security
+            Copilot, search Microsoft Docs for the most relevant and up-to-date
+            guidance. Make sure to return data relevant to Microsoft Security
+            Copilot specifically.
+
+            # Data Handling Use the AskMsDocs skill to search Microsoft
+            documentation for Security Copilot and related topics. Summarize the
+            most relevant information and provide clear, actionable answers.
+
+            # Workflow 1. Receive the user's question as input. 2. Call the
+            AskMsDocs skill with the user's question. 3. Review the returned
+            documentation results. 4. Summarize the key guidance and steps for
+            the user. 5. If the answer is not found, state that no relevant
+            documentation was found.
+
+            # Output Provide a concise, accurate answer with references to
+            Microsoft Docs where possible.
+        ChildSkills:
+          - microsoft_docs_search
