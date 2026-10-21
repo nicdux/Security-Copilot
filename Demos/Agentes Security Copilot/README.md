@@ -173,18 +173,18 @@ depois que a nova versão passar no teste do chat publicado.
 - não publique no workspace enquanto a identidade não estiver validada;
 - não aumente privilégios apenas para contornar o setup.
 
-### O agente está Active, mas o chat fica em “Processing your request”
+### A interface fica em “Processing your request”
 
-O status **Active** e a identidade conectada não garantem que o chat responda.
-Valide sempre antes de uma demonstração, com um prompt simples:
+Em uma sessão, a interface permaneceu em “Processing your request” mesmo com o
+agente **Active**, embora a resposta já tivesse sido gerada no servidor.
+Antes de uma demonstração:
 
-1. se o chat não responder em cerca de 1 minuto, mesmo sem uso de tool, o
-   problema não está nas consultas KQL;
-2. confirme se o status da lista não voltou para **Authentication expired** e
-   refaça o **Sign in** com a conta autorizada;
-3. verifique se existe outra instância do mesmo agente que declare as mesmas
-   tools; remova-a apenas com autorização do proprietário;
-4. use o teste do builder como contingência, pois ele valida o manifesto e a
+1. não reenvie o prompt: isso consome capacidade (SCU) desnecessariamente;
+2. abra a sessão pelo **History** ou recarregue a página do agente;
+3. confirme se o status da lista não voltou para **Authentication expired** e,
+   nesse caso, refaça o **Sign in** com a conta autorizada;
+4. faça um teste com prompt simples em uma aba nova antes de apresentar;
+5. use o teste do builder como contingência, pois ele valida o manifesto e a
    orquestração sem depender da identidade do chat.
 
 ## Critérios de qualidade
