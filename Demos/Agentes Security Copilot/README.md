@@ -168,8 +168,24 @@ depois que a nova versão passar no teste do chat publicado.
 - permita a janela de autenticação solicitada pelo navegador;
 - confirme que a sessão do Security Copilot continua válida;
 - repita o setup em uma janela sem bloqueio de pop-ups;
+- recarregue a página de **Agents**: a identidade pode ser registrada mesmo
+  quando o diálogo continua exibindo **Sign in**;
 - não publique no workspace enquanto a identidade não estiver validada;
 - não aumente privilégios apenas para contornar o setup.
+
+### O agente está Active, mas o chat fica em “Processing your request”
+
+O status **Active** e a identidade conectada não garantem que o chat responda.
+Valide sempre antes de uma demonstração, com um prompt simples:
+
+1. se o chat não responder em cerca de 1 minuto, mesmo sem uso de tool, o
+   problema não está nas consultas KQL;
+2. confirme se o status da lista não voltou para **Authentication expired** e
+   refaça o **Sign in** com a conta autorizada;
+3. verifique se existe outra instância do mesmo agente que declare as mesmas
+   tools; remova-a apenas com autorização do proprietário;
+4. use o teste do builder como contingência, pois ele valida o manifesto e a
+   orquestração sem depender da identidade do chat.
 
 ## Critérios de qualidade
 
