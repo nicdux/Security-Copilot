@@ -54,7 +54,26 @@ O agente:
 - plugins Intune e Defender;
 - identidade agêntica;
 - Intune read-only;
-- Defender Security Reader ou Unified RBAC equivalente.
+- Entra **Security Reader** (ou Unified RBAC equivalente) atribuído à **conta de
+  usuário do agente** (*agentic user*), com tipo **Ativo**.
+
+### Atribuição do Security Reader
+
+O agente opera com as permissões delegadas à conta de usuário do agente, e não
+ao *blueprint* nem à identidade. No Entra, em **Funções e administradores →
+Leitor de Segurança → Atribuições**:
+
+1. selecione **Adicionar atribuições** e escolha a conta de usuário do agente
+   (`SecurityCopilotAgentUser-…`);
+2. escolha o tipo **Ativo**: um agente não consegue ativar uma atribuição
+   **Qualificada**, que não concede permissão efetiva;
+3. prefira uma atribuição com prazo e registre a data para renovação;
+4. informe a justificativa e confirme;
+5. no Intune, execute **Re-run readiness check** e confirme os três endpoints
+   em **Success**.
+
+O botão **Atribuir** fica habilitado mesmo com o tipo **Qualificado**
+selecionado por padrão. Confira o tipo antes de enviar.
 
 ### Limitações
 
